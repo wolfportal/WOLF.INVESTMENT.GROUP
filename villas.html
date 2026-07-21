@@ -1,0 +1,81 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>كتالوج الفلل | Wolf Investment</title><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"><style>:root{--bg:oklch(97% .01 75);--surface:oklch(99% .006 75);--border:oklch(88% .02 75);--ink:oklch(22% .015 250);--muted:oklch(42% .012 250);--gold:oklch(62% .12 75);--green:oklch(52% .14 155);--red:oklch(50% .18 25);*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tajawal,sans-serif;line-height:1.65}.top{position:sticky;top:0;z-index:5;padding:12px 24px;background:oklch(97% .01 75/.95);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}.top a{margin:0 8px;color:var(--muted);text-decoration:none;font-size:.84rem}.langs button{border:1px solid var(--border);background:var(--surface);padding:6px 9px;border-radius:7px}.langs .active{background:var(--gold);color:white}.title{text-align:center;padding:40px 20px 14px}.title p{color:var(--muted)}.catalog{max-width:980px;margin:auto;padding:20px 18px 64px;display:flex;flex-direction:column;gap:24px}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;display:grid;grid-template-columns:320px 1fr;overflow:hidden;position:relative}.sold:after{content:var(--sold);position:absolute;top:18px;left:-32px;background:var(--red);color:white;padding:6px 40px;font-size:.8rem;font-weight:700;transform:rotate(-45deg);z-index:3}.media{position:relative;min-height:290px;overflow:hidden;background:var(--border)}.slides{display:flex;height:100%;transition:transform .4s cubic-bezier(.16,1,.3,1)}.slide{min-width:100%;height:100%}.slide img,.slide video{width:100%;height:100%;object-fit:cover;display:block}.badge,.type{position:absolute;z-index:2;background:var(--ink);color:white;padding:4px 10px;border-radius:12px;font-size:.72rem}.badge{top:12px;right:12px}.type{bottom:12px;right:12px;background:oklch(22% .01 250/.78)}.video{top:12px;left:12px;bottom:auto;right:auto;background:oklch(45% .15 25/.9)}.arrow{position:absolute;top:50%;transform:translateY(-50%);border:0;border-radius:50%;background:oklch(22% .01 250/.55);color:white;width:30px;height:30px}.prev{right:8px}.next{left:8px}.dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:4px}.dot{width:7px;height:7px;border-radius:50%;background:white}.dot.on{background:var(--gold)}.body{padding:24px;display:flex;flex-direction:column;gap:12px}.body h2{margin:0;font-size:1.25rem}.body h2 span{color:var(--gold)}.specs{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--muted);font-size:.84rem}.spec strong{color:var(--ink)}.line{height:1px;background:var(--border)}.tags{display:flex;gap:8px;flex-wrap:wrap}.tag{padding:4px 10px;border-radius:16px;background:oklch(93% .015 250);font-size:.78rem}.desc{display:none;color:var(--muted);font-size:.82rem;line-height:1.85}.desc.show{display:block}.actions{margin-top:auto;display:flex;gap:8px}.btn{border:1px solid var(--border);background:none;padding:8px 13px;border-radius:8px;font:inherit;cursor:pointer}.wa{background:var(--green);color:white;border:0;text-decoration:none}.foot{text-align:center;padding:28px;color:var(--muted);border-top:1px solid var(--border)}@media(max-width:720px){.card{grid-template-columns:1fr}.media{min-height:220px}.top nav{display:none}}
+</style></head><body><header class="top"><nav><a href="index.html" data-k="home">الرئيسية</a><a href="about.html" data-k="about">من نحن</a><a href="jericho-gate.html" data-k="gate">بوابة أريحا</a><a href="contact.html" data-k="contact">تواصل معنا</a></nav><div class="langs"><button data-l="ar">ع</button><button data-l="en">EN</button><button data-l="ka">ქარ</button><button data-l="he">עב</button></div></header><section class="title"><h1 data-k="title">كتالوج الفلل</h1><p data-k="sub">فلل فاخرة للاستثمار والسكن</p></section><main class="catalog" id="catalog"></main><footer class="foot">Wolf Investment | © 2026</footer><script>const T={ar:{dir:'rtl',home:'الرئيسية',about:'من نحن',gate:'بوابة أريحا',contact:'تواصل معنا',title:'كتالوج الفلل',sub:'فلل فاخرة للاستثمار والسكن',villa:'فيلا',land:'الأرض',build:'البناء',rooms:'غرف',master:'ماستر',pool:'بركة',delivery:'تسليم',now:'فوري',cash:'كاش',install:'تقسيط',sold:'تم البيع',more:'تفاصيل أكثر',hide:'إخفاء',wa:'واتساب'},en:{dir:'ltr',home:'Home',about:'About us',gate:'Jericho Gate',contact:'Contact',title:'Villa Catalogue',sub:'Luxury villas for living and investment',villa:'Villa',land:'Land',build:'Built',rooms:'Rooms',master:'Master',pool:'Pool',delivery:'Delivery',now:'Immediate',cash:'Cash',install:'Installment',sold:'Sold',more:'More details',hide:'Hide',wa:'WhatsApp'},ka:{dir:'ltr',home:'მთავარი',about:'ჩვენ შესახებ',gate:'იერიხოს კარიბჭე',contact:'კონტაქტი',title:'ვილების კატალოგი',sub:'პრემიუმ ვილები საცხოვრებლად და ინვესტიციისთვის',villa:'ვილა',land:'მიწა',build:'აშენებული',rooms:'ოთახები',master:'მასტერ',pool:'აუზი',delivery:'მიწოდება',now:'დაუყოვნებლივ',cash:'ნაღდი',install:'განვადება',sold:'გაიყიდა',more:'მეტი დეტალები',hide:'დამალვა',wa:'WhatsApp'},he:{dir:'rtl',home:'ראשי',about:'אודותינו',gate:'שער יריחו',contact:'צור קשר',title:'קטלוג וילות',sub:'וילות יוקרה למגורים והשקעה',villa:'וילה',land:'קרקע',build:'בנוי',rooms:'חדרים',master:'מאסטר',pool:'בריכה',delivery:'מסירה',now:'מיידית',cash:'מזומן',install:'תשלומים',sold:'נמכר',more:'פרטים נוספים',hide:'הסתר',wa:'WhatsApp'}};const P=[['R-14','https://videotourl.com/videos/1783324353987-0deedbcc-6519-4552-a890-c1842249a391.mov','500','180','0','0','5×10','sold'],['SROR-2','https://videotourl.com/videos/1783347411440-df579330-7f7c-46c6-8710-69e11f0e827f.mp4','625','195','0','0','5×10','sold'],['HM-2','https://videotourl.com/videos/1783356746114-150db066-8e59-48d0-a09d-4aa9ceec3733.mp4','445','200','2','2','5×10','cash'],['yaz-1','https://videotourl.com/videos/1783362663908-bf5c7c65-27f1-4cc8-9a53-d55a8b36a5c4.mp4','534','150','0','2','5×10','install'],['B4-90','https://videotourl.com/videos/1783360478038-29f736bd-7b5b-418d-8e97-ec878a134222.mp4','420','230','2','2','4×9','install'],['yaz-2','https://videotourl.com/videos/1783358350462-5e6419fc-3e4f-4fea-960e-8adb619914eb.mp4','555','178','2','1','5×10','install'],['R-15','https://videotourl.com/videos/1783459536713-054b496c-b405-4d17-a6eb-b9e45917d25c.mp4','500','180','1','2','5×10','install']];let lang=localStorage.getItem('wolf-lang')||'ar';function tr(k){return(T[lang]||T.ar)[k]||k}function setLang(l){lang=l;localStorage.setItem('wolf-lang',l);document.documentElement.dir=tr('dir');document.documentElement.lang=l;document.querySelectorAll('[data-k]').forEach(e=>e.textContent=tr(e.dataset.k));document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('active',b.dataset.l===l));document.documentElement.style.setProperty('--sold',`'${tr('sold')}'`);render()}function render(){document.getElementById('catalog').innerHTML=P.map((p,i)=>`<article class="card ${p[7]==='sold'?'sold':''}"><div class="media"><div class="slides"><div class="slide"><video src="${p[1]}" controls playsinline preload="metadata"></video></div></div><span class="badge">${p[0]}</span><span class="type">${p[5]==='2'?'باك تو باك':'بناء منفرد'}</span><span class="type video">▶ فيديو</span></div><div class="body"><h2>${tr('villa')} <span>#${p[0]}</span></h2><div class="specs"><span>${tr('land')}: <strong>${p[2]} م²</strong></span><span>${tr('build')}: <strong>${p[3]} م²</strong></span><span>${tr('rooms')}: <strong>${p[4]||'3'}</strong> | ${tr('master')}: <strong>${p[5]}</strong></span><span>${tr('pool')}: <strong>${p[6]}</strong></span><span>${tr('delivery')}: <strong>${tr('now')}</strong></span></div><div class="line"></div><div class="tags"><span class="tag">${tr(p[7])}</span><span class="tag">${p[7]==='cash'||p[7]==='sold'?tr(p[7]):tr('install')}</span></div><div class="desc" id="d${i}">فيلا ${p[0]} ضمن مشروع بوابة أريحا، تصميم عملي ومساحات واسعة ومرافق خارجية مناسبة للسكن أو الاستثمار.</div><div class="actions"><a class="btn wa" target="_blank" href="https://wa.me/972544228985?text=Inquiry%20${p[0]}">${tr('wa')}</a><button class="btn" onclick="toggleDesc(${i},this)">${tr('more')}</button></div></div></article>`).join('')}function toggleDesc(i,b){const d=document.getElementById('d'+i);d.classList.toggle('show');b.textContent=d.classList.contains('show')?tr('hide'):tr('more')}document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>setLang(b.dataset.l));setLang(lang)</script></body></html>
