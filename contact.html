@@ -1,0 +1,81 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>تواصل معنا | WOLF INVESTMENT GROUP</title><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}:root{--bg:#101010;--surface:#181818;--surface2:#242424;--gold:#e8dcc8;--text:#f5f3ef;--dim:rgba(245,243,239,.7);--line:rgba(255,255,255,.1)}body{margin:0;background:var(--bg);color:var(--text);font-family:Tajawal,sans-serif;line-height:1.7}a{color:inherit;text-decoration:none}.top{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(16,16,16,.95);backdrop-filter:blur(12px);z-index:2}.top img{height:52px}.nav{display:flex;gap:24px;align-items:center}.nav a{color:var(--dim);font-size:.88rem}.nav a:hover,.nav .active{color:var(--gold)}.lang-switcher{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:9px;background:var(--surface);margin-right:12px}.lang-switcher button{border:0;background:transparent;color:var(--dim);font:600 .72rem Tajawal,Arial;padding:5px 7px;border-radius:6px;cursor:pointer}.lang-switcher button:hover,.lang-switcher button.active{background:var(--gold);color:var(--bg)}.hamburger{display:none;background:none;border:0;color:var(--text);font-size:1.5rem}.wrap{max-width:1050px;margin:auto;padding:60px 24px;display:grid;grid-template-columns:1fr 1fr;gap:50px}.info h1{font-size:clamp(2rem,4vw,3rem);margin:0 0 12px}.gold{color:var(--gold)}.info p{color:var(--dim)}.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:12px 0}.card strong{display:block;color:var(--gold)}.card span{color:var(--dim);font-size:.88rem}.form{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}.form h2{margin-top:0;color:var(--gold)}label{display:block;color:var(--dim);font-size:.84rem;margin:14px 0 6px}input,select,textarea{width:100%;padding:12px;background:var(--surface2);border:1px solid var(--line);border-radius:9px;color:var(--text);font:inherit}textarea{min-height:100px;resize:vertical}.submit{width:100%;margin-top:18px;padding:13px;border:0;border-radius:9px;background:var(--gold);color:var(--bg);font:inherit;font-weight:700;cursor:pointer}footer{text-align:center;padding:22px;color:rgba(245,243,239,.4);border-top:1px solid var(--line);font-size:.78rem}@media(max-width:700px){.top{height:64px}.top img{height:42px}.nav{gap:12px}.nav a{font-size:.75rem}.hamburger{display:block}.nav{position:fixed;inset:64px 0 0;background:rgba(16,16,16,.98);flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;z-index:50}.nav.open{opacity:1;pointer-events:auto}.wrap{grid-template-columns:1fr;padding:40px 16px;gap:30px}.lang-switcher{margin-right:0;margin-top:8px}}</style></head><body><header class="top"><img src="https://i.postimg.cc/d1Dwq36D/1111.png" alt="WOLF INVESTMENT GROUP"><nav class="nav" id="nav"><a href="index.html" data-t="home">الرئيسية</a><a href="about.html" data-t="about">من نحن</a><a href="jericho-gate.html" data-t="gate">بوابة أريحا</a><a class="active" href="contact.html" data-t="contact">تواصل معنا</a><div class="lang-switcher" aria-label="Language"><button data-lang="ar" class="active">ع</button><button data-lang="en">EN</button><button data-lang="ka">ქარ</button><button data-lang="he">עב</button></div></nav><button class="hamburger" id="hamburger">☰</button></header><main class="wrap"><section class="info"><h1 data-t="title">تواصل <span class="gold">معنا</span></h1><p data-t="subtitle">يسعدنا مساعدتك في اختيار الفرصة العقارية المناسبة.</p><div class="card"><strong data-t="phone">الهاتف</strong><span>*8930 · 02-2328989</span></div><div class="card"><strong data-t="whatsapp">واتساب</strong><span>0544-228-985</span></div><div class="card"><strong data-t="email">البريد</strong><span>info@wolfgate-pal.com</span></div><div class="card"><strong data-t="address">العنوان</strong><span data-t="addressVal">بوابة أريحا - فلسطين</span></div><div class="card"><strong>Waze</strong><span><a href="https://waze.com/ul/hsv9jnf320" target="_blank" data-t="wazeLink">افتح موقعنا</a></span></div></section><form class="form" onsubmit="event.preventDefault();this.innerHTML='<h2>'+dict[document.documentElement.lang||'ar'].successTitle+'</h2><p style=color:var(--dim)>'+dict[document.documentElement.lang||'ar'].successText+'</p>'"><h2 data-t="formTitle">نموذج الاستفسار</h2><label data-t="labelName">الاسم الكامل</label><input required placeholder=""><label data-t="labelPhone">رقم الهاتف</label><input required type="tel" placeholder="05XX-XXX-XXX"><label data-t="labelLocation">موقع الاستثمار</label><select required id="locationSelect"><option value="" data-t="selectLocation">اختر الموقع</option><option data-t="opt1">بوابة أريحا - فلسطين</option><option data-t="opt2">جورجيا</option><option data-t="opt3">دبي</option></select><label data-t="labelPurpose">الغرض من العقار</label><select required id="purposeSelect"><option value="" data-t="selectPurpose">اختر الغرض</option><option data-t="optRes">سكني</option><option data-t="optInv">استثماري</option><option data-t="optBoth">سكني واستثماري</option></select><label data-t="labelNotes">ملاحظات</label><textarea placeholder=""></textarea><button class="submit" data-t="submitBtn">إرسال الاستفسار</button></form></main><footer>WOLF INVESTMENT GROUP | جميع الحقوق محفوظة © 2026</footer><script>const dict={ar:{dir:'rtl',home:'الرئيسية',about:'من نحن',gate:'بوابة أريحا',contact:'تواصل معنا',title:'تواصل معنا',subtitle:'يسعدنا مساعدتك في اختيار الفرصة العقارية المناسبة.',phone:'الهاتف',whatsapp:'واتساب',email:'البريد',address:'العنوان',addressVal:'بوابة أريحا - فلسطين',wazeLink:'افتح موقعنا',formTitle:'نموذج الاستفسار',labelName:'الاسم الكامل',labelPhone:'رقم الهاتف',labelLocation:'موقع الاستثمار',selectLocation:'اختر الموقع',opt1:'بوابة أريحا - فلسطين',opt2:'جورجيا',opt3:'دبي',labelPurpose:'الغرض من العقار',selectPurpose:'اختر الغرض',optRes:'سكني',optInv:'استثماري',optBoth:'سكني واستثماري',labelNotes:'ملاحظات',submitBtn:'إرسال الاستفسار',successTitle:'تم إرسال الاستفسار',successText:'شكرًا لتواصلك، سيتواصل معك فريقنا قريبًا.'},en:{dir:'ltr',home:'Home',about:'About us',gate:'Jericho Gate',contact:'Contact',title:'Contact us',subtitle:'We are happy to help you choose the right real estate opportunity.',phone:'Phone',whatsapp:'WhatsApp',email:'Email',address:'Address',addressVal:'Jericho Gate - Palestine',wazeLink:'Open our location',formTitle:'Inquiry Form',labelName:'Full Name',labelPhone:'Phone Number',labelLocation:'Investment Location',selectLocation:'Choose location',opt1:'Jericho Gate - Palestine',opt2:'Georgia',opt3:'Dubai',labelPurpose:'Property Purpose',selectPurpose:'Choose purpose',optRes:'Residential',optInv:'Investment',optBoth:'Residential & Investment',labelNotes:'Notes',submitBtn:'Send Inquiry',successTitle:'Inquiry Sent',successText:'Thank you for reaching out. Our team will contact you soon.'},ka:{dir:'ltr',home:'მთავარი',about:'ჩვენ შესახებ',gate:'იერიხოს კარიბჭე',contact:'კონტაქტი',title:'დაგვიკავშირდით',subtitle:'სიამოვნებით დაგეხმარებით სწორი უძრავი ქონების შესაძლებლობის არჩევაში.',phone:'ტელეფონი',whatsapp:'WhatsApp',email:'ელ-ფოსტა',address:'მისამართი',addressVal:'იერიხოს კარიბჭე - პალესტინა',wazeLink:'გახსენით ჩვენი მდებარეობა',formTitle:'მოთხოვნის ფორმა',labelName:'სრული სახელი',labelPhone:'ტელეფონის ნომერი',labelLocation:'ინვესტიციის ლოკაცია',selectLocation:'აირჩიეთ ლოკაცია',opt1:'იერიხოს კარიბჭე - პალესტინა',opt2:'საქართველო',opt3:'დუბაი',labelPurpose:'ქონების დანიშნულება',selectPurpose:'აირჩიეთ დანიშნულება',optRes:'საცხოვრებელი',optInv:'საინვესტიციო',optBoth:'საცხოვრებელი და საინვესტიციო',labelNotes:'შენიშვნები',submitBtn:'მოთხოვნის გაგზავნა',successTitle:'მოთხოვნა გაიგზავნა',successText:'გმადლობთ დაკავშირებისთვის. ჩვენი გუნდი მალე დაგიკავშირდებათ.'},he:{dir:'rtl',home:'ראשי',about:'אודותינו',gate:'שער יריחו',contact:'צור קשר',title:'צור קשר',subtitle:'נשמח לעזור לך לבחור את הזדמנות הנדל״ן המתאימה.',phone:'טלפון',whatsapp:'WhatsApp',email:'אימייל',address:'כתובת',addressVal:'שער יריחו - פלסטין',wazeLink:'פתח את המיקום שלנו',formTitle:'טופס פנייה',labelName:'שם מלא',labelPhone:'מספר טלפון',labelLocation:'מיקום ההשקעה',selectLocation:'בחר מיקום',opt1:'שער יריחו - פלסטין',opt2:'גאורגיה',opt3:'דובאי',labelPurpose:'מטרת הנכס',selectPurpose:'בחר מטרה',optRes:'מגורים',optInv:'השקעה',optBoth:'מגורים והשקעה',labelNotes:'הערות',submitBtn:'שלח פנייה',successTitle:'הפנייה נשלחה',successText:'תודה שפנית אלינו. הצוות שלנו ייצור איתך קשר בקרוב.'}};function setLang(lang){const t=dict[lang]||dict.ar;document.documentElement.lang=lang;document.documentElement.dir=t.dir;document.querySelectorAll('[data-t]').forEach(el=>{const key=el.dataset.t;if(t[key]!==undefined)el.textContent=t[key]});document.querySelectorAll('.lang-switcher button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));localStorage.setItem('wolf-lang',lang)}document.getElementById('hamburger').onclick=()=>document.getElementById('nav').classList.toggle('open');document.querySelectorAll('.lang-switcher button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));setLang(localStorage.getItem('wolf-lang')||'ar');</script></body></html>
