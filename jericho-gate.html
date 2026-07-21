@@ -1,0 +1,81 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>بوابة أريحا | WOLF INVESTMENT GROUP</title><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}:root{--bg:#101010;--surface:#181818;--gold:#e8dcc8;--text:#f5f3ef;--dim:rgba(245,243,239,.7);--line:rgba(255,255,255,.1)}body{margin:0;background:var(--bg);color:var(--text);font-family:Tajawal,sans-serif;line-height:1.9}a{color:inherit;text-decoration:none}.top{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(16,16,16,.95);backdrop-filter:blur(12px);z-index:2}.top img{height:52px}.nav{display:flex;gap:24px;align-items:center}.nav a{color:var(--dim);font-size:.88rem}.nav a:hover,.nav .active{color:var(--gold)}.lang-switcher{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:9px;background:var(--surface);margin-right:12px}.lang-switcher button{border:0;background:transparent;color:var(--dim);font:600 .72rem Tajawal,Arial;padding:5px 7px;border-radius:6px;cursor:pointer}.lang-switcher button:hover,.lang-switcher button.active{background:var(--gold);color:var(--bg)}.hamburger{display:none;background:none;border:0;color:var(--text);font-size:1.5rem}.hero{height:62vh;min-height:400px;position:relative;overflow:hidden}.hero video{width:100%;height:100%;object-fit:cover;display:block}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(16,16,16,.96) 100%)}.hero-copy{position:absolute;inset:0;z-index:1;display:grid;place-content:center;text-align:center}.hero h1{font-size:clamp(2rem,5vw,3.5rem)}.hero h1 span,.content h2{color:var(--gold)}.content{max-width:850px;margin:auto;padding:60px 24px}.content h2{margin-top:42px}.content h2:first-child{margin-top:0}.content p,.content li{color:var(--dim)}.content li{margin-bottom:9px}.content li::marker{color:var(--gold)}.video{margin:36px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}.video video{width:100%;display:block}.cta{text-align:center;padding:42px;border-top:1px solid var(--line)}.cta a{display:inline-block;background:var(--gold);color:var(--bg);padding:13px 28px;border-radius:10px;font-weight:700}footer{text-align:center;padding:22px;color:rgba(245,243,239,.4);border-top:1px solid var(--line);font-size:.78rem}@media(max-width:700px){.top{height:64px}.top img{height:42px}.nav{gap:12px}.nav a{font-size:.75rem}.hamburger{display:block}.nav{position:fixed;inset:64px 0 0;background:rgba(16,16,16,.98);flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;z-index:50}.nav.open{opacity:1;pointer-events:auto}.lang-switcher{margin-right:0;margin-top:8px}}</style></head><body><header class="top"><img src="https://i.postimg.cc/d1Dwq36D/1111.png" alt="WOLF INVESTMENT GROUP"><nav class="nav" id="nav"><a href="index.html" data-t="home">الرئيسية</a><a href="about.html" data-t="about">من نحن</a><a class="active" href="jericho-gate.html" data-t="gate">بوابة أريحا</a><a href="contact.html" data-t="contact">تواصل معنا</a><div class="lang-switcher" aria-label="Language"><button data-lang="ar" class="active">ع</button><button data-lang="en">EN</button><button data-lang="ka">ქარ</button><button data-lang="he">עב</button></div></nav><button class="hamburger" id="hamburger">☰</button></header><section class="hero"><video autoplay muted loop playsinline><source src="https://videotourl.com/videos/1783551623805-7443720c-5995-4b28-93d6-8e162531915e.mp4"></video><div class="hero-copy"><h1 data-t="heroTitle">مشروع <span>بوابة أريحا</span></h1><p data-t="heroSub">المشروع السياحي الذي يلقب بـ «دبي فلسطين»</p></div></section><main class="content"><h2 data-t="s1Title">مشروع بوابة أريحا السياحي</h2><p data-t="s1Text">مشروع استثماري متعدد الاستخدامات يقع على مساحة تزيد عن 3,033 دونم ضمن المناطق المصنفة «أ»، عند المدخل الجنوبي لمدينة أريحا، في موقع استراتيجي يربط المحافظات الفلسطينية ويسهّل الوصول من داخل فلسطين وخارجها.</p><h2 data-t="s2Title">مميزات المشروع</h2><ul><li data-t="f1"><strong>أراضٍ طابو:</strong> ملكية رسمية وتصنيفات سكنية وتجارية وسياحية وثقافية.</li><li data-t="f2"><strong>بنية تحتية:</strong> طرق معبدة، صرف صحي، مياه شرب وري، فايبر، حماية من الفيضانات، حدائق وطرق مشجرة.</li><li data-t="f3"><strong>تسهيلات مالية:</strong> خيارات دفع ميسرة للمستثمرين.</li></ul><div class="video"><video controls playsinline preload="metadata"><source src="https://videotourl.com/videos/1783551623805-7443720c-5995-4b28-93d6-8e162531915e.mp4"></video></div><h2 data-t="s3Title">ميدان بوابة أريحا</h2><p data-t="s3Text">مركز حيوي يجمع الأنشطة التجارية والسياحية، مع مناطق مشاة ومرافق تجارية وترفيهية تعزز الحركة الاقتصادية وفرص الاستثمار.</p><h2 data-t="s4Title">مرافق ومشاريع حديثة</h2><p data-t="s4Text">فلل سكنية فاخرة، ثمانية مجمعات تجارية، فندق، قاعات متعددة الاستخدام، مدينة مائية، برج أريحا، نادي فروسية، بولينج، بلياردو، بينبول، وكارتينج.</p><h2 data-t="s5Title">المسافات</h2><ul><li data-t="d1">6 كم عن معبر الكرامة.</li><li data-t="d2">8 كم عن المغطس.</li><li data-t="d3">25 كم عن القدس.</li><li data-t="d4">40 كم عن رام الله.</li><li data-t="d5">80 كم عن الخليل.</li><li data-t="d6">110 كم عن الناصرة.</li></ul><a href="https://waze.com/ul/hsv9jnf320" target="_blank" style="color:var(--gold);font-weight:700" data-t="wazeBtn">📍 الوصول عبر Waze</a></main><section class="cta"><a href="contact.html" data-t="ctaBtn">احجز استشارتك الاستثمارية</a></section><footer>WOLF INVESTMENT GROUP | جميع الحقوق محفوظة © 2026</footer><script>const dict={ar:{dir:'rtl',home:'الرئيسية',about:'من نحن',gate:'بوابة أريحا',contact:'تواصل معنا',heroTitle:'مشروع بوابة أريحا',heroSub:'المشروع السياحي الذي يلقب بـ «دبي فلسطين»',s1Title:'مشروع بوابة أريحا السياحي',s1Text:'مشروع استثماري متعدد الاستخدامات يقع على مساحة تزيد عن 3,033 دونم ضمن المناطق المصنفة «أ»، عند المدخل الجنوبي لمدينة أريحا، في موقع استراتيجي يربط المحافظات الفلسطينية ويسهّل الوصول من داخل فلسطين وخارجها.',s2Title:'مميزات المشروع',f1:'أراضٍ طابو: ملكية رسمية وتصنيفات سكنية وتجارية وسياحية وثقافية.',f2:'بنية تحتية: طرق معبدة، صرف صحي، مياه شرب وري، فايبر، حماية من الفيضانات، حدائق وطرق مشجرة.',f3:'تسهيلات مالية: خيارات دفع ميسرة للمستثمرين.',s3Title:'ميدان بوابة أريحا',s3Text:'مركز حيوي يجمع الأنشطة التجارية والسياحية، مع مناطق مشاة ومرافق تجارية وترفيهية تعزز الحركة الاقتصادية وفرص الاستثمار.',s4Title:'مرافق ومشاريع حديثة',s4Text:'فلل سكنية فاخرة، ثمانية مجمعات تجارية، فندق، قاعات متعددة الاستخدام، مدينة مائية، برج أريحا، نادي فروسية، بولينج، بلياردو، بينبول، وكارتينج.',s5Title:'المسافات',d1:'6 كم عن معبر الكرامة.',d2:'8 كم عن المغطس.',d3:'25 كم عن القدس.',d4:'40 كم عن رام الله.',d5:'80 كم عن الخليل.',d6:'110 كم عن الناصرة.',wazeBtn:'📍 الوصول عبر Waze',ctaBtn:'احجز استشارتك الاستثمارية'},en:{dir:'ltr',home:'Home',about:'About us',gate:'Jericho Gate',contact:'Contact',heroTitle:'Jericho Gate Project',heroSub:'The tourism project known as "Palestine\'s Dubai"',s1Title:'Jericho Gate Tourism Project',s1Text:'A mixed-use investment project spanning over 3,033 dunams within Area "A" classification, at the southern entrance of Jericho city, in a strategic location connecting Palestinian governorates and facilitating access from within and outside Palestine.',s2Title:'Project Features',f1:'Tabu Land: Official ownership with residential, commercial, tourism, and cultural classifications.',f2:'Infrastructure: Paved roads, sewage, drinking and irrigation water, fiber optics, flood protection, gardens and tree-lined roads.',f3:'Financial Facilitations: Flexible payment options for investors.',s3Title:'Jericho Gate Square',s3Text:'A vibrant center combining commercial and tourism activities, with pedestrian zones and commercial and entertainment facilities that boost economic activity and investment opportunities.',s4Title:'Modern Facilities & Projects',s4Text:'Luxury residential villas, eight commercial complexes, a hotel, multi-purpose halls, a water park, Jericho Tower, equestrian club, bowling, billiards, pinball, and karting.',s5Title:'Distances',d1:'6 km from Karama Crossing.',d2:'8 km from the Baptism Site.',d3:'25 km from Jerusalem.',d4:'40 km from Ramallah.',d5:'80 km from Hebron.',d6:'110 km from Nazareth.',wazeBtn:'📍 Get directions via Waze',ctaBtn:'Book your investment consultation'},ka:{dir:'ltr',home:'მთავარი',about:'ჩვენ შესახებ',gate:'იერიხოს კარიბჭე',contact:'კონტაქტი',heroTitle:'იერიხოს კარიბჭის პროექტი',heroSub:'ტურისტული პროექტი, რომელიც ცნობილია როგორც „პალესტინის დუბაი"',s1Title:'იერიხოს კარიბჭის ტურისტული პროექტი',s1Text:'მრავალფუნქციური საინვესტიციო პროექტი, რომელიც მოიცავს 3,033 დუნამზე მეტს „A" კლასიფიკაციის ტერიტორიაზე, იერიხოს ქალაქის სამხრეთ შესასვლელთან, სტრატეგიულ ადგილას, რომელიც აკავშირებს პალესტინის რეგიონებს.',s2Title:'პროექტის მახასიათებლები',f1:'ტაბუ მიწა: ოფიციალური საკუთრება საცხოვრებელი, კომერციული, ტურისტული და კულტურული კლასიფიკაციით.',f2:'ინფრასტრუქტურა: მოასფალტებული გზები, კანალიზაცია, სასმელი და სარწყავი წყალი, ოპტიკური ბოჭკო, წყალდიდობისგან დაცვა.',f3:'ფინანსური შეღავათები: მოქნილი გადახდის პირობები ინვესტორებისთვის.',s3Title:'იერიხოს კარიბჭის მოედანი',s3Text:'ენერგიული ცენტრი, რომელიც აერთიანებს კომერციულ და ტურისტულ აქტივობებს, ქვეითად სავალ ზონებსა და გართობის ობიექტებს.',s4Title:'თანამედროვე ობიექტები და პროექტები',s4Text:'ძვირადღირებული საცხოვრებელი ვილები, რვა კომერციული კომპლექსი, სასტუმრო, მრავალფუნქციური დარბაზები, აკვაპარკი, იერიხოს კოშკი, ცხენოსნობის კლუბი, ბოულინგი, ბილიარდი და კარტინგი.',s5Title:'მანძილები',d1:'6 კმ ქარამას გადასასვლელიდან.',d2:'8 კმ ნათლისღების ადგილიდან.',d3:'25 კმ იერუსალიმიდან.',d4:'40 კმ რამალადან.',d5:'80 კმ ჰებრონიდან.',d6:'110 კმ ნაზარეთიდან.',wazeBtn:'📍 მიმართულების მიღება Waze-ით',ctaBtn:'დაჯავშნეთ საინვესტიციო კონსულტაცია'},he:{dir:'rtl',home:'ראשי',about:'אודותינו',gate:'שער יריחו',contact:'צור קשר',heroTitle:'פרויקט שער יריחו',heroSub:'הפרויקט התיירותי המכונה "דובאי של פלסטין"',s1Title:'פרויקט התיירות שער יריחו',s1Text:'פרויקט השקעה רב-שימושי המשתרע על פני יותר מ-3,033 דונם בשטח מסווג "A", בכניסה הדרומית לעיר יריחו, במיקום אסטרטגי המחבר בין המחוזות הפלסטיניים ומקל על הגישה מתוך פלסטין ומחוצה לה.',s2Title:'מאפייני הפרויקט',f1:'קרקע טאבו: בעלות רשמית עם סיווגים למגורים, מסחר, תיירות ותרבות.',f2:'תשתיות: כבישים סלולים, ביוב, מי שתייה והשקיה, סיבים אופטיים, הגנה מפני שיטפונות, גנים ושדרות עצים.',f3:'הקלות פיננסיות: אפשרויות תשלום גמישות למשקיעים.',s3Title:'כיכר שער יריחו',s3Text:'מרכז תוסס המשלב פעילויות מסחריות ותיירותיות, עם אזורי הולכי רגל ומתקני מסחר ובידור המגבירים את הפעילות הכלכלית והזדמנויות ההשקעה.',s4Title:'מתקנים ופרויקטים מודרניים',s4Text:'וילות מגורים יוקרתיות, שמונה מתחמים מסחריים, מלון, אולמות רב-שימושיים, פארק מים, מגדל יריחו, מועדון רכיבה, באולינג, ביליארד, פינבול וקארטינג.',s5Title:'מרחקים',d1:'6 ק"מ ממעבר הכרמה.',d2:'8 ק"מ מאתר הטבילה.',d3:'25 ק"מ מירושלים.',d4:'40 ק"מ מרמאללה.',d5:'80 ק"מ מחברון.',d6:'110 ק"מ מנצרת.',wazeBtn:'📍 ניווט דרך Waze',ctaBtn:'הזמינו ייעוץ השקעות'}};function setLang(lang){const t=dict[lang]||dict.ar;document.documentElement.lang=lang;document.documentElement.dir=t.dir;document.querySelectorAll('[data-t]').forEach(el=>{const key=el.dataset.t;if(t[key]!==undefined)el.textContent=t[key]});document.querySelectorAll('.lang-switcher button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));localStorage.setItem('wolf-lang',lang)}document.getElementById('hamburger').onclick=()=>document.getElementById('nav').classList.toggle('open');document.querySelectorAll('.lang-switcher button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));setLang(localStorage.getItem('wolf-lang')||'ar');</script></body></html>
