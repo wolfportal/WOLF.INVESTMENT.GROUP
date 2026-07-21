@@ -1,0 +1,80 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>بوابة أريحا | WOLF INVESTMENT GROUP</title><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"><style>*{box-sizing:border-box}:root{--bg:#101010;--surface:#181818;--gold:#e8dcc8;--text:#f5f3ef;--dim:rgba(245,243,239,.7);--line:rgba(255,255,255,.1)}body{margin:0;background:var(--bg);color:var(--text);font-family:Tajawal,sans-serif;line-height:1.9}a{color:inherit;text-decoration:none}.top{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(16,16,16,.95);z-index:2}.top img{height:52px}.nav{display:flex;gap:24px}.nav a{color:var(--dim);font-size:.88rem}.nav a:hover,.nav .active{color:var(--gold)}.hero{height:62vh;min-height:400px;position:relative;overflow:hidden}.hero video{width:100%;height:100%;object-fit:cover;display:block}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(16,16,16,.96) 100%)}.hero-copy{position:absolute;inset:0;z-index:1;display:grid;place-content:center;text-align:center}.hero h1{font-size:clamp(2rem,5vw,3.5rem)}.hero h1 span,.content h2{color:var(--gold)}.content{max-width:850px;margin:auto;padding:60px 24px}.content h2{margin-top:42px}.content h2:first-child{margin-top:0}.content p,.content li{color:var(--dim)}.content li{margin-bottom:9px}.content li::marker{color:var(--gold)}.video{margin:36px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}.video video{width:100%;display:block}.cta{text-align:center;padding:42px;border-top:1px solid var(--line)}.cta a{display:inline-block;background:var(--gold);color:var(--bg);padding:13px 28px;border-radius:10px;font-weight:700}footer{text-align:center;padding:22px;color:rgba(245,243,239,.4);border-top:1px solid var(--line);font-size:.78rem}@media(max-width:700px){.top{height:64px}.top img{height:42px}.nav{gap:12px}.nav a{font-size:.75rem}}</style></head><body><header class="top"><img src="https://i.postimg.cc/d1Dwq36D/1111.png" alt="WOLF INVESTMENT GROUP"><nav class="nav"><a href="index.html">الرئيسية</a><a href="about.html">من نحن</a><a class="active" href="jericho-gate.html">بوابة أريحا</a><a href="contact.html">تواصل معنا</a></nav></header><section class="hero"><video autoplay muted loop playsinline><source src="https://videotourl.com/videos/1783551623805-7443720c-5995-4b28-93d6-8e162531915e.mp4"></video><div class="hero-copy"><h1>مشروع <span>بوابة أريحا</span></h1><p>المشروع السياحي الذي يلقب بـ «دبي فلسطين»</p></div></section><main class="content"><h2>مشروع بوابة أريحا السياحي</h2><p>مشروع استثماري متعدد الاستخدامات يقع على مساحة تزيد عن 3,033 دونم ضمن المناطق المصنفة «أ»، عند المدخل الجنوبي لمدينة أريحا، في موقع استراتيجي يربط المحافظات الفلسطينية ويسهّل الوصول من داخل فلسطين وخارجها.</p><h2>مميزات المشروع</h2><ul><li><strong>أراضٍ طابو:</strong> ملكية رسمية وتصنيفات سكنية وتجارية وسياحية وثقافية.</li><li><strong>بنية تحتية:</strong> طرق معبدة، صرف صحي، مياه شرب وري، فايبر، حماية من الفيضانات، حدائق وطرق مشجرة.</li><li><strong>تسهيلات مالية:</strong> خيارات دفع ميسرة للمستثمرين.</li></ul><div class="video"><video controls playsinline preload="metadata"><source src="https://videotourl.com/videos/1783551623805-7443720c-5995-4b28-93d6-8e162531915e.mp4"></video></div><h2>ميدان بوابة أريحا</h2><p>مركز حيوي يجمع الأنشطة التجارية والسياحية، مع مناطق مشاة ومرافق تجارية وترفيهية تعزز الحركة الاقتصادية وفرص الاستثمار.</p><h2>مرافق ومشاريع حديثة</h2><p>فلل سكنية فاخرة، ثمانية مجمعات تجارية، فندق، قاعات متعددة الاستخدام، مدينة مائية، برج أريحا، نادي فروسية، بولينج، بلياردو، بينبول، وكارتينج.</p><h2>المسافات</h2><ul><li>6 كم عن معبر الكرامة.</li><li>8 كم عن المغطس.</li><li>25 كم عن القدس.</li><li>40 كم عن رام الله.</li><li>80 كم عن الخليل.</li><li>110 كم عن الناصرة.</li></ul><a href="https://waze.com/ul/hsv9jnf320" target="_blank" style="color:var(--gold);font-weight:700">📍 الوصول عبر Waze</a></main><section class="cta"><a href="contact.html">احجز استشارتك الاستثمارية</a></section><footer>WOLF INVESTMENT GROUP | جميع الحقوق محفوظة © 2026</footer></body></html>
