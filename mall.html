@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WOLF INVESTMENT | كتالوج الطابق الأرضي (التسوية)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--bg:oklch(97% 0.005 60);--bg-alt:oklch(94% 0.008 60);--text:oklch(20% 0.01 60);--text-muted:oklch(45% 0.01 60);--text-light:oklch(60% 0.008 60);--border:oklch(88% 0.01 60);--tier-600:oklch(72% 0.16 85);--tier-700:oklch(65% 0.18 40);--tier-800:oklch(60% 0.14 240);--tier-1200:oklch(55% 0.16 155);--tier-1400:oklch(40% 0.15 270);--tier-1600:oklch(50% 0.18 320);--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}html{font-size:16px;scroll-behavior:smooth}body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}.topbar{position:sticky;top:0;z-index:100;background:oklch(97% 0.005 60/.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between}.topbar a{color:var(--text-muted);font-size:.85rem;font-weight:600;text-decoration:none;margin-left:16px}.topbar a:hover{color:oklch(62% 0.12 75)}.lang-switcher{display:flex;gap:4px;padding:4px;border:1px solid var(--border);border-radius:9px;background:oklch(99% 0.003 60)}.lang-switcher button{border:0;background:transparent;color:var(--text-muted);font:600 .72rem Cairo,Arial;padding:5px 7px;border-radius:6px;cursor:pointer}.lang-switcher button:hover,.lang-switcher button.active{background:oklch(62% 0.12 75);color:white}.hero{min-height:55vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;position:relative;background:oklch(15% 0.02 30);color:oklch(95% 0.005 60);overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 80%,oklch(25% 0.06 30/0.4),transparent),radial-gradient(ellipse 60% 40% at 80% 20%,oklch(20% 0.04 270/0.3),transparent);pointer-events:none}.hero-content{position:relative;z-index:1;max-width:800px}.hero-brand{font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.6;margin-bottom:1rem;font-weight:300}.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.2;margin-bottom:1rem}.hero h1 span{display:block;font-size:0.4em;font-weight:400;opacity:0.7;margin-top:0.5rem}.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap}.hero-stat{text-align:center}.hero-stat-value{font-size:2.5rem;font-weight:800;line-height:1;font-feature-settings:'tnum'}.hero-stat-label{font-size:0.8rem;opacity:0.6;margin-top:0.25rem}.video-panoramic{position:relative;width:100%;max-height:55vh;overflow:hidden;background:oklch(10% 0.01 30)}.video-panoramic video{width:100%;height:100%;object-fit:cover;display:block;max-height:55vh}.payment-section{margin:3rem auto;max-width:1200px;padding:3rem;background:oklch(15% 0.02 30);border-radius:20px;color:oklch(92% 0.005 60)}.payment-title{font-size:1.5rem;font-weight:800;margin-bottom:0.5rem}.payment-subtitle{font-size:0.9rem;opacity:0.6;margin-bottom:2rem}.payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}.payment-card{padding:1.5rem;background:oklch(22% 0.015 30);border-radius:12px;text-align:center}.payment-card-icon{font-size:1.5rem;margin-bottom:0.75rem}.payment-card-value{font-size:1.3rem;font-weight:700;margin-bottom:0.25rem}.payment-card-label{font-size:0.75rem;opacity:0.5}.footer{text-align:center;padding:3rem 2rem;color:var(--text-light);font-size:0.8rem;border-top:1px solid var(--border)}.footer-brand{font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:0.5rem;letter-spacing:0.05em}@media(max-width:768px){.hero{min-height:45vh;padding:3rem 1.5rem}.hero h1{font-size:2rem}.hero-stats{gap:1.5rem}.hero-stat-value{font-size:1.8rem}.payment-section{padding:2rem 1.5rem;margin:2rem 1rem}.video-panoramic{max-height:40vh}.video-panoramic video{max-height:40vh}}@media(max-width:480px){.hero-stats{flex-direction:column;gap:1rem}.payment-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="topbar"><div><a href="index.html" data-t="home">الرئيسية</a><a href="about.html" data-t="about">من نحن</a><a href="jericho-gate.html" data-t="gate">بوابة أريحا</a><a href="contact.html" data-t="contact">تواصل معنا</a></div><div class="lang-switcher" aria-label="Language"><button data-lang="ar" class="active">ع</button><button data-lang="en">EN</button><button data-lang="ka">ქარ</button><button data-lang="he">עב</button></div></div>
+
+<section class="hero"><div class="hero-content"><div class="hero-brand">WOLF INVESTMENT</div><h1 data-t="heroTitle">الطابق الأرضي (التسوية)<span data-t="heroSub">محلات تجارية بمواصفات استثمارية عالية</span></h1><div class="hero-stats"><div class="hero-stat"><div class="hero-stat-value">45</div><div class="hero-stat-label" data-t="statUnits">وحدة تجارية</div></div><div class="hero-stat"><div class="hero-stat-value">73-214</div><div class="hero-stat-label" data-t="statArea">م² المساحة الإجمالية</div></div><div class="hero-stat"><div class="hero-stat-value">36</div><div class="hero-stat-label" data-t="statMonths">شهر تقسيط</div></div><div class="hero-stat"><div class="hero-stat-value">50%</div><div class="hero-stat-label" data-t="statDown">دفعة أولى</div></div></div></div></section>
+
+<section class="video-panoramic"><video autoplay muted loop playsinline><source src="https://videotourl.com/videos/1783544807060-a7710f5c-832d-4ab9-a146-1a771e779970.mp4#t=3" type="video/mp4"></video></section>
+
+<section class="payment-section"><h2 class="payment-title" data-t="payTitle">خطة الدفع</h2><p class="payment-subtitle" data-t="paySub">تسهيلات مالية مرنة للمستثمرين</p><div class="payment-grid"><div class="payment-card"><div class="payment-card-icon">💰</div><div class="payment-card-value">50%</div><div class="payment-card-label" data-t="payDown">دفعة أولى</div></div><div class="payment-card"><div class="payment-card-icon">📅</div><div class="payment-card-value">36</div><div class="payment-card-label" data-t="payMonths">شهر تقسيط</div></div><div class="payment-card"><div class="payment-card-icon">📐</div><div class="payment-card-value">73-214 م²</div><div class="payment-card-label" data-t="payArea">المساحات المتاحة</div></div><div class="payment-card"><div class="payment-card-icon">🏪</div><div class="payment-card-value">45</div><div class="payment-card-label" data-t="payUnits">وحدة تجارية</div></div></div></section>
+
+<footer class="footer"><div class="footer-brand">WOLF INVESTMENT GROUP</div><p>© 2026</p></footer>
+
+<script>
+const dict={ar:{dir:'rtl',home:'الرئيسية',about:'من نحن',gate:'بوابة أريحا',contact:'تواصل معنا',heroTitle:'الطابق الأرضي (التسوية)',heroSub:'محلات تجارية بمواصفات استثمارية عالية',statUnits:'وحدة تجارية',statArea:'م² المساحة الإجمالية',statMonths:'شهر تقسيط',statDown:'دفعة أولى',payTitle:'خطة الدفع',paySub:'تسهيلات مالية مرنة للمستثمرين',payDown:'دفعة أولى',payMonths:'شهر تقسيط',payArea:'المساحات المتاحة',payUnits:'وحدة تجارية'},en:{dir:'ltr',home:'Home',about:'About us',gate:'Jericho Gate',contact:'Contact',heroTitle:'Ground Floor (Basement Level)',heroSub:'Commercial units with high investment specifications',statUnits:'Commercial units',statArea:'m² total area',statMonths:'Installment months',statDown:'Down payment',payTitle:'Payment Plan',paySub:'Flexible financial facilitations for investors',payDown:'Down payment',payMonths:'Installment months',payArea:'Available areas',payUnits:'Commercial units'},ka:{dir:'ltr',home:'მთავარი',about:'ჩვენ შესახებ',gate:'იერიხოს კარიბჭე',contact:'კონტაქტი',heroTitle:'მიწისქვეშა სართული',heroSub:'კომერციული ერთეულები მაღალი საინვესტიციო სპეციფიკაციებით',statUnits:'კომერციული ერთეული',statArea:'მ² საერთო ფართობი',statMonths:'განვადების თვეები',statDown:'პირველი შენატანი',payTitle:'გადახდის გეგმა',paySub:'მოქნილი ფინანსური პირობები ინვესტორებისთვის',payDown:'პირველი შენატანი',payMonths:'განვადების თვეები',payArea:'ხელმისაწვდომი ფართობები',payUnits:'კომერციული ერთეული'},he:{dir:'rtl',home:'ראשי',about:'אודותינו',gate:'שער יריחו',contact:'צור קשר',heroTitle:'הקומה הקרקעית (מרתף)',heroSub:'יחידות מסחריות עם מפרט השקעתי גבוה',statUnits:'יחידות מסחריות',statArea:'מ"ר שטח כולל',statMonths:'חודשי תשלומים',statDown:'מקדמה',payTitle:'תוכנית תשלומים',paySub:'הקלות פיננסיות גמישות למשקיעים',payDown:'מקדמה',payMonths:'חודשי תשלומים',payArea:'שטחים זמינים',payUnits:'יחידות מסחריות'}};
+
+function setLang(lang){const t=dict[lang]||dict.ar;document.documentElement.lang=lang;document.documentElement.dir=t.dir;document.querySelectorAll('[data-t]').forEach(el=>{const key=el.dataset.t;if(t[key]!==undefined)el.textContent=t[key]});document.querySelectorAll('.lang-switcher button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));localStorage.setItem('wolf-lang',lang)}
+document.querySelectorAll('.lang-switcher button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+setLang(localStorage.getItem('wolf-lang')||'ar');
+</script>
+</body>
+</html>
