@@ -1,0 +1,279 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<!-- skill:chrome -->
+<style>
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+@media (hover: none) { .design-ui-credit { display: none; } }
+@media print {
+  * { transition: none !important; animation: none !important; box-shadow: none !important; }
+  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .design-ui-credit { display: none !important; }
+}
+</style>
+<script>
+(function () {
+    function markEditable() { document.body.classList.add('artifact-editable'); }
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+    function init() { markEditable(); initChromeUI(); }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})();
+</script>
+<!-- /skill:chrome -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لماذا نستثمر | WOLF INVESTMENT GROUP</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#101010;--surface:#181818;--surface2:#1f1f1f;--gold:#e8dcc8;--gold-soft:rgba(232,220,200,.14);--text:#f5f3ef;--dim:rgba(245,243,239,.68);--faint:rgba(245,243,239,.42);--line:rgba(255,255,255,.1);--ease:cubic-bezier(.16,1,.3,1);--ease2:cubic-bezier(.22,1,.36,1)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tajawal,Arial,sans-serif;line-height:1.75;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2{font-family:'Cairo',Tajawal,sans-serif}
+
+.topbar{position:sticky;top:0;z-index:40;background:rgba(16,16,16,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{height:82px;max-width:1240px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{height:72px}
+.nav{display:flex;align-items:center;gap:22px}
+.nav a{color:var(--dim);font-size:.88rem;transition:color 250ms}
+.nav a:hover,.nav .active{color:var(--gold)}
+.lang-switcher{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:9px;background:var(--surface)}
+.lang-switcher button{border:0;background:transparent;color:var(--dim);font:600 .72rem Tajawal,Arial;padding:5px 7px;border-radius:6px;cursor:pointer}
+.lang-switcher button:hover,.lang-switcher button.active{background:var(--gold);color:var(--bg)}
+.hamburger{display:none;background:none;border:0;color:var(--text);font-size:1.5rem}
+@media(max-width:1020px){.nav{gap:13px}.nav a{font-size:.8rem}}
+@media(max-width:700px){.topbar-inner{height:72px;padding:0 16px}.logo{height:58px}.hamburger{display:block}.nav{position:fixed;inset:72px 0 0;background:rgba(16,16,16,.98);flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;z-index:30}.nav.open{opacity:1;pointer-events:auto}.nav a{font-size:1.1rem}.lang-switcher{margin-top:8px}}
+
+/* ===== Hero ===== */
+.hero{position:relative;padding:96px 24px 70px;text-align:center;overflow:hidden}
+.hero-glow{position:absolute;inset:0;pointer-events:none;z-index:0;background:
+  radial-gradient(ellipse 65% 55% at 22% 15%,rgba(232,220,200,.16),transparent 60%),
+  radial-gradient(ellipse 55% 45% at 82% 30%,rgba(232,220,200,.10),transparent 60%);
+  animation:glowShift 12s ease-in-out infinite alternate}
+@keyframes glowShift{from{opacity:.7;transform:scale(1)}to{opacity:1;transform:scale(1.08)}}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.hero span.eyebrow{display:block;color:var(--gold);font-size:.76rem;letter-spacing:.28em;text-transform:uppercase;opacity:0;animation:riseIn 900ms var(--ease2) 100ms forwards}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:800;margin:20px 0 14px;opacity:0;animation:riseIn 900ms var(--ease2) 250ms forwards}
+.hero p{color:var(--dim);max-width:600px;margin:0 auto;font-size:1rem;font-weight:300;opacity:0;animation:riseIn 900ms var(--ease2) 400ms forwards}
+@keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+.growth-arrow{width:180px;max-width:70%;margin:34px auto 6px;opacity:0;animation:riseIn 900ms var(--ease2) 520ms forwards}
+.growth-arrow path.line{stroke-dasharray:340;stroke-dashoffset:340;animation:drawLine 1.8s var(--ease2) 900ms forwards}
+.growth-arrow path.head{opacity:0;animation:popIn 500ms var(--ease2) 2500ms forwards}
+.growth-arrow circle.dot{opacity:0;animation:popIn 400ms var(--ease2) forwards}
+.growth-arrow circle.dot:nth-of-type(1){animation-delay:1000ms}
+.growth-arrow circle.dot:nth-of-type(2){animation-delay:1500ms}
+.growth-arrow circle.dot:nth-of-type(3){animation-delay:2000ms}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+@keyframes popIn{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.hero span.eyebrow,.hero h1,.hero p,.growth-arrow{animation:none;opacity:1}.growth-arrow path.line{stroke-dashoffset:0}.growth-arrow path.head,.growth-arrow circle.dot{opacity:1}}
+
+.stat-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:8px;opacity:0;animation:riseIn 900ms var(--ease2) 700ms forwards}
+.stat-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold-soft);background:var(--surface);color:var(--gold);padding:8px 16px;border-radius:99px;font-size:.78rem;font-weight:600}
+.stat-pill i{font-size:.95rem}
+
+.market-jump{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:34px 24px 10px;position:relative;z-index:1}
+.jump-btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--surface);color:var(--dim);padding:10px 20px;border-radius:99px;font-size:.83rem;font-weight:600;cursor:pointer;transition:all 250ms var(--ease2)}
+.jump-btn i{transition:transform 250ms var(--ease2)}
+.jump-btn:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 22px rgba(232,220,200,.12)}
+.jump-btn:hover i{transform:translateY(2px)}
+
+/* ===== Market blocks ===== */
+.market-block{max-width:1020px;margin:0 auto;padding:70px 24px;border-top:1px solid var(--line);position:relative;opacity:0;transform:translateY(36px);transition:opacity 800ms var(--ease2),transform 800ms var(--ease2)}
+.market-block.in-view{opacity:1;transform:translateY(0)}
+.market-block:first-of-type{border-top:none}
+@media(prefers-reduced-motion:reduce){.market-block{opacity:1;transform:none;transition:none}}
+
+.market-head{display:flex;align-items:center;gap:18px;margin-bottom:10px}
+.market-flag{position:relative;width:64px;height:64px;flex-shrink:0}
+.market-flag-ring{position:absolute;inset:-8px;border-radius:50%;border:1px solid var(--gold-soft);animation:ringPulse 3.4s ease-in-out infinite}
+@keyframes ringPulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.12);opacity:1}}
+.market-flag-img{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;border:2px solid var(--gold);box-shadow:0 0 26px rgba(232,220,200,.35)}
+.market-flag-img img{width:100%;height:100%;object-fit:cover}
+.market-head h2{margin:0;font-size:1.85rem;font-weight:800}
+.market-head span.market-eyebrow{color:var(--gold);display:block;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
+.market-intro{color:var(--dim);max-width:760px;margin:16px 0 32px;font-size:.98rem}
+
+.perk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-bottom:34px}
+.perk-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px 22px;overflow:hidden;transition:transform 350ms var(--ease2),border-color 350ms,box-shadow 350ms;opacity:0;transform:translateY(24px)}
+.perk-card.in-view{opacity:1;transform:translateY(0)}
+.perk-card:hover{transform:translateY(-6px);border-color:var(--gold-soft);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.perk-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,220,200,.06),transparent 55%);opacity:0;transition:opacity 350ms}
+.perk-card:hover::before{opacity:1}
+.perk-icon-badge{width:46px;height:46px;border-radius:12px;background:linear-gradient(145deg,rgba(232,220,200,.18),rgba(232,220,200,.04));display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.25rem}
+.perk-card strong{display:block;color:var(--gold);margin-bottom:7px;font-size:1rem;font-weight:800}
+.perk-card p{margin:0;color:var(--dim);font-size:.85rem;position:relative}
+
+.market-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:6px}
+.btn-gold{position:relative;display:inline-flex;align-items:center;gap:9px;background:linear-gradient(120deg,var(--gold),#fff7e6,var(--gold));background-size:220% 100%;color:var(--bg);padding:13px 26px;border-radius:11px;font-weight:800;font-size:.88rem;transition:background-position 800ms var(--ease2),transform 250ms}
+.btn-gold:hover{background-position:100% 0;transform:translateY(-2px)}
+.btn-gold i{transition:transform 250ms var(--ease2)}
+.btn-gold:hover i{transform:translateX(-5px)}
+.btn-outline{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);color:var(--gold);padding:13px 26px;border-radius:11px;font-weight:700;font-size:.88rem;transition:all 250ms var(--ease2)}
+.btn-outline:hover{border-color:var(--gold);transform:translateY(-2px);background:var(--gold-soft)}
+.btn-outline i{transition:transform 250ms var(--ease2)}
+.btn-outline:hover i{transform:translateX(-5px)}
+
+.section-divider{display:flex;justify-content:center;padding:6px 0}
+.divider-arrow{width:30px;height:30px;color:var(--gold-soft);animation:bounceDown 2.2s ease-in-out infinite}
+@keyframes bounceDown{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(8px);opacity:1}}
+
+.disclaimer{max-width:1000px;margin:10px auto 0;padding:36px 24px 60px;color:var(--faint);font-size:.75rem;line-height:1.9;border-top:1px solid var(--line)}
+
+footer{text-align:center;padding:22px;color:rgba(245,243,239,.4);font-size:.78rem;border-top:1px solid var(--line)}
+</style></head><body>
+<nav class="topbar"><div class="topbar-inner"><img class="logo" src="https://i.postimg.cc/d1Dwq36D/1111.png" alt="WOLF INVESTMENT GROUP"><div class="nav" id="nav"><a href="index.html" data-t="home">الرئيسية</a><a href="about.html" data-t="about">من نحن</a><a href="jericho-gate.html" data-t="gate">بوابة أريحا</a><a class="active" href="why-invest.html" data-t="whyInvest">لماذا نستثمر</a><a href="contact.html" data-t="contact">تواصل معنا</a><div class="lang-switcher" aria-label="Language"><button data-lang="ar" class="active">ع</button><button data-lang="en">EN</button><button data-lang="ka">ქარ</button><button data-lang="he">עב</button></div></div><button class="hamburger" id="hamburger">☰</button></div></nav>
+
+<section class="hero">
+<div class="hero-glow"></div>
+<div class="hero-inner">
+<span class="eyebrow" data-t="eyebrow">دليل المستثمر</span>
+<h1 data-t="pageTitle">لماذا تستثمر معنا؟</h1>
+<p data-t="pageSub">ثلاث وجهات استثمارية مختلفة، بميزة مشتركة: سهولة التملك ووضوح الإجراءات لكل مستثمر عربي.</p>
+
+<svg class="growth-arrow" viewBox="0 0 220 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="line" d="M10 95 L60 60 L95 78 L145 30 L200 15" stroke="#e8dcc8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="head" d="M175 12 L202 14 L198 40" stroke="#e8dcc8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="dot" cx="60" cy="60" r="5" fill="#e8dcc8"/>
+  <circle class="dot" cx="95" cy="78" r="5" fill="#e8dcc8"/>
+  <circle class="dot" cx="145" cy="30" r="5" fill="#e8dcc8"/>
+</svg>
+
+<div class="stat-row">
+<span class="stat-pill"><i class="ph-bold ph-globe-hemisphere-west"></i><span data-t="stat1">3 وجهات استثمارية</span></span>
+<span class="stat-pill"><i class="ph-bold ph-key"></i><span data-t="stat2">تملك حر</span></span>
+<span class="stat-pill"><i class="ph-bold ph-shield-check"></i><span data-t="stat3">إجراءات مبسطة</span></span>
+</div>
+</div>
+</section>
+
+<div class="market-jump">
+<button class="jump-btn" onclick="document.getElementById('georgia').scrollIntoView({behavior:'smooth'})" data-t="jumpGeorgia">جورجيا <i class="ph-bold ph-arrow-down-left"></i></button>
+<button class="jump-btn" onclick="document.getElementById('dubai').scrollIntoView({behavior:'smooth'})" data-t="jumpDubai">دبي <i class="ph-bold ph-arrow-down-left"></i></button>
+<button class="jump-btn" onclick="document.getElementById('jericho').scrollIntoView({behavior:'smooth'})" data-t="jumpJericho">بوابة أريحا <i class="ph-bold ph-arrow-down-left"></i></button>
+</div>
+
+<section class="market-block" id="georgia">
+<div class="market-head"><div class="market-flag"><div class="market-flag-ring"></div><div class="market-flag-img"><img src="https://flagcdn.com/w160/ge.png" alt="Georgia"></div></div><div><span class="market-eyebrow" data-t="georgiaEyebrow">وجهة أوروبا الصاعدة</span><h2 data-t="georgiaTitle">جورجيا</h2></div></div>
+<p class="market-intro" data-t="georgiaIntro">من أسهل الأسواق العقارية بالعالم للمستثمر العربي: تملك حر بدون قيود على الأجانب، إجراءات تسجيل سريعة وشفافة، وتكلفة معيشة واستثمار منخفضة نسبيًا مقارنة بأوروبا.</p>
+<div class="perk-grid">
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-house-line" style="color:var(--gold)"></i></div><strong data-t="georgiaP1T">تملك حر 100%</strong><p data-t="georgiaP1D">لا حاجة لشريك محلي أو إقامة مسبقة؛ يمكن تملك العقار بالاسم الكامل من اليوم الأول.</p></div>
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-file-text" style="color:var(--gold)"></i></div><strong data-t="georgiaP2T">تسجيل سريع</strong><p data-t="georgiaP2D">إجراءات نقل الملكية بالسجل العقاري تتم عادة خلال أيام قليلة فقط، بدون تعقيدات بيروقراطية طويلة.</p></div>
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-airplane-tilt" style="color:var(--gold)"></i></div><strong data-t="georgiaP3T">تسهيلات إقامة</strong><p data-t="georgiaP3D">امتلاك عقار قد يفتح المجال للتقديم على إقامة استثمارية، مع سهولة الدخول لجورجيا لمعظم الجنسيات العربية بدون تأشيرة مسبقة.</p></div>
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-percent" style="color:var(--gold)"></i></div><strong data-t="georgiaP4T">بيئة ضريبية مشجعة</strong><p data-t="georgiaP4D">ضرائب عقارية وأرباح رأسمالية منخفضة نسبيًا مقارنة بالأسواق الأوروبية والخليجية المجاورة.</p></div>
+</div>
+<div class="market-cta"><a class="btn-gold" href="contact.html" data-t="ctaConsult"><i class="ph-bold ph-arrow-left"></i>تواصل مع فريقنا حول جورجيا</a><a class="btn-outline" href="about.html#investment-sites" data-t="ctaNews"><i class="ph-bold ph-arrow-left"></i>تفاصيل الوجهة</a></div>
+</section>
+
+<div class="section-divider"><i class="ph-bold ph-caret-double-down divider-arrow"></i></div>
+
+<section class="market-block" id="dubai">
+<div class="market-head"><div class="market-flag"><div class="market-flag-ring"></div><div class="market-flag-img"><img src="https://flagcdn.com/w160/ae.png" alt="Dubai"></div></div><div><span class="market-eyebrow" data-t="dubaiEyebrow">مركز الاستثمار العالمي</span><h2 data-t="dubaiTitle">دبي</h2></div></div>
+<p class="market-intro" data-t="dubaiIntro">واحدة من أكثر أسواق العالم جذبًا للمستثمر العربي، بفضل مناطق التملك الحر ومناخ الأعمال المستقر والبنية التحتية العالمية المستوى.</p>
+<div class="perk-grid">
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-city" style="color:var(--gold)"></i></div><strong data-t="dubaiP1T">مناطق تملك حر</strong><p data-t="dubaiP1D">يمكن للمستثمر العربي والأجنبي تملك العقار بالكامل ضمن المناطق المخصصة للتملك الحر في دبي.</p></div>
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-identification-card" style="color:var(--gold)"></i></div><strong data-t="dubaiP2T">مسار للإقامة الذهبية</strong><p data-t="dubaiP2D">الاستثمار العقاري ضمن حدود معينة قد يؤهل صاحبه للتقديم على تأشيرة إقامة طويلة الأمد.</p></div>
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-money" style="color:var(--gold)"></i></div><strong data-t="dubaiP3T">لا ضريبة دخل على الإيجار</strong><p data-t="dubaiP3D">دبي لا تفرض ضريبة دخل شخصية على عوائد الإيجار، ما يعزز صافي العائد على الاستثمار.</p></div>
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-link" style="color:var(--gold)"></i></div><strong data-t="dubaiP4T">استقرار العملة</strong><p data-t="dubaiP4D">الدرهم الإماراتي مربوط بالدولار الأمريكي، ما يوفر استقرارًا واضحًا لرأس المال المستثمر.</p></div>
+</div>
+<div class="market-cta"><a class="btn-gold" href="contact.html" data-t="ctaConsult2"><i class="ph-bold ph-arrow-left"></i>تواصل مع فريقنا حول دبي</a><a class="btn-outline" href="about.html#investment-sites" data-t="ctaNews2"><i class="ph-bold ph-arrow-left"></i>تفاصيل الوجهة</a></div>
+</section>
+
+<div class="section-divider"><i class="ph-bold ph-caret-double-down divider-arrow"></i></div>
+
+<section class="market-block" id="jericho">
+<div class="market-head"><div class="market-flag"><div class="market-flag-ring"></div><div class="market-flag-img"><img src="https://i.ibb.co/zVzcNr95/hisham-palace-jericho.jpg" alt="Jericho Gate"></div></div><div><span class="market-eyebrow" data-t="jerichoEyebrow">فرصة استثمارية إقليمية</span><h2 data-t="jerichoTitle">بوابة أريحا</h2></div></div>
+<p class="market-intro" data-t="jerichoIntro">المشروع الذي يُلقّب بـ«دبي فلسطين» — فرصة مبكرة بسعر دخول منخفض نسبيًا مقارنة بالأسواق الإقليمية، وموقع استراتيجي بمنطقة سياحية تنمو باستمرار.</p>
+<div class="perk-grid">
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-map-pin" style="color:var(--gold)"></i></div><strong data-t="jerichoP1T">موقع استراتيجي</strong><p data-t="jerichoP1D">أريحا من أقدم مدن العالم وأخفضها ارتفاعًا، وتقع قرب البحر الميت ومعابر حدودية رئيسية، ما يجعلها محطة سياحية طبيعية.</p></div>
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-crane-tower" style="color:var(--gold)"></i></div><strong data-t="jerichoP2T">مرحلة تأسيسية</strong><p data-t="jerichoP2D">الدخول بمرحلة مبكرة من تطوير المشروع يعني أسعارًا تنافسية مقارنة بما هو متوقع بعد اكتمال البنية السياحية والتجارية.</p></div>
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-handshake" style="color:var(--gold)"></i></div><strong data-t="jerichoP3T">إجراءات مبسطة</strong><p data-t="jerichoP3D">كونه سوقًا عربيًا محليًا، لا توجد تعقيدات لغوية أو قانونية إضافية أمام المستثمر العربي مقارنة بالأسواق الأجنبية.</p></div>
+<div class="perk-card"><div class="perk-icon-badge"><i class="ph-bold ph-chart-line-up" style="color:var(--gold)"></i></div><strong data-t="jerichoP4T">خطط دفع مرنة</strong><p data-t="jerichoP4D">خيارات كاش أو تقسيط مريحة تناسب مستثمرين بمستويات ميزانية مختلفة، مع تسليم فوري لبعض الوحدات.</p></div>
+</div>
+<div class="market-cta"><a class="btn-gold" href="contact.html" data-t="ctaConsult3"><i class="ph-bold ph-arrow-left"></i>تواصل مع فريقنا حول بوابة أريحا</a><a class="btn-outline" href="jericho-gate.html" data-t="ctaProject"><i class="ph-bold ph-arrow-left"></i>تفاصيل المشروع كاملة</a></div>
+</section>
+
+<p class="disclaimer" data-t="disclaimer">المعلومات أعلاه لأغراض تعريفية عامة ولا تُغني عن استشارة قانونية أو مالية متخصصة، لأن الأنظمة والتسهيلات قابلة للتغيير بحسب الجهة الرسمية في كل بلد. لمعرفة أحدث الشروط والتفاصيل الدقيقة، يسعد فريقنا بالمساعدة عبر نموذج التواصل.</p>
+
+<footer>WOLF INVESTMENT GROUP | © 2026</footer>
+
+<script>
+const dict={
+ar:{dir:'rtl',home:'الرئيسية',about:'من نحن',gate:'بوابة أريحا',whyInvest:'لماذا نستثمر',contact:'تواصل معنا',eyebrow:'دليل المستثمر',pageTitle:'لماذا تستثمر معنا؟',pageSub:'ثلاث وجهات استثمارية مختلفة، بميزة مشتركة: سهولة التملك ووضوح الإجراءات لكل مستثمر عربي.',stat1:'3 وجهات استثمارية',stat2:'تملك حر',stat3:'إجراءات مبسطة',jumpGeorgia:'جورجيا',jumpDubai:'دبي',jumpJericho:'بوابة أريحا',
+georgiaEyebrow:'وجهة أوروبا الصاعدة',georgiaTitle:'جورجيا',georgiaIntro:'من أسهل الأسواق العقارية بالعالم للمستثمر العربي: تملك حر بدون قيود على الأجانب، إجراءات تسجيل سريعة وشفافة، وتكلفة معيشة واستثمار منخفضة نسبيًا مقارنة بأوروبا.',georgiaP1T:'تملك حر 100%',georgiaP1D:'لا حاجة لشريك محلي أو إقامة مسبقة؛ يمكن تملك العقار بالاسم الكامل من اليوم الأول.',georgiaP2T:'تسجيل سريع',georgiaP2D:'إجراءات نقل الملكية بالسجل العقاري تتم عادة خلال أيام قليلة فقط، بدون تعقيدات بيروقراطية طويلة.',georgiaP3T:'تسهيلات إقامة',georgiaP3D:'امتلاك عقار قد يفتح المجال للتقديم على إقامة استثمارية، مع سهولة الدخول لجورجيا لمعظم الجنسيات العربية بدون تأشيرة مسبقة.',georgiaP4T:'بيئة ضريبية مشجعة',georgiaP4D:'ضرائب عقارية وأرباح رأسمالية منخفضة نسبيًا مقارنة بالأسواق الأوروبية والخليجية المجاورة.',ctaConsult:'تواصل مع فريقنا حول جورجيا',ctaNews:'تفاصيل الوجهة',
+dubaiEyebrow:'مركز الاستثمار العالمي',dubaiTitle:'دبي',dubaiIntro:'واحدة من أكثر أسواق العالم جذبًا للمستثمر العربي، بفضل مناطق التملك الحر ومناخ الأعمال المستقر والبنية التحتية العالمية المستوى.',dubaiP1T:'مناطق تملك حر',dubaiP1D:'يمكن للمستثمر العربي والأجنبي تملك العقار بالكامل ضمن المناطق المخصصة للتملك الحر في دبي.',dubaiP2T:'مسار للإقامة الذهبية',dubaiP2D:'الاستثمار العقاري ضمن حدود معينة قد يؤهل صاحبه للتقديم على تأشيرة إقامة طويلة الأمد.',dubaiP3T:'لا ضريبة دخل على الإيجار',dubaiP3D:'دبي لا تفرض ضريبة دخل شخصية على عوائد الإيجار، ما يعزز صافي العائد على الاستثمار.',dubaiP4T:'استقرار العملة',dubaiP4D:'الدرهم الإماراتي مربوط بالدولار الأمريكي، ما يوفر استقرارًا واضحًا لرأس المال المستثمر.',ctaConsult2:'تواصل مع فريقنا حول دبي',ctaNews2:'تفاصيل الوجهة',
+jerichoEyebrow:'فرصة استثمارية إقليمية',jerichoTitle:'بوابة أريحا',jerichoIntro:'المشروع الذي يُلقّب بـ«دبي فلسطين» — فرصة مبكرة بسعر دخول منخفض نسبيًا مقارنة بالأسواق الإقليمية، وموقع استراتيجي بمنطقة سياحية تنمو باستمرار.',jerichoP1T:'موقع استراتيجي',jerichoP1D:'أريحا من أقدم مدن العالم وأخفضها ارتفاعًا، وتقع قرب البحر الميت ومعابر حدودية رئيسية، ما يجعلها محطة سياحية طبيعية.',jerichoP2T:'مرحلة تأسيسية',jerichoP2D:'الدخول بمرحلة مبكرة من تطوير المشروع يعني أسعارًا تنافسية مقارنة بما هو متوقع بعد اكتمال البنية السياحية والتجارية.',jerichoP3T:'إجراءات مبسطة',jerichoP3D:'كونه سوقًا عربيًا محليًا، لا توجد تعقيدات لغوية أو قانونية إضافية أمام المستثمر العربي مقارنة بالأسواق الأجنبية.',jerichoP4T:'خطط دفع مرنة',jerichoP4D:'خيارات كاش أو تقسيط مريحة تناسب مستثمرين بمستويات ميزانية مختلفة، مع تسليم فوري لبعض الوحدات.',ctaConsult3:'تواصل مع فريقنا حول بوابة أريحا',ctaProject:'تفاصيل المشروع كاملة',
+disclaimer:'المعلومات أعلاه لأغراض تعريفية عامة ولا تُغني عن استشارة قانونية أو مالية متخصصة، لأن الأنظمة والتسهيلات قابلة للتغيير بحسب الجهة الرسمية في كل بلد. لمعرفة أحدث الشروط والتفاصيل الدقيقة، يسعد فريقنا بالمساعدة عبر نموذج التواصل.'},
+en:{dir:'ltr',home:'Home',about:'About us',gate:'Jericho Gate',whyInvest:'Why Invest',contact:'Contact',eyebrow:'Investor Guide',pageTitle:'Why Invest With Us?',pageSub:'Three different investment destinations, one shared advantage: easy ownership and clear procedures for every Arab investor.',stat1:'3 Investment Destinations',stat2:'Freehold Ownership',stat3:'Simplified Process',jumpGeorgia:'Georgia',jumpDubai:'Dubai',jumpJericho:'Jericho Gate',
+georgiaEyebrow:'Europe\\'s rising destination',georgiaTitle:'Georgia',georgiaIntro:'One of the easiest real estate markets in the world for Arab investors: full freehold ownership with no restrictions on foreigners, fast and transparent registration, and relatively low living and investment costs compared to Europe.',georgiaP1T:'100% Freehold Ownership',georgiaP1D:'No need for a local partner or prior residency; property can be owned fully in your own name from day one.',georgiaP2T:'Fast Registration',georgiaP2D:'Property registry transfer procedures typically take just a few days, without lengthy bureaucracy.',georgiaP3T:'Residency Facilitation',georgiaP3D:'Owning property may open the door to applying for investment residency, alongside visa-free entry to Georgia for most Arab nationalities.',georgiaP4T:'Favorable Tax Environment',georgiaP4D:'Relatively low property and capital gains taxes compared to neighboring European and Gulf markets.',ctaConsult:'Contact our team about Georgia',ctaNews:'Destination details',
+dubaiEyebrow:'A global investment hub',dubaiTitle:'Dubai',dubaiIntro:'One of the world\\'s most attractive markets for Arab investors, thanks to freehold zones, a stable business climate, and world-class infrastructure.',dubaiP1T:'Freehold Zones',dubaiP1D:'Arab and foreign investors can fully own property within Dubai\\'s designated freehold areas.',dubaiP2T:'Path to Golden Visa',dubaiP2D:'Real estate investment above certain thresholds may qualify an investor to apply for a long-term residency visa.',dubaiP3T:'No Income Tax on Rent',dubaiP3D:'Dubai does not impose personal income tax on rental returns, boosting net investment yield.',dubaiP4T:'Currency Stability',dubaiP4D:'The UAE Dirham is pegged to the US Dollar, providing clear stability for invested capital.',ctaConsult2:'Contact our team about Dubai',ctaNews2:'Destination details',
+jerichoEyebrow:'A regional investment opportunity',jerichoTitle:'Jericho Gate',jerichoIntro:'Known as "Palestine\\'s Dubai" — an early-stage opportunity with a relatively low entry price compared to regional markets, and a strategic location in a continuously growing tourism area.',jerichoP1T:'Strategic Location',jerichoP1D:'Jericho is one of the oldest and lowest-elevation cities in the world, close to the Dead Sea and major border crossings, making it a natural tourism hub.',jerichoP2T:'Early Development Stage',jerichoP2D:'Entering at an early project stage means competitive pricing compared to what is expected once tourism and commercial infrastructure is complete.',jerichoP3T:'Simplified Process',jerichoP3D:'As a local Arab market, there are no added language or legal complications for Arab investors compared to foreign markets.',jerichoP4T:'Flexible Payment Plans',jerichoP4D:'Comfortable cash or installment options suit investors across different budget levels, with immediate delivery available on some units.',ctaConsult3:'Contact our team about Jericho Gate',ctaProject:'Full project details',
+disclaimer:'The information above is for general informational purposes and does not replace specialized legal or financial advice, as regulations and facilities are subject to change by the relevant authority in each country. To learn the latest exact terms, our team is happy to help via the contact form.'},
+ka:{dir:'ltr',home:'მთავარი',about:'ჩვენ შესახებ',gate:'იერიხოს კარიბჭე',whyInvest:'რატომ ჩვენთან',contact:'კონტაქტი',eyebrow:'ინვესტორის გზამკვლევი',pageTitle:'რატომ ჩადოთ ინვესტიცია ჩვენთან?',pageSub:'სამი განსხვავებული საინვესტიციო მიმართულება, ერთი საერთო უპირატესობით: მარტივი საკუთრება და გამჭვირვალე პროცედურები.',stat1:'3 საინვესტიციო მიმართულება',stat2:'სრული საკუთრება',stat3:'გამარტივებული პროცესი',jumpGeorgia:'საქართველო',jumpDubai:'დუბაი',jumpJericho:'იერიხოს კარიბჭე',
+georgiaEyebrow:'ევროპის მზარდი მიმართულება',georgiaTitle:'საქართველო',georgiaIntro:'ერთ-ერთი ყველაზე მარტივი უძრავი ქონების ბაზარი მსოფლიოში არაბი ინვესტორისთვის: სრული საკუთრება უცხოელებზე შეზღუდვების გარეშე, სწრაფი და გამჭვირვალე რეგისტრაცია.',georgiaP1T:'100% სრული საკუთრება',georgiaP1D:'არ არის საჭირო ადგილობრივი პარტნიორი ან წინასწარი ბინადრობა; ქონების ფლობა შესაძლებელია პირველივე დღიდან.',georgiaP2T:'სწრაფი რეგისტრაცია',georgiaP2D:'საკუთრების რეესტრში გადაცემის პროცედურები ჩვეულებრივ მხოლოდ რამდენიმე დღეს მოითხოვს.',georgiaP3T:'ბინადრობის ხელშეწყობა',georgiaP3D:'ქონების ფლობამ შეიძლება გაუხსნას გზა საინვესტიციო ბინადრობაზე განაცხადის შესატანად.',georgiaP4T:'ხელსაყრელი საგადასახადო გარემო',georgiaP4D:'შედარებით დაბალი ქონებისა და კაპიტალის მოგების გადასახადები.',ctaConsult:'დაუკავშირდით ჩვენს გუნდს საქართველოზე',ctaNews:'მიმართულების დეტალები',
+dubaiEyebrow:'გლობალური საინვესტიციო ცენტრი',dubaiTitle:'დუბაი',dubaiIntro:'ერთ-ერთი ყველაზე მიმზიდველი ბაზარი მსოფლიოში არაბი ინვესტორებისთვის.',dubaiP1T:'სრული საკუთრების ზონები',dubaiP1D:'არაბ და უცხოელ ინვესტორებს შეუძლიათ ქონების სრულად ფლობა.',dubaiP2T:'გზა ოქროს ვიზისკენ',dubaiP2D:'ინვესტიცია გარკვეულ ზღვარს ზემოთ შესაძლოა აკმაყოფილებდეს ვიზის პირობებს.',dubaiP3T:'გადასახადი არ ეკისრება ქირას',dubaiP3D:'დუბაი არ აწესებს პირად საშემოსავლო გადასახადს ქირავნობაზე.',dubaiP4T:'ვალუტის სტაბილურობა',dubaiP4D:'დირჰამი მიბმულია აშშ დოლართან.',ctaConsult2:'დაუკავშირდით ჩვენს გუნდს დუბაიზე',ctaNews2:'მიმართულების დეტალები',
+jerichoEyebrow:'რეგიონული საინვესტიციო შესაძლებლობა',jerichoTitle:'იერიხოს კარიბჭე',jerichoIntro:'ცნობილი როგორც „პალესტინის დუბაი" — ადრეული ეტაპის შესაძლებლობა შედარებით დაბალი ფასით.',jerichoP1T:'სტრატეგიული მდებარეობა',jerichoP1D:'იერიხო მსოფლიოში ერთ-ერთი უძველესი ქალაქია, მკვდარი ზღვის სიახლოვეს.',jerichoP2T:'ადრეული განვითარების ეტაპი',jerichoP2D:'ადრეულ ეტაპზე შესვლა ნიშნავს კონკურენტულ ფასებს.',jerichoP3T:'გამარტივებული პროცესი',jerichoP3D:'ადგილობრივი ბაზრის სტატუსის გამო არ არსებობს დამატებითი სირთულეები.',jerichoP4T:'მოქნილი გადახდის გეგმები',jerichoP4D:'ნაღდი ან განვადების მოსახერხებელი ვარიანტები.',ctaConsult3:'დაუკავშირდით ჩვენს გუნდს იერიხოს კარიბჭეზე',ctaProject:'პროექტის სრული დეტალები',
+disclaimer:'ზემოთ მოცემული ინფორმაცია ზოგადი საინფორმაციო მიზნებისთვისაა და არ ცვლის სპეციალიზებულ იურიდიულ ან ფინანსურ კონსულტაციას.'},
+he:{dir:'rtl',home:'ראשי',about:'אודותינו',gate:'שער יריחו',whyInvest:'למה איתנו',contact:'צור קשר',eyebrow:'מדריך המשקיע',pageTitle:'למה להשקיע איתנו?',pageSub:'שלושה יעדי השקעה שונים, עם יתרון משותף: קלות בעלות ונהלים ברורים לכל משקיע ערבי.',stat1:'3 יעדי השקעה',stat2:'בעלות מלאה',stat3:'תהליך פשוט',jumpGeorgia:'גאורגיה',jumpDubai:'דובאי',jumpJericho:'שער יריחו',
+georgiaEyebrow:'היעד העולה של אירופה',georgiaTitle:'גאורגיה',georgiaIntro:'אחד משוקי הנדל״ן הקלים בעולם למשקיע הערבי: בעלות מלאה ללא הגבלות על זרים, רישום מהיר ושקוף.',georgiaP1T:'בעלות מלאה 100%',georgiaP1D:'אין צורך בשותף מקומי או תושבות מוקדמת; ניתן לרכוש נכס מהיום הראשון.',georgiaP2T:'רישום מהיר',georgiaP2D:'הליכי העברת בעלות אורכים בדרך כלל ימים ספורים בלבד.',georgiaP3T:'הקלות תושבות',georgiaP3D:'בעלות על נכס עשויה לפתוח אפשרות לתושבות השקעה.',georgiaP4T:'סביבת מס נוחה',georgiaP4D:'מיסי נדל״ן ורווחי הון נמוכים יחסית.',ctaConsult:'צרו קשר עם הצוות בנוגע לגאורגיה',ctaNews:'פרטי היעד',
+dubaiEyebrow:'מרכז השקעות עולמי',dubaiTitle:'דובאי',dubaiIntro:'אחד השווקים האטרקטיביים בעולם למשקיע הערבי.',dubaiP1T:'אזורי בעלות מלאה',dubaiP1D:'משקיעים יכולים לרכוש נכס במלואו באזורי הבעלות המלאה.',dubaiP2T:'מסלול לוויזת זהב',dubaiP2D:'השקעה מעל סף מסוים עשויה להכשיר לוויזת תושבות.',dubaiP3T:'ללא מס הכנסה על שכירות',dubaiP3D:'דובאי אינה מטילה מס הכנסה על שכירות.',dubaiP4T:'יציבות מטבע',dubaiP4D:'הדירהם צמוד לדולר האמריקאי.',ctaConsult2:'צרו קשר עם הצוות בנוגע לדובאי',ctaNews2:'פרטי היעד',
+jerichoEyebrow:'הזדמנות השקעה אזורית',jerichoTitle:'שער יריחו',jerichoIntro:'הפרויקט המכונה "דובאי של פלסטין" — הזדמנות בשלב מוקדם במחיר נמוך יחסית.',jerichoP1T:'מיקום אסטרטגי',jerichoP1D:'יריחו היא אחת הערים העתיקות בעולם, בקרבת ים המלח.',jerichoP2T:'שלב פיתוח מוקדם',jerichoP2D:'כניסה בשלב מוקדם משמעה מחירים תחרותיים.',jerichoP3T:'תהליך פשוט',jerichoP3D:'כשוק ערבי מקומי אין מורכבויות נוספות.',jerichoP4T:'תוכניות תשלום גמישות',jerichoP4D:'אפשרויות מזומן או תשלומים נוחות.',ctaConsult3:'צרו קשר עם הצוות בנוגע לשער יריחו',ctaProject:'פרטי הפרויקט המלאים',
+disclaimer:'המידע לעיל נועד למטרות מידע כלליות ואינו מחליף ייעוץ משפטי או פיננסי מקצועי.'}
+};
+
+function setLang(lang){
+  const t=dict[lang]||dict.ar;
+  document.documentElement.lang=lang;
+  document.documentElement.dir=t.dir;
+  document.querySelectorAll('[data-t]').forEach(el=>{const key=el.dataset.t;if(t[key]!==undefined)el.textContent=t[key]});
+  document.querySelectorAll('.lang-switcher button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  localStorage.setItem('wolf-lang',lang);
+}
+
+document.getElementById('hamburger').onclick=()=>document.getElementById('nav').classList.toggle('open');
+document.querySelectorAll('.lang-switcher button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+setLang(localStorage.getItem('wolf-lang')||'ar');
+
+// Scroll reveal animations
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in-view');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.15});
+document.querySelectorAll('.market-block').forEach(el=>observer.observe(el));
+document.querySelectorAll('.perk-card').forEach((el,i)=>{
+  el.style.transitionDelay=(i%4)*90+'ms';
+  observer.observe(el);
+});
+</script>
+<!-- This site is converting visitors into subscribers and customers with https://respond.io --><script id="respondio__widget" src="https://cdn.respond.io/webchat/widget/widget.js?cId=143f07de414e0f78d978da9b8cadcf2"></script><!-- https://respond.io -->
+</body></html>
