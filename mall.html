@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WOLF INVESTMENT | كتالوج الطابق الأرضي (التسوية)</title><meta name="description" content="كتالوج محلات تجارية بمواصفات استثمارية عالية في الطابق الأرضي (التسوية) ضمن مشروع بوابة أريحا - خطة دفع مرنة على 36 شهرًا.">
+<link rel="canonical" href="https://wolfportal.github.io/WOLF.INVESTMENT.GROUP/mall.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WOLF INVESTMENT GROUP">
+<meta property="og:title" content="WOLF INVESTMENT | كتالوج الطابق الأرضي (التسوية)">
+<meta property="og:description" content="كتالوج محلات تجارية بمواصفات استثمارية عالية في الطابق الأرضي (التسوية) ضمن مشروع بوابة أريحا - خطة دفع مرنة على 36 شهرًا.">
+<meta property="og:image" content="https://i.postimg.cc/d1Dwq36D/1111.png">
+<meta property="og:url" content="https://wolfportal.github.io/WOLF.INVESTMENT.GROUP/mall.html">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WOLF INVESTMENT | كتالوج الطابق الأرضي (التسوية)">
+<meta name="twitter:description" content="كتالوج محلات تجارية بمواصفات استثمارية عالية في الطابق الأرضي (التسوية) ضمن مشروع بوابة أريحا - خطة دفع مرنة على 36 شهرًا.">
+<meta name="twitter:image" content="https://i.postimg.cc/d1Dwq36D/1111.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "RealEstateAgent", "name": "WOLF INVESTMENT GROUP", "url": "https://wolfportal.github.io/WOLF.INVESTMENT.GROUP/", "logo": "https://i.postimg.cc/d1Dwq36D/1111.png", "image": "https://i.postimg.cc/d1Dwq36D/1111.png", "description": "شركة إدارة استثمارات عقارية، وإدارة رأس مال، واستشارات عقارية في بوابة أريحا، جورجيا، ودبي.", "areaServed": [{"@type": "Place", "name": "بوابة أريحا، فلسطين"}, {"@type": "Place", "name": "جورجيا"}, {"@type": "Place", "name": "دبي، الإمارات"}], "sameAs": ["https://www.facebook.com/share/1bhVZ7q8EB/", "https://www.instagram.com/wolf__investment", "https://www.tiktok.com/@wolf.investment_group"], "telephone": "+972544228985"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--bg:oklch(97% 0.005 60);--bg-alt:oklch(94% 0.008 60);--text:oklch(20% 0.01 60);--text-muted:oklch(45% 0.01 60);--text-light:oklch(60% 0.008 60);--border:oklch(88% 0.01 60);--tier-600:oklch(72% 0.16 85);--tier-700:oklch(65% 0.18 40);--tier-800:oklch(60% 0.14 240);--tier-1200:oklch(55% 0.16 155);--tier-1400:oklch(40% 0.15 270);--tier-1600:oklch(50% 0.18 320);--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}html{font-size:16px;scroll-behavior:smooth}body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}.hero{min-height:55vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;position:relative;background:oklch(15% 0.02 30);color:oklch(95% 0.005 60);overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 80%,oklch(25% 0.06 30/0.4),transparent),radial-gradient(ellipse 60% 40% at 80% 20%,oklch(20% 0.04 270/0.3),transparent);pointer-events:none}.hero-content{position:relative;z-index:1;max-width:800px}.hero-brand{font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.6;margin-bottom:1rem;font-weight:300}.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.2;margin-bottom:1rem}.hero h1 span{display:block;font-size:0.4em;font-weight:400;opacity:0.7;margin-top:0.5rem}.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap}.hero-stat{text-align:center}.hero-stat-value{font-size:2.5rem;font-weight:800;line-height:1;font-feature-settings:'tnum'}.hero-stat-label{font-size:0.8rem;opacity:0.6;margin-top:0.25rem}.video-panoramic{position:relative;width:100%;max-height:55vh;overflow:hidden;background:oklch(10% 0.01 30)}.video-panoramic video{width:100%;height:100%;object-fit:cover;display:block;max-height:55vh}.gallery-section{padding:3rem 2rem;background:oklch(99% 0.003 60);max-width:900px;margin:0 auto}.gallery-title{text-align:center;margin-bottom:1.5rem}.gallery-title h2{font-size:1.5rem;font-weight:800}.gallery-title .gallery-subtitle{font-size:0.95rem;color:var(--text-muted);margin-top:0.35rem;font-weight:600}.gallery-title p{font-size:0.8rem;color:var(--text-light);margin-top:0.25rem}.gallery-layout{display:flex;flex-direction:column;gap:0.75rem}.gallery-hero-img{width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--border)}.gallery-hero-img img{width:100%;height:auto;display:block;cursor:zoom-in}.gallery-pair{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}.gallery-pair-item{overflow:hidden;border-radius:10px;border:1px solid var(--border)}.gallery-pair-item img{width:100%;height:auto;display:block;cursor:zoom-in}.lightbox{display:none;position:fixed;inset:0;z-index:9999;background:oklch(5% 0.01 30/0.92);backdrop-filter:blur(16px);justify-content:center;align-items:center;padding:2rem;cursor:zoom-out}.lightbox.active{display:flex}.lightbox img{max-width:95%;max-height:90vh;object-fit:contain;border-radius:12px}.lightbox-close{position:absolute;top:1.5rem;left:1.5rem;width:40px;height:40px;border-radius:50%;background:oklch(20% 0.01 30/0.6);border:none;color:white;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center}.floorplan-section{padding:4rem 2rem;background:oklch(97% 0.005 60);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.floorplan-container{max-width:1200px;margin:0 auto}.floorplan-title{text-align:center;margin-bottom:2.5rem}.floorplan-title h2{font-size:1.75rem;font-weight:800;margin-bottom:0.5rem}.floorplan-title p{font-size:0.9rem;color:var(--text-muted)}.floorplan-wrapper{background:oklch(99.5% 0.002 60);border:1px solid var(--border);border-radius:16px;padding:2rem;overflow:auto}.floorplan-svg-wrap{display:flex;justify-content:center;min-height:700px}.floorplan-svg-wrap svg{width:100%;max-width:750px;height:auto}.floorplan-svg-wrap svg rect[data-unit]{cursor:pointer;transition:opacity 120ms ease-out}.floorplan-svg-wrap svg rect[data-unit]:hover{opacity:0.5}.floorplan-legend{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)}.legend-item{display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;color:var(--text-muted)}.legend-arrow{width:28px;height:14px;border-radius:3px}.legend-facilities{display:flex;flex-wrap:wrap;gap:1.25rem;justify-content:center;margin-top:1rem}.legend-facility{font-size:0.75rem;color:var(--text-light)}.unit-popup-overlay{display:none;position:fixed;inset:0;z-index:9998;background:oklch(10% 0.01 30/0.4);backdrop-filter:blur(3px)}.unit-popup-overlay.active{display:block}.unit-popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:white;border-radius:16px;padding:2rem;box-shadow:0 20px 60px oklch(20% 0.01 60/0.18);min-width:270px;text-align:center;animation:popIn 180ms var(--ease-out-expo)}.unit-popup.active{display:block}.unit-popup-num{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.2rem;color:white;margin:0 auto 0.7rem}.unit-popup-price{font-size:1.6rem;font-weight:900;margin-bottom:0.4rem;font-feature-settings:'tnum'}.unit-popup-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border)}.unit-popup-item{text-align:center}.unit-popup-val{font-size:0.9rem;font-weight:700;font-feature-settings:'tnum'}.unit-popup-lbl{font-size:0.62rem;color:var(--text-light)}.unit-popup-close{position:absolute;top:0.6rem;left:0.6rem;width:28px;height:28px;border-radius:50%;border:1px solid var(--border);background:none;cursor:pointer;font-size:0.85rem;display:flex;align-items:center;justify-content:center;color:var(--text-muted)}@keyframes popIn{from{opacity:0;transform:translate(-50%,-50%) scale(0.92)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}.filter-section{position:sticky;top:0;z-index:100;background:oklch(97% 0.005 60/0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:1rem 2rem}.filter-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:0.75rem;overflow-x:auto;scrollbar-width:none}.filter-wrap::-webkit-scrollbar{display:none}.filter-btn{padding:0.5rem 1.25rem;border-radius:100px;border:1.5px solid var(--border);background:transparent;font-family:inherit;font-size:0.85rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 200ms;color:var(--text-muted)}.filter-btn:hover{border-color:var(--text-muted);color:var(--text)}.filter-btn.active{background:var(--text);color:var(--bg);border-color:var(--text)}.filter-btn[data-tier]::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--dot);margin-left:0.5rem}.filter-btn[data-tier="600"]{--dot:var(--tier-600)}.filter-btn[data-tier="700"]{--dot:var(--tier-700)}.filter-btn[data-tier="800"]{--dot:var(--tier-800)}.filter-btn[data-tier="1200"]{--dot:var(--tier-1200)}.filter-btn[data-tier="1400"]{--dot:var(--tier-1400)}.filter-btn[data-tier="1600"]{--dot:var(--tier-1600)}.main{max-width:1200px;margin:0 auto;padding:3rem 2rem 6rem}.tier-section{margin-bottom:4rem}.tier-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:2px solid var(--tier-color)}.tier-price{font-size:1.75rem;font-weight:800;color:var(--tier-color);font-feature-settings:'tnum'}.tier-count{font-size:0.85rem;color:var(--text-light)}.tier-meta{font-size:0.8rem;color:var(--text-muted);margin-right:auto}.units-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}.unit-card{background:oklch(99% 0.003 60);border:1px solid var(--border);border-radius:12px;padding:1.5rem;position:relative;transition:all 300ms var(--ease-out-expo);overflow:hidden}.unit-card::before{content:'';position:absolute;top:0;right:0;width:4px;height:0;background:var(--tier-color);transition:height 300ms}.unit-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px oklch(20% 0.01 60/0.08)}.unit-card:hover::before{height:100%}.unit-number{position:absolute;top:1rem;left:1rem;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--tier-color);color:white;border-radius:8px;font-weight:800;font-size:0.9rem}.unit-type{font-size:0.75rem;color:var(--text-light);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.35rem}.unit-areas{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin:1rem 0;padding:0.75rem;background:var(--bg-alt);border-radius:8px}.unit-area{text-align:center}.unit-area-value{font-size:1.1rem;font-weight:700;font-feature-settings:'tnum'}.unit-area-label{font-size:0.65rem;color:var(--text-light)}.unit-pricing{display:flex;justify-content:space-between;align-items:baseline;margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--border)}.unit-ppm{font-size:0.8rem;color:var(--text-muted)}.unit-ppm strong{color:var(--text);font-weight:700}.unit-installment{text-align:left;font-size:0.75rem;color:var(--text-light)}.unit-installment strong{display:block;font-size:0.95rem;color:var(--tier-color);font-weight:700}.payment-section{margin-top:5rem;padding:3rem;background:oklch(15% 0.02 30);border-radius:20px;color:oklch(92% 0.005 60)}.payment-title{font-size:1.5rem;font-weight:800;margin-bottom:0.5rem}.payment-subtitle{font-size:0.9rem;opacity:0.6;margin-bottom:2rem}.payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}.payment-card{padding:1.5rem;background:oklch(22% 0.015 30);border-radius:12px;text-align:center}.payment-card-icon{font-size:1.5rem;margin-bottom:0.75rem}.payment-card-value{font-size:1.3rem;font-weight:700;margin-bottom:0.25rem}.payment-card-label{font-size:0.75rem;opacity:0.5}.footer{text-align:center;padding:3rem 2rem;color:var(--text-light);font-size:0.8rem;border-top:1px solid var(--border)}.footer-brand{font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:0.5rem;letter-spacing:0.05em}.footer-services{display:flex;justify-content:center;gap:2rem;margin-top:0.75rem;flex-wrap:wrap}@media(max-width:768px){.hero{min-height:45vh;padding:3rem 1.5rem}.hero h1{font-size:2rem}.hero-stats{gap:1.5rem}.hero-stat-value{font-size:1.8rem}.gallery-section{padding:2rem 1rem}.main{padding:2rem 1rem 4rem}.units-grid{grid-template-columns:1fr}.payment-section{padding:2rem 1.5rem}.filter-section{padding:0.75rem 1rem}.floorplan-section{padding:2rem 1rem}.floorplan-wrapper{padding:1rem}.video-panoramic{max-height:40vh}.video-panoramic video{max-height:40vh}}@media(max-width:480px){.hero-stats{flex-direction:column;gap:1rem}.payment-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<style>
+.wolf-top{position:sticky;top:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(16,16,16,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1)}
+.wolf-top img{height:42px}
+.wolf-top nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.wolf-top nav a{color:rgba(245,243,239,.75);text-decoration:none;font-size:.82rem;font-family:Tajawal,Arial,sans-serif;transition:color 200ms}
+.wolf-top nav a:hover{color:#e8dcc8}
+@media(max-width:700px){.wolf-top{padding:0 14px;height:56px}.wolf-top img{height:34px}.wolf-top nav{gap:12px}.wolf-top nav a{font-size:.72rem}}
+</style>
+<body>
+<header class="wolf-top"><img src="https://i.postimg.cc/d1Dwq36D/1111.png" alt="Wolf Investment Group"><nav><a href="index.html">الرئيسية</a><a href="gallery.html">معرض العقارات</a><a href="about.html">من نحن</a><a href="jericho-gate.html">بوابة أريحا</a><a href="contact.html">تواصل معنا</a></nav></header>
+<section class="hero"><div class="hero-content"><div class="hero-brand">WOLF INVESTMENT</div><h1>الطابق الأرضي (التسوية)<span>محلات تجارية بمواصفات استثمارية عالية</span></h1><div class="hero-stats"><div class="hero-stat"><div class="hero-stat-value">45</div><div class="hero-stat-label">وحدة تجارية</div></div><div class="hero-stat"><div class="hero-stat-value">73-214</div><div class="hero-stat-label">م² المساحة الإجمالية</div></div><div class="hero-stat"><div class="hero-stat-value">36</div><div class="hero-stat-label">شهر تقسيط</div></div><div class="hero-stat"><div class="hero-stat-value">50%</div><div class="hero-stat-label">دفعة أولى</div></div></div></div></section>
+<section class="video-panoramic"><video autoplay muted loop playsinline><source src="https://videotourl.com/videos/1783544807060-a7710f5c-832d-4ab9-a146-1a771e779970.mp4#t=3" type="video/mp4"></video></section>
+<section class="gallery-section"><div class="gallery-title"><h2>صور المشروع</h2><div class="gallery-subtitle">الحالة الإنشائية للمول التجاري</div><p>اضغط على الصورة لعرضها بالحجم الكامل</p></div><div class="gallery-layout"><div class="gallery-hero-img"><img src="https://i.ibb.co/SXNv98tT/Whats-App-Image-2026-06-10-at-11-55-12-AM-3.jpg" alt="الحالة الإنشائية" onclick="openLightbox(this.src)"></div><div class="gallery-pair"><div class="gallery-pair-item"><img src="https://i.ibb.co/yDcSDnq/image.png" alt="صورة 2" onclick="openLightbox(this.src)"></div><div class="gallery-pair-item"><img src="https://i.ibb.co/spDyN6WN/Whats-App-Image-2026-06-10-at-11-55-15-AM-2-1.jpg" alt="صورة 3" onclick="openLightbox(this.src)"></div></div></div></section>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close">✕</button><img id="lightbox-img" src="" alt="عرض مكبر"></div>
+<section class="floorplan-section"><div class="floorplan-container"><div class="floorplan-title"><h2>المخطط الهندسي التوضيحي</h2><p>الطابق الأرضي (التسوية): اضغط على أي وحدة لمعرفة السعر وتفاصيل الدفع</p></div><div class="floorplan-wrapper"><div class="floorplan-svg-wrap"><svg viewBox="0 0 760 1240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="blueprint-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f1f0ea" stroke-width="0.75" />
+              </pattern>
+
+              <pattern id="hatch-monwar" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="0" y2="8" stroke="#9ca3af" stroke-width="1.2" />
+              </pattern>
+
+              <pattern id="hatch-cross" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 0 0 L 10 10 M 10 0 L 0 10" stroke="#cbd5e1" stroke-width="0.8" />
+              </pattern>
+            </defs>
+
+            <rect x="0" y="0" width="760" height="1240" fill="#ffffff" rx="12" />
+            <rect x="0" y="0" width="760" height="1240" fill="url(#blueprint-grid)" rx="12" />
+
+            <rect x="15" y="15" width="730" height="1210" fill="none" stroke="#e2e0d8" stroke-width="1.5" rx="8" />
+
+            <g transform="translate(680, 50)" opacity="0.85">
+              <circle cx="0" cy="0" r="18" fill="none" stroke="#6b7280" stroke-width="1.2" />
+              <polygon points="0,-16 -5,0 5,0" fill="#1f2937" />
+              <polygon points="0,16 -5,0 5,0" fill="#e5e7eb" stroke="#6b7280" stroke-width="0.8" />
+              <text x="0" y="-20" text-anchor="middle" font-family="Cairo" font-size="10" font-weight="800" fill="#1f2937">N</text>
+            </g>
+
+            <g transform="translate(380, 45)">
+              <text text-anchor="middle" font-family="Cairo" font-size="15" font-weight="900" fill="#1f2937" letter-spacing="0.05em">
+                مخطط الطابق الأرضي (التسوية)
+              </text>
+              <text text-anchor="middle" y="18" font-family="Cairo" font-size="9" font-weight="600" fill="#6b7280">
+                WOLF INVESTMENT MALL · GROUND LEVEL COMMERCIAL UNITS
+              </text>
+            </g>
+
+            <g transform="translate(38, 720) rotate(-90)">
+              <line x1="-300" y1="0" x2="300" y2="0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="6 3" />
+              <rect x="-135" y="-12" width="270" height="24" fill="#ffffff" stroke="#cbd5e1" rx="4" />
+              <text x="0" y="4" text-anchor="middle" font-family="Cairo" font-size="11" font-weight="800" fill="#4b5563">
+                شـــــكل تـــوضـــيحي لطـــابق التســــوية الارضــــي
+              </text>
+            </g>
+
+            
+            <g stroke="#1f2937" stroke-width="3" fill="none" stroke-linejoin="miter">
+              <path d="
+                M 120 110 
+                L 500 110 
+                L 570 180 
+                L 570 560 
+                L 500 560 
+                L 500 590 
+                L 520 590 
+                L 520 990 
+                L 490 990 
+                L 490 1065 
+                L 228 1065 
+                L 228 1115 
+                L 105 1115 
+                L 105 565 
+                L 120 565 
+                Z
+              " fill="#faf9f5" stroke="#2b313d" stroke-width="3" />
+            </g>
+
+            <g stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5 3" fill="none">
+              <path d="M 105 95 L 515 95 L 585 170 L 585 570 L 530 570 L 530 1000 L 500 1075 L 238 1075 L 238 1125 L 95 1125 L 95 560 L 105 95 Z" />
+              <text x="580" y="380" font-family="Cairo" font-size="9" font-weight="700" fill="#64748b" transform="rotate(90 580 380)">
+                بـــــروز مـعـمـــــاري
+              </text>
+            </g>
+
+            
+            <g id="central-structural-spine">
+              <rect
+                x="268"
+                y="185"
+                width="38"
+                height="805"
+                fill="#f8fafc"
+                stroke="#cbd5e1"
+                stroke-width="1"
+              />
+              <line x1="287" y1="190" x2="287" y2="985" stroke="#94a3b8" stroke-width="0.75" stroke-dasharray="4 2" />
+
+              <rect
+                x="228"
+                y="185"
+                width="40"
+                height="760"
+                fill="#f1f5f9"
+                stroke="#94a3b8"
+                stroke-width="1"
+              />
+              <line x1="228" y1="185" x2="228" y2="945" stroke="#334155" stroke-width="2.5" />
+              
+              <rect
+                x="306"
+                y="185"
+                width="39"
+                height="805"
+                fill="#f1f5f9"
+                stroke="#94a3b8"
+                stroke-width="1"
+              />
+              <line x1="345" y1="185" x2="345" y2="990" stroke="#334155" stroke-width="2.5" />
+
+              <g><rect x="281" y="230" width="12" height="12" fill="#475569" stroke="#1e293b" stroke-width="1" rx="1" /><line x1="281" y1="230" x2="293" y2="242" stroke="#ffffff" stroke-width="0.5" /></g>
+<g><rect x="281" y="340" width="12" height="12" fill="#475569" stroke="#1e293b" stroke-width="1" rx="1" /><line x1="281" y1="340" x2="293" y2="352" stroke="#ffffff" stroke-width="0.5" /></g>
+<g><rect x="281" y="450" width="12" height="12" fill="#475569" stroke="#1e293b" stroke-width="1" rx="1" /><line x1="281" y1="450" x2="293" y2="462" stroke="#ffffff" stroke-width="0.5" /></g>
+<g><rect x="281" y="670" width="12" height="12" fill="#475569" stroke="#1e293b" stroke-width="1" rx="1" /><line x1="281" y1="670" x2="293" y2="682" stroke="#ffffff" stroke-width="0.5" /></g>
+<g><rect x="281" y="780" width="12" height="12" fill="#475569" stroke="#1e293b" stroke-width="1" rx="1" /><line x1="281" y1="780" x2="293" y2="792" stroke="#ffffff" stroke-width="0.5" /></g>
+<g><rect x="281" y="890" width="12" height="12" fill="#475569" stroke="#1e293b" stroke-width="1" rx="1" /><line x1="281" y1="890" x2="293" y2="902" stroke="#ffffff" stroke-width="0.5" /></g>
+
+
+              <text
+                x="287"
+                y="380"
+                text-anchor="middle"
+                font-family="Cairo"
+                font-size="8"
+                font-weight="700"
+                fill="#64748b"
+                transform="rotate(-90 287 380)"
+                letter-spacing="1"
+              >
+                مـمـر تـوزيـع وخـدمـات
+              </text>
+              <text
+                x="287"
+                y="840"
+                text-anchor="middle"
+                font-family="Cairo"
+                font-size="8"
+                font-weight="700"
+                fill="#64748b"
+                transform="rotate(-90 287 840)"
+                letter-spacing="1"
+              >
+                جـدار فـاصـل إنـشـائـي
+              </text>
+            </g>
+
+            <path
+              d="M 108 952 L 488 952 L 488 995 L 108 995 Z"
+              fill="#f8fafc"
+              stroke="#cbd5e1"
+              stroke-width="1"
+            />
+
+            
+            <g transform="translate(315, 96)">
+              <rect x="-24" y="0" width="48" height="15" fill="#10b981" rx="3" />
+              <text x="0" y="11" text-anchor="middle" font-family="Cairo" font-size="9" font-weight="800" fill="#ffffff">
+                مدخل 1
+              </text>
+              <polygon points="0,19 -5,14 5,14" fill="#10b981" />
+            </g>
+
+            <g transform="translate(90, 750)">
+              <rect x="0" y="-12" width="22" height="40" fill="#10b981" rx="3" />
+              <text x="11" y="13" text-anchor="middle" font-family="Cairo" font-size="9" font-weight="800" fill="#ffffff" transform="rotate(-90 11 13)">
+                مدخل 2
+              </text>
+              <polygon points="26,8 21,3 21,13" fill="#10b981" />
+            </g>
+
+            <g transform="translate(505, 570)">
+              <rect x="0" y="-10" width="20" height="36" fill="#10b981" rx="3" />
+              <text x="10" y="12" text-anchor="middle" font-family="Cairo" font-size="8" font-weight="800" fill="#ffffff" transform="rotate(90 10 12)">
+                مدخل 3
+              </text>
+              <polygon points="-4,8 1,3 1,13" fill="#10b981" />
+            </g>
+
+
+            <g transform="translate(230, 560)">
+              <g transform="translate(0, 0)">
+                <rect x="0" y="0" width="55" height="35" fill="#f8fafc" stroke="#64748b" stroke-width="1.2" />
+                <line x1="9" y1="0" x2="9" y2="35" stroke="#94a3b8" stroke-width="1" />
+                <line x1="18" y1="0" x2="18" y2="35" stroke="#94a3b8" stroke-width="1" />
+                <line x1="27" y1="0" x2="27" y2="35" stroke="#94a3b8" stroke-width="1" />
+                <line x1="36" y1="0" x2="36" y2="35" stroke="#94a3b8" stroke-width="1" />
+                <line x1="45" y1="0" x2="45" y2="35" stroke="#94a3b8" stroke-width="1" />
+                <text x="27.5" y="22" text-anchor="middle" font-family="Cairo" font-size="9.5" font-weight="800" fill="#334155">
+                  درج
+                </text>
+              </g>
+
+              <g transform="translate(58, 0)">
+                <rect x="0" y="0" width="28" height="35" fill="url(#hatch-monwar)" stroke="#64748b" stroke-width="1.2" />
+                <rect x="2" y="10" width="24" height="15" fill="#ffffff" opacity="0.9" rx="2" />
+                <text x="14" y="21" text-anchor="middle" font-family="Cairo" font-size="7.5" font-weight="800" fill="#334155">
+                  منور
+                </text>
+              </g>
+
+              <g transform="translate(88, 0)">
+                <rect x="0" y="0" width="27" height="35" fill="#f8fafc" stroke="#64748b" stroke-width="1.2" />
+                <text x="13.5" y="21" text-anchor="middle" font-family="Cairo" font-size="8" font-weight="700" fill="#475569">
+                  خدمات
+                </text>
+              </g>
+            </g>
+
+            <g transform="translate(345, 518)">
+              <rect x="0" y="0" width="145" height="42" fill="#f1f5f9" stroke="#475569" stroke-width="1.5" rx="3" />
+              <rect x="5" y="5" width="45" height="32" fill="#ffffff" stroke="#64748b" stroke-width="1" />
+              <line x1="5" y1="5" x2="50" y2="37" stroke="#94a3b8" stroke-width="0.8" />
+              <line x1="50" y1="5" x2="5" y2="37" stroke="#94a3b8" stroke-width="0.8" />
+              <rect x="15" y="10" width="25" height="22" fill="#e2e8f0" stroke="#475569" stroke-width="1" />
+              <text x="27.5" y="25" text-anchor="middle" font-family="Cairo" font-size="8.5" font-weight="800" fill="#0f172a">
+                مصعد
+              </text>
+
+              <text x="95" y="20" text-anchor="middle" font-family="Cairo" font-size="9" font-weight="800" fill="#334155">
+                مـصـعـد الـمـول
+              </text>
+              <text x="95" y="32" text-anchor="middle" font-family="Cairo" font-size="7.5" font-weight="600" fill="#64748b">
+                فاصل هندسي (31 - 30)
+              </text>
+            </g>
+
+            <g transform="translate(485, 937)">
+              <rect x="0" y="0" width="30" height="90" fill="#f8fafc" stroke="#475569" stroke-width="1.2" rx="2" />
+              <line x1="0" y1="10" x2="30" y2="10" stroke="#94a3b8" stroke-width="0.9" />
+              <line x1="0" y1="20" x2="30" y2="20" stroke="#94a3b8" stroke-width="0.9" />
+              <line x1="0" y1="30" x2="30" y2="30" stroke="#94a3b8" stroke-width="0.9" />
+              <line x1="0" y1="40" x2="30" y2="40" stroke="#94a3b8" stroke-width="0.9" />
+              <line x1="0" y1="50" x2="30" y2="50" stroke="#94a3b8" stroke-width="0.9" />
+              <line x1="0" y1="60" x2="30" y2="60" stroke="#94a3b8" stroke-width="0.9" />
+              <line x1="0" y1="70" x2="30" y2="70" stroke="#94a3b8" stroke-width="0.9" />
+              <line x1="0" y1="80" x2="30" y2="80" stroke="#94a3b8" stroke-width="0.9" />
+              <text x="15" y="47" text-anchor="middle" font-family="Cairo" font-size="8" font-weight="800" fill="#334155" transform="rotate(90 15 47)">
+                درج
+              </text>
+            </g>
+
+
+
+
+
+
+
+
+
+            <g id="units-layer"><rect data-unit="1" x="125" y="115" width="62" height="68" fill="oklch(72% 0.08 270/0.3)" stroke="oklch(35% 0.1 270)" stroke-width="1.2" rx="2"/><text x="156" y="154" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="18" fill="oklch(35% 0.12 270)" pointer-events="none">1</text><rect data-unit="2" x="125" y="185" width="105" height="58" fill="oklch(72% 0.08 270/0.3)" stroke="oklch(35% 0.1 270)" stroke-width="1.2" rx="2"/><text x="177" y="219" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(35% 0.12 270)" pointer-events="none">2</text><rect data-unit="3" x="125" y="245" width="105" height="42" fill="oklch(85% 0.08 40/0.3)" stroke="oklch(50% 0.1 40)" stroke-width="1.2" rx="2"/><text x="177" y="271" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 40)" pointer-events="none">3</text><rect data-unit="4" x="125" y="289" width="105" height="42" fill="oklch(85% 0.08 40/0.3)" stroke="oklch(50% 0.1 40)" stroke-width="1.2" rx="2"/><text x="177" y="315" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 40)" pointer-events="none">4</text><rect data-unit="5" x="125" y="333" width="105" height="40" fill="oklch(85% 0.08 40/0.3)" stroke="oklch(50% 0.1 40)" stroke-width="1.2" rx="2"/><text x="177" y="358" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 40)" pointer-events="none">5</text><rect data-unit="6" x="125" y="375" width="105" height="42" fill="oklch(85% 0.08 40/0.3)" stroke="oklch(50% 0.1 40)" stroke-width="1.2" rx="2"/><text x="177" y="401" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 40)" pointer-events="none">6</text><rect data-unit="7" x="125" y="419" width="105" height="62" fill="oklch(72% 0.08 270/0.3)" stroke="oklch(35% 0.1 270)" stroke-width="1.2" rx="2"/><text x="177" y="455" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="18" fill="oklch(35% 0.12 270)" pointer-events="none">7</text><rect data-unit="8" x="125" y="483" width="105" height="68" fill="oklch(72% 0.08 270/0.3)" stroke="oklch(35% 0.1 270)" stroke-width="1.2" rx="2"/><text x="177" y="522" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="18" fill="oklch(35% 0.12 270)" pointer-events="none">8</text><rect data-unit="9" x="108" y="688" width="120" height="54" fill="oklch(72% 0.08 320/0.3)" stroke="oklch(40% 0.1 320)" stroke-width="1.2" rx="2"/><text x="168" y="720" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(38% 0.12 320)" pointer-events="none">9</text><rect data-unit="10" x="108" y="746" width="120" height="44" fill="oklch(80% 0.08 240/0.3)" stroke="oklch(50% 0.1 240)" stroke-width="1.2" rx="2"/><text x="168" y="773" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 240)" pointer-events="none">10</text><rect data-unit="11" x="108" y="794" width="120" height="44" fill="oklch(80% 0.08 240/0.3)" stroke="oklch(50% 0.1 240)" stroke-width="1.2" rx="2"/><text x="168" y="821" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 240)" pointer-events="none">11</text><rect data-unit="12" x="108" y="842" width="120" height="54" fill="oklch(72% 0.08 320/0.3)" stroke="oklch(40% 0.1 320)" stroke-width="1.2" rx="2"/><text x="168" y="874" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(38% 0.12 320)" pointer-events="none">12</text><rect data-unit="13" x="108" y="900" width="120" height="44" fill="oklch(80% 0.08 240/0.3)" stroke="oklch(50% 0.1 240)" stroke-width="1.2" rx="2"/><text x="168" y="927" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 240)" pointer-events="none">13</text><rect data-unit="14" x="108" y="948" width="120" height="45" fill="oklch(72% 0.08 320/0.3)" stroke="oklch(40% 0.1 320)" stroke-width="1.2" rx="2"/><text x="168" y="975" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(38% 0.12 320)" pointer-events="none">14</text><rect data-unit="15" x="108" y="997" width="120" height="54" fill="oklch(80% 0.08 240/0.3)" stroke="oklch(50% 0.1 240)" stroke-width="1.2" rx="2"/><text x="168" y="1029" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 240)" pointer-events="none">15</text><rect data-unit="16" x="108" y="1055" width="120" height="55" fill="oklch(72% 0.08 320/0.3)" stroke="oklch(40% 0.1 320)" stroke-width="1.2" rx="2"/><text x="168" y="1087" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(38% 0.12 320)" pointer-events="none">16</text><rect data-unit="17" x="230" y="997" width="46" height="62" fill="oklch(85% 0.08 40/0.3)" stroke="oklch(50% 0.1 40)" stroke-width="1.2" rx="2"/><text x="253" y="1033" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 40)" pointer-events="none">17</text><rect data-unit="18" x="318" y="997" width="42" height="62" fill="oklch(75% 0.08 155/0.3)" stroke="oklch(45% 0.1 155)" stroke-width="1.2" rx="2"/><text x="339" y="1033" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(42% 0.12 155)" pointer-events="none">18</text><rect data-unit="19" x="364" y="997" width="38" height="62" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="383" y="1033" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">19</text><rect data-unit="20" x="406" y="997" width="38" height="62" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="425" y="1033" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">20</text><rect data-unit="21" x="448" y="997" width="40" height="62" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="468" y="1033" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">21</text><rect data-unit="22" x="345" y="943" width="138" height="42" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="414" y="969" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">22</text><rect data-unit="23" x="345" y="899" width="138" height="42" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="414" y="925" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">23</text><rect data-unit="24" x="345" y="847" width="138" height="50" fill="oklch(75% 0.08 155/0.3)" stroke="oklch(45% 0.1 155)" stroke-width="1.2" rx="2"/><text x="414" y="877" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(42% 0.12 155)" pointer-events="none">24</text><rect data-unit="25" x="345" y="803" width="138" height="42" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="414" y="829" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">25</text><rect data-unit="26" x="345" y="759" width="138" height="42" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="414" y="785" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">26</text><rect data-unit="27" x="345" y="707" width="138" height="50" fill="oklch(75% 0.08 155/0.3)" stroke="oklch(45% 0.1 155)" stroke-width="1.2" rx="2"/><text x="414" y="737" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(42% 0.12 155)" pointer-events="none">27</text><rect data-unit="28" x="345" y="663" width="138" height="42" fill="oklch(80% 0.08 240/0.3)" stroke="oklch(50% 0.1 240)" stroke-width="1.2" rx="2"/><text x="414" y="689" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 240)" pointer-events="none">28</text><rect data-unit="29" x="345" y="619" width="138" height="42" fill="oklch(80% 0.08 240/0.3)" stroke="oklch(50% 0.1 240)" stroke-width="1.2" rx="2"/><text x="414" y="645" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 240)" pointer-events="none">29</text><rect data-unit="30" x="345" y="575" width="138" height="42" fill="oklch(80% 0.08 240/0.3)" stroke="oklch(50% 0.1 240)" stroke-width="1.2" rx="2"/><text x="414" y="601" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 240)" pointer-events="none">30</text><rect data-unit="31" x="345" y="481" width="145" height="34" fill="oklch(80% 0.08 240/0.3)" stroke="oklch(50% 0.1 240)" stroke-width="1.2" rx="2"/><text x="417" y="503" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 240)" pointer-events="none">31</text><rect data-unit="32" x="345" y="445" width="145" height="34" fill="oklch(80% 0.08 240/0.3)" stroke="oklch(50% 0.1 240)" stroke-width="1.2" rx="2"/><text x="417" y="467" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 240)" pointer-events="none">32</text><rect data-unit="33" x="345" y="409" width="145" height="34" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="417" y="431" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">33</text><rect data-unit="34" x="345" y="373" width="145" height="34" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="417" y="395" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">34</text><rect data-unit="35" x="345" y="337" width="145" height="34" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="417" y="359" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">35</text><rect data-unit="36" x="345" y="297" width="145" height="38" fill="oklch(75% 0.08 155/0.3)" stroke="oklch(45% 0.1 155)" stroke-width="1.2" rx="2"/><text x="417" y="321" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(42% 0.12 155)" pointer-events="none">36</text><rect data-unit="37" x="345" y="261" width="145" height="34" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="417" y="283" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">37</text><rect data-unit="38" x="345" y="225" width="145" height="34" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="417" y="247" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">38</text><rect data-unit="39" x="345" y="185" width="145" height="38" fill="oklch(75% 0.08 155/0.3)" stroke="oklch(45% 0.1 155)" stroke-width="1.2" rx="2"/><text x="417" y="209" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(42% 0.12 155)" pointer-events="none">39</text><rect data-unit="40" x="445" y="115" width="50" height="68" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="470" y="154" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">40</text><rect data-unit="41" x="395" y="115" width="48" height="68" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="419" y="154" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">41</text><rect data-unit="42" x="343" y="115" width="50" height="68" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="368" y="154" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">42</text><rect data-unit="43" x="289" y="115" width="52" height="68" fill="oklch(75% 0.08 155/0.3)" stroke="oklch(45% 0.1 155)" stroke-width="1.2" rx="2"/><text x="315" y="154" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(42% 0.12 155)" pointer-events="none">43</text><rect data-unit="44" x="239" y="115" width="48" height="68" fill="oklch(85% 0.1 85/0.3)" stroke="oklch(60% 0.12 85)" stroke-width="1.2" rx="2"/><text x="263" y="154" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(55% 0.14 85)" pointer-events="none">44</text><rect data-unit="45" x="189" y="115" width="48" height="68" fill="oklch(85% 0.08 40/0.3)" stroke="oklch(50% 0.1 40)" stroke-width="1.2" rx="2"/><text x="213" y="154" text-anchor="middle" font-family="Cairo" font-weight="800" font-size="14" fill="oklch(45% 0.12 40)" pointer-events="none">45</text></g>
+            <g stroke="#9ca3af" stroke-width="0.75" opacity="0.8">
+              <line x1="125" y1="106" x2="495" y2="106" />
+              <line x1="125" y1="102" x2="125" y2="110" />
+              <line x1="189" y1="102" x2="189" y2="110" />
+              <line x1="239" y1="102" x2="239" y2="110" />
+              <line x1="289" y1="102" x2="289" y2="110" />
+              <line x1="343" y1="102" x2="343" y2="110" />
+              <line x1="395" y1="102" x2="395" y2="110" />
+              <line x1="495" y1="102" x2="495" y2="110" />
+              <text x="157" y="103" text-anchor="middle" font-family="Cairo" font-size="7" fill="#6b7280">6.27</text>
+              <text x="214" y="103" text-anchor="middle" font-family="Cairo" font-size="7" fill="#6b7280">5.09</text>
+              <text x="264" y="103" text-anchor="middle" font-family="Cairo" font-size="7" fill="#6b7280">4.12</text>
+              <text x="316" y="103" text-anchor="middle" font-family="Cairo" font-size="7" fill="#6b7280">4.30</text>
+              <text x="369" y="103" text-anchor="middle" font-family="Cairo" font-size="7" fill="#6b7280">4.30</text>
+              <text x="445" y="103" text-anchor="middle" font-family="Cairo" font-size="7" fill="#6b7280">4.14</text>
+            </g>
+
+
+
+
+
+
+
+
+
+            <g stroke="#9ca3af" stroke-width="0.75" opacity="0.8">
+              <line x1="116" y1="185" x2="116" y2="551" />
+              <line x1="112" y1="185" x2="120" y2="185" />
+              <line x1="112" y1="245" x2="120" y2="245" />
+              <line x1="112" y1="289" x2="120" y2="289" />
+              <line x1="112" y1="333" x2="120" y2="333" />
+              <line x1="112" y1="375" x2="120" y2="375" />
+              <line x1="112" y1="419" x2="120" y2="419" />
+              <line x1="112" y1="483" x2="120" y2="483" />
+              <line x1="112" y1="551" x2="120" y2="551" />
+              <text x="108" y="217" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">14.11</text>
+              <text x="108" y="268" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">4.70</text>
+              <text x="108" y="312" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">4.70</text>
+              <text x="108" y="355" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">4.70</text>
+              <text x="108" y="398" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">4.70</text>
+              <text x="108" y="452" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">14.11</text>
+              <text x="108" y="520" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">14.11</text>
+            </g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <g transform="translate(280, 997)">
+              <rect x="0" y="0" width="34" height="62" fill="#10b981" rx="3" />
+              <text
+                x="17"
+                y="31"
+                text-anchor="middle"
+                dominant-baseline="central"
+                font-family="Cairo"
+                font-size="8.5"
+                font-weight="800"
+                fill="#ffffff"
+                transform="rotate(-90 17 31)"
+              >
+                مدخـــــل
+              </text>
+              <polygon points="17,68 12,62 22,62" fill="#10b981" />
+            </g>
+
+
+
+
+
+
+
+
+
+
+
+            <g stroke="#9ca3af" stroke-width="0.75" opacity="0.8">
+              <line x1="102" y1="688" x2="102" y2="1110" />
+              <line x1="98" y1="688" x2="106" y2="688" />
+              <line x1="98" y1="742" x2="106" y2="742" />
+              <line x1="98" y1="790" x2="106" y2="790" />
+              <line x1="98" y1="838" x2="106" y2="838" />
+              <line x1="98" y1="896" x2="106" y2="896" />
+              <line x1="98" y1="944" x2="106" y2="944" />
+              <line x1="98" y1="993" x2="106" y2="993" />
+              <line x1="98" y1="1051" x2="106" y2="1051" />
+              <line x1="98" y1="1110" x2="106" y2="1110" />
+              <text x="94" y="718" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">14.11</text>
+              <text x="94" y="869" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">14.11</text>
+              <text x="94" y="970" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">14.11</text>
+              <text x="94" y="1080" text-anchor="end" font-family="Cairo" font-size="6.5" fill="#6b7280">14.11</text>
+            </g>
+
+            <g stroke="#cbd5e1" stroke-width="0.75" stroke-dasharray="3 3">
+              <line x1="80" y1="115" x2="520" y2="115" />
+              <line x1="80" y1="560" x2="520" y2="560" />
+              <line x1="80" y1="775" x2="520" y2="775" />
+              <line x1="80" y1="997" x2="520" y2="997" />
+              <line x1="80" y1="1115" x2="520" y2="1115" />
+            </g>
+
+            <g>
+              <circle cx="95" cy="115" r="7" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+              <text x="95" y="118" text-anchor="middle" font-family="Cairo" font-size="8" font-weight="800" fill="#334155">A</text>
+
+              <circle cx="95" cy="560" r="7" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+              <text x="95" y="563" text-anchor="middle" font-family="Cairo" font-size="8" font-weight="800" fill="#334155">B</text>
+
+              <circle cx="95" cy="775" r="7" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+              <text x="95" y="778" text-anchor="middle" font-family="Cairo" font-size="8" font-weight="800" fill="#334155">C</text>
+
+              <circle cx="95" cy="997" r="7" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+              <text x="95" y="1000" text-anchor="middle" font-family="Cairo" font-size="8" font-weight="800" fill="#334155">D</text>
+
+              <circle cx="95" cy="1115" r="7" fill="#f1f5f9" stroke="#64748b" stroke-width="1" />
+              <text x="95" y="1118" text-anchor="middle" font-family="Cairo" font-size="8" font-weight="800" fill="#334155">E</text>
+            </g>
+
+          </svg></div><div class="floorplan-legend"><div class="legend-item"><div class="legend-arrow" style="background:oklch(72% 0.16 85)"></div><span>600,000 ₪</span></div><div class="legend-item"><div class="legend-arrow" style="background:oklch(65% 0.18 40)"></div><span>700,000 ₪</span></div><div class="legend-item"><div class="legend-arrow" style="background:oklch(60% 0.14 240)"></div><span>800,000 ₪</span></div><div class="legend-item"><div class="legend-arrow" style="background:oklch(55% 0.16 155)"></div><span>1,200,000 ₪</span></div><div class="legend-item"><div class="legend-arrow" style="background:oklch(40% 0.15 270)"></div><span>1,400,000 ₪</span></div><div class="legend-item"><div class="legend-arrow" style="background:oklch(50% 0.18 320)"></div><span>1,600,000 ₪</span></div></div><div class="legend-facilities"><span class="legend-facility">◻️ مدخل رئيسي</span><span class="legend-facility">⬜ مصعد</span><span class="legend-facility">⬜ درج</span></div></div></div></section>
+<div class="unit-popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
+<div class="unit-popup" id="unit-popup"><button class="unit-popup-close" onclick="closePopup()">✕</button><div class="unit-popup-num" id="popup-num"></div><div class="unit-popup-price" id="popup-price"></div><div class="unit-popup-grid"><div class="unit-popup-item"><div class="unit-popup-val" id="popup-down"></div><div class="unit-popup-lbl">دفعة أولى (50%)</div></div><div class="unit-popup-item"><div class="unit-popup-val" id="popup-monthly"></div><div class="unit-popup-lbl">قسط شهري / 36 شهر</div></div><div class="unit-popup-item"><div class="unit-popup-val" id="popup-total"></div><div class="unit-popup-lbl">م² إجمالي</div></div><div class="unit-popup-item"><div class="unit-popup-val" id="popup-doors"></div><div class="unit-popup-lbl">عدد الأبواب</div></div></div></div>
+<nav class="filter-section"><div class="filter-wrap"><button class="filter-btn active" data-filter="all">الكل</button><button class="filter-btn" data-filter="600" data-tier="600">600,000 ₪</button><button class="filter-btn" data-filter="700" data-tier="700">700,000 ₪</button><button class="filter-btn" data-filter="800" data-tier="800">800,000 ₪</button><button class="filter-btn" data-filter="1200" data-tier="1200">1,200,000 ₪</button><button class="filter-btn" data-filter="1400" data-tier="1400">1,400,000 ₪</button><button class="filter-btn" data-filter="1600" data-tier="1600">1,600,000 ₪</button></div></nav>
+<main class="main" id="catalog"></main>
+<footer class="footer"><div class="footer-brand">WOLF INVESTMENT</div><div>استشارات عقارية · بيع وشراء العقارات · إدارة رأس المال</div><div class="footer-services"><span>🌐 WOLF JERICHO Inv.</span><span>🇬🇪 WOLF GEORGIA Inv.</span><span>🇦🇪 WOLF DUBAI Inv.</span></div></footer>
+<script>
+function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden'}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLightbox();closePopup()}});
+var units=[{id:1,doors:2,ground:88,roof:46,total:134,price:1400000,ppm:10448,down:700000,monthly:19444},{id:2,doors:2,ground:113,roof:78,total:191,price:1400000,ppm:7330,down:700000,monthly:19444},{id:3,doors:1,ground:64,roof:44,total:108,price:700000,ppm:6481,down:350000,monthly:9722},{id:4,doors:1,ground:66,roof:46,total:112,price:700000,ppm:6250,down:350000,monthly:9722},{id:5,doors:1,ground:55,roof:38,total:93,price:700000,ppm:7527,down:350000,monthly:9722},{id:6,doors:1,ground:64,roof:44,total:108,price:700000,ppm:6481,down:350000,monthly:9722},{id:7,doors:2,ground:114,roof:79,total:193,price:1400000,ppm:7254,down:700000,monthly:19444},{id:8,doors:2,ground:120,roof:83,total:203,price:1400000,ppm:6897,down:700000,monthly:19444},{id:9,doors:2,ground:115,roof:78,total:193,price:1600000,ppm:8290,down:800000,monthly:22222},{id:10,doors:1,ground:60,roof:41,total:101,price:800000,ppm:7921,down:400000,monthly:11111},{id:11,doors:1,ground:60,roof:41,total:101,price:800000,ppm:7921,down:400000,monthly:11111},{id:12,doors:2,ground:118,roof:80,total:198,price:1600000,ppm:8081,down:800000,monthly:22222},{id:13,doors:1,ground:64,roof:43,total:107,price:800000,ppm:7477,down:400000,monthly:11111},{id:14,doors:2,ground:121,roof:84,total:205,price:1600000,ppm:7805,down:800000,monthly:22222},{id:15,doors:1,ground:59,roof:40,total:99,price:800000,ppm:8081,down:400000,monthly:11111},{id:16,doors:2,ground:126,roof:88,total:214,price:1600000,ppm:7477,down:800000,monthly:22222},{id:17,doors:1,ground:44,roof:30,total:74,price:700000,ppm:9459,down:350000,monthly:9722},{id:18,doors:2,ground:83,roof:48,total:131,price:1200000,ppm:9160,down:600000,monthly:16667},{id:19,doors:1,ground:46,roof:27,total:73,price:600000,ppm:8219,down:300000,monthly:8333},{id:20,doors:1,ground:46,roof:27,total:73,price:600000,ppm:8219,down:300000,monthly:8333},{id:21,doors:1,ground:48,roof:29,total:77,price:600000,ppm:7792,down:300000,monthly:8333},{id:22,doors:1,ground:50,roof:31,total:81,price:600000,ppm:7407,down:300000,monthly:8333},{id:23,doors:1,ground:54,roof:34,total:88,price:600000,ppm:6818,down:300000,monthly:8333},{id:24,doors:2,ground:96,roof:60,total:156,price:1200000,ppm:7692,down:600000,monthly:16667},{id:25,doors:1,ground:51,roof:32,total:83,price:600000,ppm:7229,down:300000,monthly:8333},{id:26,doors:1,ground:51,roof:32,total:83,price:600000,ppm:7229,down:300000,monthly:8333},{id:27,doors:2,ground:93,roof:58,total:151,price:1200000,ppm:7947,down:600000,monthly:16667},{id:28,doors:1,ground:71,roof:51,total:122,price:800000,ppm:6557,down:400000,monthly:11111},{id:29,doors:1,ground:70,roof:51,total:121,price:800000,ppm:6612,down:400000,monthly:11111},{id:30,doors:1,ground:69,roof:50,total:119,price:800000,ppm:6723,down:400000,monthly:11111},{id:31,doors:1,ground:64,roof:46,total:110,price:800000,ppm:7273,down:400000,monthly:11111},{id:32,doors:1,ground:67,roof:48,total:115,price:800000,ppm:6957,down:400000,monthly:11111},{id:33,doors:1,ground:49,roof:33,total:82,price:600000,ppm:7317,down:300000,monthly:8333},{id:34,doors:1,ground:50,roof:32,total:82,price:600000,ppm:7317,down:300000,monthly:8333},{id:35,doors:1,ground:50,roof:32,total:82,price:600000,ppm:7317,down:300000,monthly:8333},{id:36,doors:2,ground:99,roof:64,total:163,price:1200000,ppm:7362,down:600000,monthly:16667},{id:37,doors:1,ground:49,roof:32,total:81,price:600000,ppm:7407,down:300000,monthly:8333},{id:38,doors:1,ground:48,roof:31,total:79,price:600000,ppm:7595,down:300000,monthly:8333},{id:39,doors:2,ground:98,roof:63,total:161,price:1200000,ppm:7453,down:600000,monthly:16667},{id:40,doors:1,ground:56,roof:34,total:90,price:600000,ppm:6667,down:300000,monthly:8333},{id:41,doors:1,ground:49,roof:33,total:82,price:600000,ppm:7317,down:300000,monthly:8333},{id:42,doors:1,ground:96,roof:34,total:130,price:600000,ppm:4615,down:300000,monthly:8333},{id:43,doors:2,ground:54,roof:60,total:114,price:1200000,ppm:10526,down:600000,monthly:16667},{id:44,doors:1,ground:52,roof:30,total:82,price:600000,ppm:7317,down:300000,monthly:8333},{id:45,doors:1,ground:54,roof:56,total:110,price:700000,ppm:6364,down:350000,monthly:9722}];
+var tierColors={600000:'oklch(72% 0.16 85)',700000:'oklch(65% 0.18 40)',800000:'oklch(60% 0.14 240)',1200000:'oklch(55% 0.16 155)',1400000:'oklch(40% 0.15 270)',1600000:'oklch(50% 0.18 320)'};
+document.querySelectorAll('rect[data-unit]').forEach(function(rect){rect.addEventListener('click',function(){var unitId=parseInt(this.getAttribute('data-unit'));var unit=units.find(function(u){return u.id===unitId});if(!unit)return;document.getElementById('popup-num').style.background=tierColors[unit.price];document.getElementById('popup-num').textContent=unit.id;document.getElementById('popup-price').textContent=formatNum(unit.price)+' ₪';document.getElementById('popup-down').textContent=formatNum(unit.down)+' ₪';document.getElementById('popup-monthly').textContent=formatNum(unit.monthly)+' ₪';document.getElementById('popup-total').textContent=unit.total+' م²';document.getElementById('popup-doors').textContent=unit.doors===1?'باب واحد':'بابين';document.getElementById('unit-popup').classList.add('active');document.getElementById('popup-overlay').classList.add('active')})});
+function closePopup(){document.getElementById('unit-popup').classList.remove('active');document.getElementById('popup-overlay').classList.remove('active')}
+var tiers=[{price:600000,label:'600,000',color:'var(--tier-600)',units:[]},{price:700000,label:'700,000',color:'var(--tier-700)',units:[]},{price:800000,label:'800,000',color:'var(--tier-800)',units:[]},{price:1200000,label:'1,200,000',color:'var(--tier-1200)',units:[]},{price:1400000,label:'1,400,000',color:'var(--tier-1400)',units:[]},{price:1600000,label:'1,600,000',color:'var(--tier-1600)',units:[]}];
+units.forEach(function(u){var tier=tiers.find(function(t){return t.price===u.price});if(tier)tier.units.push(u)});
+function formatNum(n){return n.toLocaleString('en-US')}
+function renderCatalog(){var main=document.getElementById('catalog');var html='';tiers.forEach(function(tier){if(tier.units.length===0)return;var tierKey=tier.price/1000;html+='<section class="tier-section" data-tier="'+tierKey+'" style="--tier-color:'+tier.color+'"><div class="tier-header"><div class="tier-price">'+tier.label+' ₪</div><div class="tier-count">'+tier.units.length+' وحدة</div><div class="tier-meta">دفعة أولى '+formatNum(tier.units[0].down)+' ₪ · قسط شهري '+formatNum(tier.units[0].monthly)+' ₪</div></div><div class="units-grid">';tier.units.sort(function(a,b){return a.id-b.id}).forEach(function(u){html+='<article class="unit-card" style="--tier-color:'+tier.color+'"><div class="unit-number">'+u.id+'</div><div class="unit-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/>'+(u.doors===2?'<rect x="14" y="3" width="7" height="18" rx="1"/>':'')+'</svg>'+(u.doors===1?'باب واحد':'بابين (عدد 2)')+'</div><div class="unit-areas"><div class="unit-area"><div class="unit-area-value">'+u.ground+'</div><div class="unit-area-label">م² أرضي</div></div><div class="unit-area"><div class="unit-area-value">'+u.roof+'</div><div class="unit-area-label">م² طابقي</div></div><div class="unit-area"><div class="unit-area-value">'+u.total+'</div><div class="unit-area-label">م² إجمالي</div></div></div><div class="unit-pricing"><div class="unit-ppm">سعر المتر: <strong>'+formatNum(u.ppm)+' ₪</strong></div><div class="unit-installment"><strong>'+formatNum(u.monthly)+' ₪</strong>شهرياً / 36 شهر</div></div></article>'});html+='</div></section>'});html+='<section class="payment-section"><div class="payment-title">خطة الدفع</div><div class="payment-subtitle">نظام تقسيط مرن على 36 شهراً بدون فوائد</div><div class="payment-grid"><div class="payment-card"><div class="payment-card-icon">📋</div><div class="payment-card-value">50%</div><div class="payment-card-label">دفعة أولى عند التوقيع</div></div><div class="payment-card"><div class="payment-card-icon">📅</div><div class="payment-card-value">36 شهر</div><div class="payment-card-label">فترة التقسيط</div></div><div class="payment-card"><div class="payment-card-icon">💰</div><div class="payment-card-value">0%</div><div class="payment-card-label">بدون فوائد أو رسوم إضافية</div></div><div class="payment-card"><div class="payment-card-icon">🔑</div><div class="payment-card-value">فوري</div><div class="payment-card-label">تسليم المحل بعد الدفعة الأولى</div></div></div></section>';main.innerHTML=html}
+document.querySelectorAll('.filter-btn').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');var filter=btn.dataset.filter;document.querySelectorAll('.tier-section').forEach(function(section){if(filter==='all'){section.style.display=''}else{section.style.display=section.dataset.tier==filter?'':'none'}})})});
+renderCatalog();
+document.querySelector('.video-panoramic video').addEventListener('loadedmetadata',function(){this.currentTime=3});
+</script>
+<style>
+.wa-float-g{position:fixed;bottom:24px;left:24px;z-index:9999;width:52px;height:52px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:transform .2s ease,box-shadow .2s ease;text-decoration:none}
+.wa-float-g:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,.45)}
+.wa-float-g svg{width:28px;height:28px;fill:#fff}
+.wa-float-g:before{content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;animation:wa-pulse-g 2.2s ease-out infinite;z-index:-1}
+@keyframes wa-pulse-g{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}100%{box-shadow:0 0 0 18px rgba(37,211,102,0)}}
+@media(prefers-reduced-motion:reduce){.wa-float-g:before{animation:none}}
+@media(max-width:700px){.wa-float-g{bottom:16px;left:16px;width:48px;height:48px}.wa-float-g svg{width:25px;height:25px}}
+.chat-hint-g{position:fixed;bottom:26px;right:88px;z-index:9998;background:rgba(16,16,16,.92);color:#f5f3ef;font-size:.68rem;padding:5px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.15);white-space:nowrap;pointer-events:none;animation:chatHintPulse-g 3.2s ease-in-out infinite}
+@keyframes chatHintPulse-g{0%,100%{opacity:.85;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+@media(max-width:700px){.chat-hint-g{bottom:20px;right:70px;font-size:.6rem;padding:4px 9px}}
+</style>
+<span class="chat-hint-g">💬 تحدث معنا مباشرة</span>
+<a class="wa-float-g" href="https://wa.me/972544228985" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+<!-- This site is converting visitors into subscribers and customers with https://respond.io --><script id="respondio__widget" src="https://cdn.respond.io/webchat/widget/widget.js?cId=143f07de414e0f78d978da9b8cadcf2"></script><!-- https://respond.io -->
+</body>
+</html>
