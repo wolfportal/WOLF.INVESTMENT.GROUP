@@ -34,8 +34,8 @@
     '@media(max-width:' + BP + 'px){' +
       (cfg.hide ? cfg.hide.split(',').map(function (s) { return s.trim() + '{display:none!important}'; }).join('') : '') +
       '.mnav-host{position:relative}' +
-      '.mnav-btn{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 11px;margin-inline-start:auto;flex:0 0 auto;border:1px solid rgba(255,255,255,.14);border-radius:10px;background:#181818;cursor:pointer;-webkit-tap-highlight-color:transparent}' +
-      '.mnav-btn span{display:block;height:2px;border-radius:2px;background:#e8dcc8}' +
+      '.mnav-btn{display:grid;place-items:center;width:46px;height:46px;padding:0;margin-inline-start:auto;flex:0 0 auto;border:1px solid rgba(232,220,200,.55);border-radius:12px;background:#1a1a1a;color:#e8dcc8;cursor:pointer;-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent}' +
+      '.mnav-btn svg{width:28px;height:28px;display:block;pointer-events:none}' +
       '.mnav-btn:focus-visible,.mnav-close:focus-visible,.mnav-drawer a:focus-visible,.mnav-langs button:focus-visible{outline:2px solid #e8dcc8;outline-offset:2px}' +
       '.mnav-backdrop{display:block;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s}' +
       '.mnav-backdrop.show{opacity:1;pointer-events:auto}' +
@@ -85,7 +85,7 @@
     btn.className = 'mnav-btn';
     btn.setAttribute('aria-controls', 'mnavDrawer');
     btn.setAttribute('aria-expanded', 'false');
-    btn.innerHTML = '<span></span><span></span><span></span>';
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="6.5" x2="20" y2="6.5"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17.5" x2="20" y2="17.5"/></svg>';
     host.classList.add('mnav-host');
     host.appendChild(btn);
 
