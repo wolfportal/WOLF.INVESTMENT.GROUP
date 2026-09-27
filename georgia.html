@@ -380,6 +380,20 @@
     .wm-step span{font-size:.7rem;color:var(--muted);margin-top:4px}
     .wm-step b{font-size:.9rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
     .wm-step small{font-size:.68rem;color:var(--muted);line-height:1.4}
+    .wm-sched{margin-top:12px;border:1px solid rgba(212,190,158,.3);border-radius:14px;background:rgba(212,190,158,.04);overflow:hidden}
+    .wm-sched>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:.78rem;font-weight:700;color:#E8DCC8}
+    .wm-sched>summary::-webkit-details-marker{display:none}
+    .wm-sched>summary small{margin-inline-start:auto;font-weight:500;color:var(--muted)}
+    .wm-sched>summary::after{content:"";width:8px;height:8px;border-inline-end:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-inline-start:6px;transition:transform .25s}
+    .wm-sched[open]>summary::after{transform:rotate(-135deg)}
+    .wm-sched-wrap{max-height:230px;overflow-y:auto;border-top:1px solid rgba(212,190,158,.2)}
+    .wm-sched table{width:100%;border-collapse:collapse;font-size:.72rem}
+    .wm-sched th,.wm-sched td{padding:6px 10px;text-align:start;white-space:nowrap}
+    .wm-sched thead th{position:sticky;top:0;background:#0d0d0d;color:var(--muted);font-weight:600}
+    .wm-sched tbody tr+tr td{border-top:1px solid rgba(255,255,255,.06)}
+    .wm-sched td:last-child{color:#E8DCC8;font-weight:700}
+    .wm-sched tfoot td{position:sticky;bottom:0;background:#0d0d0d;border-top:1px solid rgba(212,190,158,.3);font-weight:700;color:#E8DCC8}
+    .wm-sched-note{font-size:.66rem;color:var(--muted);padding:8px 14px 10px;margin:0;line-height:1.6}
     .wm-plan-note{font-size:.74rem;color:var(--muted);margin-top:12px;line-height:1.7;text-align:center}
     .wm-plan-note.warn{color:var(--warn)}
 
@@ -1957,6 +1971,25 @@
     }
     const fmtRange = (a, b) => Math.round(a) === Math.round(b) ? fmtUsd(a) : fmtUsd(a) + ' – ' + fmtUsd(b);
 
+    /* Detailed monthly payment schedule (collapsed by default). Dates are approximate, counted from this month. */
+    function wmScheduleHtml(plan) {
+      if (!plan || !plan.months) return '';
+      const now = new Date();
+      const mm = (k) => { const d = new Date(now.getFullYear(), now.getMonth() + k, 1); return (d.getMonth() + 1) + '/' + d.getFullYear(); };
+      const monthly = Math.round(plan.monthly);
+      let rows = '<tr><td class="wm-n">1</td><td>الدفعة الأولى</td><td>عند توقيع العقد</td><td class="wm-n">' + fmtUsd(plan.down) + '</td></tr>';
+      let paid = plan.down;
+      for (let k = 1; k <= plan.months; k++) {
+        const amt = k === plan.months ? Math.max(0, Math.round(plan.down + plan.monthly * plan.months) - paid) : monthly;
+        paid += amt;
+        rows += '<tr><td class="wm-n">' + (k + 1) + '</td><td>القسط ' + k + '</td><td class="wm-n">' + mm(k) + '</td><td class="wm-n">' + fmtUsd(amt) + '</td></tr>';
+      }
+      return '<details class="wm-sched"><summary>' + wmIcon('date', 15) + '<span>تفاصيل خطة الدفع التفصيلية</span><small>' + (plan.months + 1) + ' دفعة</small></summary>' +
+        '<div class="wm-sched-wrap"><table><thead><tr><th>#</th><th>الدفعة</th><th>الاستحقاق التقريبي</th><th>المبلغ</th></tr></thead><tbody>' + rows + '</tbody>' +
+        '<tfoot><tr><td></td><td>المجموع</td><td></td><td class="wm-n">' + fmtUsd(paid) + '</td></tr></tfoot></table></div>' +
+        '<p class="wm-sched-note">تواريخ تقديرية تبدأ من الشهر القادم؛ الجدول النهائي يُثبَّت في عقد الشراء.</p></details>';
+    }
+
     function wmStageHtml(r, i) {
       const u = r.u, P = MATCH_PROJECTS[u[0]], key = unitKey(u), picked = matchPicked.has(key);
       const cash = matchPay === 'cash';
@@ -1999,7 +2032,8 @@
           '<div class="wm-step"><span class="wm-dot">' + wmIcon('monthly', 17) + '</span><span>' + plan.months + ' قسطاً</span><b class="wm-n">' + fmtUsd(plan.monthly) + '</b><small>شهرياً</small></div>' +
           '<div class="wm-step"><span class="wm-dot">' + wmIcon('key', 17) + '</span><span>التسليم</span><b>' + P.del + '</b></div>' +
         '</div>' +
-        (P.planNote ? '<p class="wm-plan-note">' + P.planNote + '</p>' : '');
+        (P.planNote ? '<p class="wm-plan-note">' + P.planNote + '</p>' : '') +
+        wmScheduleHtml(plan);
       const payCash =
         '<div class="wm-st-sub">طريقة الدفع</div>' +
         '<div class="wm-cashbox">' +
