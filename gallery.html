@@ -1220,7 +1220,7 @@ body.ag-mode .ag-panel{display:block}
       <div class="filter-controls-row">
         <div class="category-tabs" id="categoryTabs">
           <button class="cat-tab active" data-cat="all" onclick="setCategory('all', this)"><i class="ph-bold ph-squares-four"></i> الكل (جميع العقارات)</button>
-          <button class="cat-tab" data-cat="ready" onclick="setCategory('ready', this)"><i class="ph-bold ph-house-line"></i> العقارات الجاهزة</button>
+          <button class="cat-tab" data-cat="ready" onclick="setCategory('ready', this)"><i class="ph-bold ph-house-line"></i> فلل وشاليهات جاهزة</button>
           <button class="cat-tab" data-cat="shell" onclick="setCategory('shell', this)"><i class="ph-bold ph-hammer"></i> فلل العظم</button>
           <button class="cat-tab" data-cat="mall" onclick="setCategory('mall', this)"><i class="ph-bold ph-storefront"></i> المول التجاري</button>
           <button class="cat-tab" data-cat="lands" onclick="setCategory('lands', this)"><i class="ph-bold ph-compass"></i> الأراضي</button>
@@ -1250,12 +1250,12 @@ body.ag-mode .ag-panel{display:block}
   <!-- MAIN CATALOG CONTENT -->
   <main class="master-catalog">
 
-    <!-- 1. SECTION 1: READY PROPERTIES (العقارات الجاهزة) -->
+    <!-- 1. SECTION 1: READY PROPERTIES (فلل وشاليهات جاهزة) -->
     <section class="section-container" id="ready-section">
       <div class="section-header-block">
         <div>
           <span class="section-badge"><i class="ph-bold ph-check-circle"></i> القسم الأول · تسليم فوري ومفتاح</span>
-          <h2 class="section-title">العقارات الجاهزة المشطبة</h2>
+          <h2 class="section-title">فلل وشاليهات جاهزة مشطبة</h2>
           <p class="section-desc">فلل وشاليهات فاخرة بتصاميم حديثة ومسابح خاصة، متاحة بنظام الكاش والتقسيط الميسر، جميعها بأقل من سعر السوق.</p>
         </div>
       </div>
@@ -1962,7 +1962,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
     function renderReadyCards(items) {
       const grid = document.getElementById('readyGrid');
       if (!items || items.length === 0) {
-        grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; color:rgba(245, 243, 239, 0.68); padding:40px;">لا توجد عقارات جاهزة تطابق معايير البحث الحالية.</div>';
+        grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; color:rgba(245, 243, 239, 0.68); padding:40px;">لا توجد فلل وشاليهات جاهزة تطابق معايير البحث الحالية.</div>';
         return;
       }
       grid.innerHTML = items.map((p, idx) => {
