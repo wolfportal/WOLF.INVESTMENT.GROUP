@@ -1218,7 +1218,7 @@ body.ag-mode .ag-panel{display:block}
           <button class="cat-tab" data-cat="ready" onclick="setCategory('ready', this)"><i class="ph-bold ph-house-line"></i> العقارات الجاهزة (13)</button>
           <button class="cat-tab" data-cat="shell" onclick="setCategory('shell', this)"><i class="ph-bold ph-hammer"></i> فلل العظم (7)</button>
           <button class="cat-tab" data-cat="mall" onclick="setCategory('mall', this)"><i class="ph-bold ph-storefront"></i> المول التجاري (45)</button>
-          <button class="cat-tab" data-cat="lands" onclick="setCategory('lands', this)"><i class="ph-bold ph-compass"></i> الأراضي (17)</button>
+          <button class="cat-tab" data-cat="lands" onclick="setCategory('lands', this)"><i class="ph-bold ph-compass"></i> الأراضي (22)</button>
         </div>
         <div class="payment-filters">
           <span style="font-size:0.75rem; color:rgba(245, 243, 239, 0.68); margin-left:4px;">الدفع:</span>
@@ -1792,7 +1792,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
     const shellData = [{"id": "AJ-D211", "img": "https://i.ibb.co/DPq1B3xc/1.png", "land": "280", "build": "80", "rooms": "1", "master": "1", "pool": "4×8", "pay": "installment", "kind": "chalet"}, {"id": "qan-C", "img": "https://i.ibb.co/ZpzWyr8s/Whats-App-Image-2026-04-25-at-12-26-23-PM-3.jpg", "land": "420", "build": "100", "rooms": "0", "master": "1", "pool": "5×10", "pay": "installment", "kind": "chalet"}, {"id": "شارع 3", "img": "https://i.postimg.cc/3wGjc6tr/shar-3-mhdth.png", "land": "455", "build": "144", "rooms": "0", "master": "1", "pool": "5×10", "pay": "installment", "kind": "chalet"}, {"id": "R-10", "img": "https://i.postimg.cc/TP7Ggtbg/3.png", "land": "500", "build": "180", "rooms": "1", "master": "3", "pool": "5×10", "pay": "cash", "kind": "villa"}, {"id": "qan-B", "img": "https://i.ibb.co/tMr4dvFc/Whats-App-Image-2026-04-25-at-12-26-26-PM-2.jpg", "land": "460", "build": "195", "rooms": "2", "master": "1", "pool": "5×10", "pay": "installment", "kind": "villa"}, {"id": "A", "img": "https://i.postimg.cc/SR37Pr7J/Whats-App-Image-2026-06-11-at-5-21-12-PM.jpg", "land": "750", "build": "209", "rooms": "0", "master": "0", "pool": "5×11", "pay": "sold", "kind": "villa"}, {"id": "15", "img": "https://i.postimg.cc/d1XyQ07H/abw-ghrbyt-dm.png", "land": "509", "build": "230", "rooms": "4", "master": "2", "pool": "4×4", "pay": "installment", "kind": "villa"}];
     
     // 3. Lands Data
-    const landsData = [{"id": "GH-1", "type": "plot", "area": "550", "class": "residential", "months": 12, "pay": "installment"}, {"id": "224", "type": "partOf", "area": "414", "class": "tourism", "months": 24, "pay": "installment"}, {"id": "225", "type": "partOf", "area": "392", "class": "tourism", "months": 24, "pay": "installment"}, {"id": "153", "type": "plot", "area": "3,000", "class": "tourism", "months": 24, "pay": "installment"}, {"id": "J-1", "type": "plot", "area": "503", "class": "residential", "months": 24, "pay": "installment"}, {"id": "135", "type": "plot", "area": "900", "class": "residential", "months": 24, "pay": "installment"}, {"id": "134", "type": "plot", "area": "977", "class": "residential", "months": 24, "pay": "installment"}, {"id": "133", "type": "plot", "area": "971", "class": "residential", "months": 24, "pay": "installment"}, {"id": "132", "type": "plot", "area": "972", "class": "residential", "months": 24, "pay": "installment"}, {"id": "131", "type": "plot", "area": "980", "class": "residential", "months": 24, "pay": "installment"}, {"id": "130", "type": "plot", "area": "993", "class": "residential", "months": 24, "pay": "installment"}, {"id": "127", "type": "plot", "area": "1,219", "class": "residential", "months": 24, "pay": "installment"}, {"id": "126", "type": "plot", "area": "1,229", "class": "residential", "months": 24, "pay": "installment"}, {"id": "125", "type": "plot", "area": "1,235", "class": "residential", "months": 24, "pay": "installment"}, {"id": "124", "type": "plot", "area": "1,236", "class": "residential", "months": 24, "pay": "installment"}, {"id": "123", "type": "plot", "area": "1,235", "class": "residential", "months": 24, "pay": "installment"}, {"id": "122", "type": "plot", "area": "1,030", "class": "residential", "months": 24, "pay": "installment"}];
+    const landsData = [{"id": "GH-1", "type": "plot", "area": "550", "class": "residential", "months": 12, "pay": "installment"}, {"id": "224", "type": "partOf", "area": "414", "class": "tourism", "months": 24, "pay": "installment"}, {"id": "225", "type": "partOf", "area": "392", "class": "tourism", "months": 24, "pay": "installment"}, {"id": "153", "type": "plot", "area": "3,000", "class": "tourism", "months": 24, "pay": "installment"}, {"id": "J-1", "type": "plot", "area": "503", "class": "residential", "months": 24, "pay": "installment"}, {"id": "135", "type": "plot", "area": "900", "class": "residential", "months": 24, "pay": "installment"}, {"id": "134", "type": "plot", "area": "977", "class": "residential", "months": 24, "pay": "installment"}, {"id": "133", "type": "plot", "area": "971", "class": "residential", "months": 24, "pay": "installment"}, {"id": "132", "type": "plot", "area": "972", "class": "residential", "months": 24, "pay": "installment"}, {"id": "131", "type": "plot", "area": "980", "class": "residential", "months": 24, "pay": "installment"}, {"id": "130", "type": "plot", "area": "993", "class": "residential", "months": 24, "pay": "installment"}, {"id": "127", "type": "plot", "area": "1,219", "class": "residential", "months": 24, "pay": "installment"}, {"id": "126", "type": "plot", "area": "1,229", "class": "residential", "months": 24, "pay": "installment"}, {"id": "125", "type": "plot", "area": "1,235", "class": "residential", "months": 24, "pay": "installment"}, {"id": "124", "type": "plot", "area": "1,236", "class": "residential", "months": 24, "pay": "installment"}, {"id": "123", "type": "plot", "area": "1,235", "class": "residential", "months": 24, "pay": "installment"}, {"id": "122", "type": "plot", "area": "1,030", "class": "residential", "months": 24, "pay": "installment"}, {"id": "282", "type": "plot", "area": "894", "class": "residential", "months": 0, "pay": "cash"}, {"id": "286", "type": "plot", "area": "1,246", "class": "residential", "months": 24, "pay": "installment"}, {"id": "241", "type": "plot", "area": "756", "class": "residential", "months": 24, "pay": "installment"}, {"id": "302", "type": "plot", "area": "753", "class": "residential", "months": 24, "pay": "installment"}, {"id": "233", "type": "plot", "area": "4,651", "class": "commercial", "months": 0, "pay": "cash"}];
 
     // Current State
     let currentCategory = 'all';
@@ -1925,7 +1925,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
     // Prices in ILS (matched by property ID from the price sheet)
     const priceMap = {"#D-83":1350000,"#D-89":1350000,"#D-71":1250000,"#D-95":1400000,"#D-113":1680000,"#D-107":1700000,"D-149":1600000,"D-9":1000000,"#D-47":900000,"#D-59":1200000,"#D-77":1300000,"#D-155":2100000,"#D-161":3200000,
       "AJ-D211":670000,"qan-C":700000,"شارع 3":650000,"R-10":800000,"qan-B":850000,"15":980000,
-      "GH-1":575000,"224":300000,"225":285000,"153":2022300,"J-1":562800,"135":537930,"134":583953,"133":580367,"132":580367,"131":580964,"130":593516,"127":728596,"126":734573,"125":738160,"124":738757,"123":738160,"122":615631};
+      "GH-1":575000,"282":650000,"286":748186,"241":453955,"302":547205,"233":5000000,"224":300000,"225":285000,"153":2022300,"J-1":562800,"135":537930,"134":583953,"133":580367,"132":580367,"131":580964,"130":593516,"127":728596,"126":734573,"125":738160,"124":738757,"123":738160,"122":615631};
     function priceBlock(id, discount, sold) {
       const v = priceMap[id];
       if (!v || sold) return '';
@@ -2073,8 +2073,10 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
         const isPlot = l.type === 'plot';
         const nameLabel = isPlot ? 'قطعة' : 'جزء من قطعة';
         const isRes = l.class === 'residential';
-        const classLabel = isRes ? 'سكني' : 'سياحي';
-        const classTag = isRes ? 'residential' : 'tourism';
+        const isCom = l.class === 'commercial';
+        const classLabel = isCom ? 'تجاري' : (isRes ? 'سكني' : 'سياحي');
+        const classTag = isRes || isCom ? 'residential' : 'tourism';
+        const isCash = l.pay === 'cash';
 
         return `
           <article class="property-card" id="land_card_${idx}" data-pay="${l.pay}" data-id="${l.id}" data-area="${l.area}" style="--card-i:${idx % 6}">
@@ -2096,9 +2098,9 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
               <div class="divider"></div>
               <div class="property-payment">
                 <span class="payment-tag ${classTag}">${classLabel}</span>
-                <span class="payment-tag installment">تقسيط</span>
+                ${isCash ? '<span class="payment-tag cash">كاش</span>' : '<span class="payment-tag installment">تقسيط</span>'}
               </div>
-              <div class="payment-info">خطط سداد مرنة | ${l.months} شهر</div>
+              ${isCash ? '' : `<div class="payment-info">خطط سداد مرنة | ${l.months} شهر</div>`}
               <div class="property-actions">
                 <button class="btn-book" onclick="openBooking('${l.id}','${nameLabel}')"><i class="ph-bold ph-calendar-plus"></i> حجز معاينة</button>
                 <a class="btn-wa" target="_blank" href="https://wa.me/972544228985?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%82%D8%B7%D8%B9%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B1%D8%B6%20${encodeURIComponent(l.id)}"><i class="ph-bold ph-whatsapp-logo"></i> واتساب</a>
