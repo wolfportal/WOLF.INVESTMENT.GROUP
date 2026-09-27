@@ -842,7 +842,9 @@
     .wm-step:last-child .wm-dot{box-shadow:0 0 0 4px #050505!important}
     .wm-send{background:rgba(5,5,5,.94)!important;border-color:rgba(212,190,158,.26)!important}
     .wm-aurora{opacity:.18!important}
-  </style>
+      .tm-video{aspect-ratio:16/9}
+    .tm-video video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+</style>
 </head>
 <body class="bg-[oklch(14%_.012_55)] text-[oklch(94%_.012_80)] min-h-screen relative selection:bg-[oklch(80%_.04_75)] selection:text-black">
 
@@ -1248,6 +1250,17 @@
     </section>
 
     <!-- FAQ -->
+    <!-- Client testimonials -->
+    <section id="testimonials" class="mb-24 scroll-mt-24 reveal-card">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">آراء عملائنا</h2>
+        <p class="text-sm sm:text-base text-[oklch(72%_.012_75)]">تجارب حقيقية من مستثمرين وثقوا بـ WOLF INVESTMENT</p>
+      </div>
+      <div class="tm-video max-w-2xl mx-auto rounded-2xl overflow-hidden border border-gold-subtle bg-black">
+        <video src="https://videotourl.com/videos/1788792460285-6f1380ab-2e77-4e72-977e-43c5a6df940f.mp4#t=0.1" controls playsinline preload="metadata" aria-label="فيديو آراء عملائنا"></video>
+      </div>
+    </section>
+
     <section id="faq" class="mb-24 scroll-mt-24 reveal-card">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">الأسئلة الشائعة</h2>
