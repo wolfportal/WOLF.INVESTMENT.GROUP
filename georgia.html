@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@600;700&family=Cairo:wght@400;600;700&family=Tajawal:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@600;700&family=Cairo:wght@400;600;700&family=Tajawal:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
   <script defer src="https://unpkg.com/lucide@latest"></script>
@@ -1509,6 +1509,15 @@
       const curIdx = Array.from(slides).findIndex(s => s.classList.contains('active'));
       showPanoramaSlide((curIdx - 1 + slides.length) % slides.length);
     }
+    /* While one project's video plays, quietly load the next project's video so the
+       switch is instant — without downloading every video at page open. */
+    function preloadNextPanoramaVideo(slides, i) {
+      const n = slides.length;
+      for (let k = 1; k < n; k++) {
+        const v = slides[(i + k) % n].querySelector('video');
+        if (v) { if (v.preload !== 'auto') v.preload = 'auto'; return; }
+      }
+    }
     function showPanoramaSlide(i) {
       const slides = document.querySelectorAll('.panorama-slide');
       const dots = document.querySelectorAll('.panorama-dot');
@@ -1520,6 +1529,7 @@
         const vid = s.querySelector('video');
         if (vid) { if (idx === i) { vid.preload = 'auto'; vid.currentTime = 0; vid.play().catch(() => {}); } else { vid.pause(); } }
       });
+      preloadNextPanoramaVideo(slides, i);
       dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
       const activeSlide = slides[i];
       const project = activeSlide.dataset.project;
@@ -2351,6 +2361,7 @@
       renderMarquee();
       setupIntroVideo();
       buildGallery();
+      setTimeout(() => preloadNextPanoramaVideo(document.querySelectorAll('.panorama-slide'), 0), 2500);
       registerExplicitVerticalSets();
       setupNav();
       setupPanoramaNav();
