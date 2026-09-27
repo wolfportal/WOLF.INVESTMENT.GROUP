@@ -424,6 +424,8 @@
     .price-filter select { background:#1f1f1f; color:#e8dcc8; border:1px solid rgba(232,220,200,0.35); border-radius:8px; padding:6px 10px; font:700 0.8rem 'Tajawal',sans-serif; cursor:pointer; color-scheme:dark; }
     .price-filter select:focus { outline:1px solid #e8dcc8; }
     .price-hidden { display:none !important; }
+    .plan-line { display:flex; flex-direction:column; align-items:flex-start; gap:2px; font-size:0.8rem; color:rgba(245,243,239,0.75); line-height:1.6; }
+    .plan-line strong { color:#f5f3ef; font-weight:700; font-variant-numeric:tabular-nums; }
     .results-count {
       font-size: 0.82rem;
       color: rgba(245, 243, 239, 0.68);
@@ -1951,6 +1953,15 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
     const priceMap = {"#D-83":1350000,"#D-89":1350000,"#D-71":1250000,"#D-95":1400000,"#D-113":1680000,"#D-107":1700000,"D-149":1600000,"D-9":1000000,"#D-47":900000,"#D-59":1200000,"#D-77":1300000,"#D-155":2100000,"#D-161":3200000,
       "AJ-D211":670000,"qan-C":700000,"شارع 3":650000,"R-10":800000,"qan-B":850000,"15":980000,
       "GH-1":575000,"282":650000,"286":748186,"241":453955,"302":547205,"233":5000000,"224":300000,"225":285000,"153":2022300,"J-1":562800,"135":537930,"134":583953,"133":580367,"132":580367,"131":580964,"130":593516,"127":728596,"126":734573,"125":738160,"124":738757,"123":738160,"122":615631};
+    // Installment plans from the price sheet: [down payment ₪, %, months, monthly ₪]
+    const payPlan = {"#D-83":[675000,50,36,18750],"#D-95":[700000,50,36,19444],"#D-113":[672000,40,30,33600],"D-149":[800000,50,36,22222],"D-9":[500000,50,36,13889],
+      "AJ-D211":[335000,50,36,9306],"15":[392000,40,36,16333],"qan-C":[210000,30,24,20417],"شارع 3":[195000,30,24,18958],"qan-B":[255000,30,24,24792]};
+    function planLine(id, sold) {
+      const pl = payPlan[id];
+      if (!pl || sold) return '';
+      const f = n => n.toLocaleString('en-US');
+      return `<div class="plan-line"><span>دفعة أولى <strong>${f(pl[0])} ₪</strong> (${pl[1]}%)</span><span>قسط شهري <strong>${f(pl[3])} ₪</strong> لمدة ${pl[2]} شهر</span></div>`;
+    }
     function priceBlock(id, discount, sold) {
       const v = priceMap[id];
       if (!v || sold) return '';
@@ -2012,6 +2023,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
               ${discountLine}
               <div class="divider"></div>
               <div class="property-payment">${paymentBlock}</div>
+              ${isInstall ? planLine(p.id, isSold) : ''}
               <div class="property-desc" id="r_desc_${idx}">${descText}${paymentInfoLine}${videoLink}</div>
               <div class="property-actions">
                 <button class="btn-explore" onclick="toggleDetails('r_desc_${idx}', this)" aria-expanded="false"><span>تفاصيل أكثر</span><i class="ph-bold ph-arrow-left"></i></button>
@@ -2074,6 +2086,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
               ${priceBlock(p.id, null, isSold)}
               <div class="divider"></div>
               <div class="property-payment">${paymentBlock}<span class="payment-tag installment">عظم</span></div>
+              ${isInstall ? planLine(p.id, isSold) : ''}
               <div class="property-desc" id="s_desc_${idx}">${kindLabel} ${p.id} في بوابة أريحا، جاهز للتشطيب حسب ذوقك، مع مساحة خارجية وبركة سباحة ومخطط عملي.</div>
               <div class="property-actions">
                 <button class="btn-explore" onclick="toggleDetails('s_desc_${idx}', this)" aria-expanded="false"><i class="ph-bold ph-plus-circle"></i><span>تفاصيل أكثر</span></button>
