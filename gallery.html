@@ -1955,12 +1955,12 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
       "GH-1":575000,"282":650000,"286":748186,"241":453955,"302":547205,"233":5000000,"224":300000,"225":285000,"153":2022300,"J-1":562800,"135":537930,"134":583953,"133":580367,"132":580367,"131":580964,"130":593516,"127":728596,"126":734573,"125":738160,"124":738757,"123":738160,"122":615631};
     // Installment plans from the price sheet: [down payment ₪, %, months, monthly ₪]
     const payPlan = {"#D-83":[675000,50,36,18750],"#D-95":[700000,50,36,19444],"#D-113":[672000,40,30,33600],"D-149":[800000,50,36,22222],"D-9":[500000,50,36,13889],
-      "AJ-D211":[335000,50,36,9306],"15":[392000,40,36,16333],"qan-C":[210000,30,24,20417],"شارع 3":[195000,30,24,18958],"qan-B":[255000,30,24,24792]};
+      "AJ-D211":[335000,50,36,9306],"15":[392000,40,36,16333],"qan-C":[300000,null,30,13333],"شارع 3":[195000,30,24,18958],"qan-B":[300000,null,30,18333]};
     function planLine(id, sold) {
       const pl = payPlan[id];
       if (!pl || sold) return '';
       const f = n => n.toLocaleString('en-US');
-      return `<div class="plan-line"><span>دفعة أولى <strong>${f(pl[0])} ₪</strong> (${pl[1]}%)</span><span>قسط شهري <strong>${f(pl[3])} ₪</strong> لمدة ${pl[2]} شهر</span></div>`;
+      return `<div class="plan-line"><span>دفعة أولى <strong>${f(pl[0])} ₪</strong>${pl[1] ? ` (${pl[1]}%)` : ''}</span><span>قسط شهري <strong>${f(pl[3])} ₪</strong> لمدة ${pl[2]} شهر</span></div>`;
     }
     function priceBlock(id, discount, sold) {
       const v = priceMap[id];
