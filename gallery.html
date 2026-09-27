@@ -2100,7 +2100,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
                 <span class="payment-tag ${classTag}">${classLabel}</span>
                 ${isCash ? '<span class="payment-tag cash">كاش</span>' : '<span class="payment-tag installment">تقسيط</span>'}
               </div>
-              ${isCash ? '' : `<div class="payment-info">خطط سداد مرنة | ${l.months} شهر</div>`}
+              ${isCash ? '' : `<div class="payment-info">دفعة أولى ${l.id === 'GH-1' ? '50%' : '30%'} | الباقي على ${l.months} شهر</div>`}
               <div class="property-actions">
                 <button class="btn-book" onclick="openBooking('${l.id}','${nameLabel}')"><i class="ph-bold ph-calendar-plus"></i> حجز معاينة</button>
                 <a class="btn-wa" target="_blank" href="https://wa.me/972544228985?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%82%D8%B7%D8%B9%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B1%D8%B6%20${encodeURIComponent(l.id)}"><i class="ph-bold ph-whatsapp-logo"></i> واتساب</a>
