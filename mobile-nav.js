@@ -9,9 +9,10 @@
     hide: (me && me.getAttribute('data-hide')) || '',
     lang: (me && me.getAttribute('data-lang')) || '',
     social: (me && me.getAttribute('data-social')) || '',
-    extra: (me && me.getAttribute('data-extra')) || ''
+    extra: (me && me.getAttribute('data-extra')) || '',
+    links: (me && me.getAttribute('data-links')) || ''
   };
-  var BP = 1100;
+  var BP = parseInt((me && me.getAttribute('data-bp')) || '1100', 10) || 1100;
 
   var LINKS = [
     ['index.html', { ar: 'الرئيسية', en: 'Home', he: 'דף הבית', ka: 'მთავარი' }],
@@ -107,7 +108,9 @@
       dr.setAttribute('dir', isLtr() ? 'ltr' : 'rtl');
       var cur = here();
       var html = '<div class="mnav-top"><span class="mnav-title">' + ui.menu + '</span><button type="button" class="mnav-close" aria-label="' + ui.close + '">✕</button></div><nav class="mnav-links">';
-      LINKS.forEach(function (l) {
+      if (cfg.links) {
+        html += '</nav>';
+      } else LINKS.forEach(function (l) {
         var own = null;
         if (cfg.hide) {
           try {
@@ -120,11 +123,33 @@
         if (lang !== 'ar' && own && /[؀-ۿ]/.test(txt)) txt = l[1][lang] || txt;
         html += '<a href="' + l[0] + '"' + (l[0] === cur ? ' class="active" aria-current="page"' : '') + '>' + txt + '</a>';
       });
-      html += '</nav>';
+      if (!cfg.links) html += '</nav>';
       if (cfg.extra) html += '<div class="mnav-extra"></div>';
       if (cfg.social) html += '<div class="mnav-social"></div>';
       if (cfg.lang) html += '<div class="mnav-langs" role="group" aria-label="' + ui.lang + '"></div>';
       dr.innerHTML = html;
+
+      if (cfg.links) {
+        var list = dr.querySelector('.mnav-links');
+        document.querySelectorAll(cfg.links).forEach(function (orig) {
+          var t = orig.textContent.trim();
+          if (!t) return;
+          var a = document.createElement('a');
+          var href = orig.getAttribute('href');
+          a.href = href || '#';
+          a.textContent = t;
+          if (orig.getAttribute('target')) { a.target = orig.getAttribute('target'); a.rel = 'noopener'; }
+          var local = !href || href.charAt(0) === '#';
+          a.addEventListener('click', function (e) {
+            if (local) {
+              e.preventDefault();
+              setOpen(false);
+              setTimeout(function () { orig.click(); }, 30);
+            }
+          });
+          list.appendChild(a);
+        });
+      }
 
       if (cfg.extra) {
         var ex = document.querySelector(cfg.extra);
