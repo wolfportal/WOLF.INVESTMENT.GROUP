@@ -381,19 +381,25 @@
     .wm-step b{font-size:.9rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
     .wm-step small{font-size:.68rem;color:var(--muted);line-height:1.4}
     .wm-sched{margin-top:12px;border:1px solid rgba(212,190,158,.3);border-radius:14px;background:rgba(212,190,158,.04);overflow:hidden}
-    .wm-sched>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:.78rem;font-weight:700;color:#E8DCC8}
+    .wm-sched>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:13px 16px;font-size:.86rem;font-weight:700;color:#E8DCC8}
     .wm-sched>summary::-webkit-details-marker{display:none}
-    .wm-sched>summary small{margin-inline-start:auto;font-weight:500;color:var(--muted)}
+    .wm-sched>summary small{white-space:nowrap;margin-inline-start:auto;font-weight:500;color:var(--muted)}
     .wm-sched>summary::after{content:"";width:8px;height:8px;border-inline-end:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-inline-start:6px;transition:transform .25s}
     .wm-sched[open]>summary::after{transform:rotate(-135deg)}
-    .wm-sched-wrap{max-height:230px;overflow-y:auto;border-top:1px solid rgba(212,190,158,.2)}
-    .wm-sched table{width:100%;border-collapse:collapse;font-size:.72rem}
-    .wm-sched th,.wm-sched td{padding:6px 10px;text-align:start;white-space:nowrap}
+    .wm-sched-wrap{max-height:380px;overflow-y:auto;overflow-x:hidden;border-top:1px solid rgba(212,190,158,.2);scrollbar-width:thin;scrollbar-color:rgba(212,190,158,.45) transparent}
+    .wm-sched-wrap::-webkit-scrollbar{width:6px}
+    .wm-sched-wrap::-webkit-scrollbar-track{background:transparent}
+    .wm-sched-wrap::-webkit-scrollbar-thumb{background:rgba(212,190,158,.45);border-radius:6px}
+    .wm-sched table{width:100%;border-collapse:collapse;font-size:.84rem;table-layout:fixed}
+    .wm-sched th,.wm-sched td{padding:10px 12px;text-align:start;white-space:nowrap;overflow:hidden;text-overflow:clip}
+    .wm-sched th:nth-child(1),.wm-sched td:nth-child(1){width:35%}
+    .wm-sched th:nth-child(2),.wm-sched td:nth-child(2){width:31%}
+    .wm-sched th:last-child,.wm-sched td:last-child{text-align:left}
     .wm-sched thead th{position:sticky;top:0;background:#0d0d0d;color:var(--muted);font-weight:600}
     .wm-sched tbody tr+tr td{border-top:1px solid rgba(255,255,255,.06)}
     .wm-sched td:last-child{color:#E8DCC8;font-weight:700}
     .wm-sched tfoot td{position:sticky;bottom:0;background:#0d0d0d;border-top:1px solid rgba(212,190,158,.3);font-weight:700;color:#E8DCC8}
-    .wm-sched-note{font-size:.66rem;color:var(--muted);padding:8px 14px 10px;margin:0;line-height:1.6}
+    .wm-sched-note{font-size:.72rem;color:var(--muted);padding:8px 14px 10px;margin:0;line-height:1.6}
     .wm-plan-note{font-size:.74rem;color:var(--muted);margin-top:12px;line-height:1.7;text-align:center}
     .wm-plan-note.warn{color:var(--warn)}
 
@@ -1977,17 +1983,17 @@
       const now = new Date();
       const mm = (k) => { const d = new Date(now.getFullYear(), now.getMonth() + k, 1); return (d.getMonth() + 1) + '/' + d.getFullYear(); };
       const monthly = Math.round(plan.monthly);
-      let rows = '<tr><td class="wm-n">1</td><td>الدفعة الأولى</td><td>عند توقيع العقد</td><td class="wm-n">' + fmtUsd(plan.down) + '</td></tr>';
+      let rows = '<tr><td>الدفعة الأولى</td><td>عند التوقيع</td><td class="wm-n">' + fmtUsd(plan.down) + '</td></tr>';
       let paid = plan.down;
       for (let k = 1; k <= plan.months; k++) {
         const amt = k === plan.months ? Math.max(0, Math.round(plan.down + plan.monthly * plan.months) - paid) : monthly;
         paid += amt;
-        rows += '<tr><td class="wm-n">' + (k + 1) + '</td><td>القسط ' + k + '</td><td class="wm-n">' + mm(k) + '</td><td class="wm-n">' + fmtUsd(amt) + '</td></tr>';
+        rows += '<tr><td>القسط <span class="wm-n">' + k + '</span></td><td class="wm-n">' + mm(k) + '</td><td class="wm-n">' + fmtUsd(amt) + '</td></tr>';
       }
       return '<details class="wm-sched"><summary>' + wmIcon('date', 15) + '<span>تفاصيل خطة الدفع التفصيلية</span><small>' + (plan.months + 1) + ' دفعة</small></summary>' +
-        '<div class="wm-sched-wrap"><table><thead><tr><th>#</th><th>الدفعة</th><th>الاستحقاق التقريبي</th><th>المبلغ</th></tr></thead><tbody>' + rows + '</tbody>' +
-        '<tfoot><tr><td></td><td>المجموع</td><td></td><td class="wm-n">' + fmtUsd(paid) + '</td></tr></tfoot></table></div>' +
-        '<p class="wm-sched-note">تواريخ تقديرية تبدأ من الشهر القادم؛ الجدول النهائي يُثبَّت في عقد الشراء.</p></details>';
+        '<div class="wm-sched-wrap"><table><thead><tr><th>الدفعة</th><th>الاستحقاق</th><th>المبلغ</th></tr></thead><tbody>' + rows + '</tbody>' +
+        '<tfoot><tr><td>المجموع</td><td></td><td class="wm-n">' + fmtUsd(paid) + '</td></tr></tfoot></table></div>' +
+        '<p class="wm-sched-note">تواريخ الاستحقاق تقديرية وتبدأ من الشهر القادم؛ الجدول النهائي يُثبَّت في عقد الشراء.</p></details>';
     }
 
     function wmStageHtml(r, i) {
