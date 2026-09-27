@@ -419,6 +419,11 @@
       color: #e8dcc8;
       border: 1px solid rgba(232, 220, 200, 0.35);
     }
+    .price-filter { display:flex; align-items:center; gap:8px; background:#181818; padding:4px 4px 4px 10px; border-radius:10px; border:1px solid rgba(255,255,255,0.1); }
+    .price-filter label { font-size:0.75rem; color:rgba(245,243,239,0.68); padding-inline-start:6px; }
+    .price-filter select { background:#1f1f1f; color:#e8dcc8; border:1px solid rgba(232,220,200,0.35); border-radius:8px; padding:6px 10px; font:700 0.8rem 'Tajawal',sans-serif; cursor:pointer; color-scheme:dark; }
+    .price-filter select:focus { outline:1px solid #e8dcc8; }
+    .price-hidden { display:none !important; }
     .results-count {
       font-size: 0.82rem;
       color: rgba(245, 243, 239, 0.68);
@@ -1215,16 +1220,28 @@ body.ag-mode .ag-panel{display:block}
       <div class="filter-controls-row">
         <div class="category-tabs" id="categoryTabs">
           <button class="cat-tab active" data-cat="all" onclick="setCategory('all', this)"><i class="ph-bold ph-squares-four"></i> الكل (جميع العقارات)</button>
-          <button class="cat-tab" data-cat="ready" onclick="setCategory('ready', this)"><i class="ph-bold ph-house-line"></i> العقارات الجاهزة (13)</button>
-          <button class="cat-tab" data-cat="shell" onclick="setCategory('shell', this)"><i class="ph-bold ph-hammer"></i> فلل العظم (7)</button>
-          <button class="cat-tab" data-cat="mall" onclick="setCategory('mall', this)"><i class="ph-bold ph-storefront"></i> المول التجاري (45)</button>
-          <button class="cat-tab" data-cat="lands" onclick="setCategory('lands', this)"><i class="ph-bold ph-compass"></i> الأراضي (22)</button>
+          <button class="cat-tab" data-cat="ready" onclick="setCategory('ready', this)"><i class="ph-bold ph-house-line"></i> العقارات الجاهزة</button>
+          <button class="cat-tab" data-cat="shell" onclick="setCategory('shell', this)"><i class="ph-bold ph-hammer"></i> فلل العظم</button>
+          <button class="cat-tab" data-cat="mall" onclick="setCategory('mall', this)"><i class="ph-bold ph-storefront"></i> المول التجاري</button>
+          <button class="cat-tab" data-cat="lands" onclick="setCategory('lands', this)"><i class="ph-bold ph-compass"></i> الأراضي</button>
         </div>
         <div class="payment-filters">
           <span style="font-size:0.75rem; color:rgba(245, 243, 239, 0.68); margin-left:4px;">الدفع:</span>
           <button class="pay-pill active" data-pay="all" onclick="setPayment('all', this)">الكل</button>
           <button class="pay-pill" data-pay="cash" onclick="setPayment('cash', this)">💵 كاش</button>
           <button class="pay-pill" data-pay="installment" onclick="setPayment('installment', this)">📝 تقسيط</button>
+        </div>
+        <div class="price-filter">
+          <label for="priceFilter">السعر:</label>
+          <select id="priceFilter" onchange="setPriceRange(this.value)">
+            <option value="all">كل الأسعار</option>
+            <option value="0-500000">أقل من 500,000 ₪</option>
+            <option value="500000-750000">500,000 – 750,000 ₪</option>
+            <option value="750000-1000000">750,000 – 1,000,000 ₪</option>
+            <option value="1000000-1500000">1,000,000 – 1,500,000 ₪</option>
+            <option value="1500000-2000000">1,500,000 – 2,000,000 ₪</option>
+            <option value="2000000-999999999">أكثر من 2,000,000 ₪</option>
+          </select>
         </div>
       </div>
     </div>
@@ -1271,14 +1288,14 @@ body.ag-mode .ag-panel{display:block}
         <div>
           <span class="section-badge"><i class="ph-bold ph-storefront"></i> القسم الثالث · استثمار تجاري بعوائد مستدامة</span>
           <h2 class="section-title">المول التجاري (الطابق الأرضي - التسوية)</h2>
-          <p class="section-desc">45 وحدة ومحل تجاري بمواصفات استثمارية عالية، تقسيط حتى 36 شهرًا، دفعة أولى 50% واستلام فوري.</p>
+          <p class="section-desc">وحدات ومحلات تجارية بمواصفات استثمارية عالية، تقسيط حتى 36 شهرًا، دفعة أولى 50% واستلام فوري.</p>
         </div>
       </div>
       
       <!-- Embedded Mall Blueprint & Content -->
       <div class="mall-embedded-wrap">
         
-<section class="hero"><div class="hero-content"><div class="hero-brand">WOLF INVESTMENT</div><h1>الطابق الأرضي (التسوية)<span>محلات تجارية بمواصفات استثمارية عالية</span></h1><div class="hero-stats"><div class="hero-stat"><div class="hero-stat-value">45</div><div class="hero-stat-label">وحدة تجارية</div></div><div class="hero-stat"><div class="hero-stat-value">73-214</div><div class="hero-stat-label">م² المساحة الإجمالية</div></div><div class="hero-stat"><div class="hero-stat-value">36</div><div class="hero-stat-label">شهر تقسيط</div></div><div class="hero-stat"><div class="hero-stat-value">50%</div><div class="hero-stat-label">دفعة أولى</div></div></div></div></section>
+<section class="hero"><div class="hero-content"><div class="hero-brand">WOLF INVESTMENT</div><h1>الطابق الأرضي (التسوية)<span>محلات تجارية بمواصفات استثمارية عالية</span></h1><div class="hero-stats"><div class="hero-stat"><div class="hero-stat-value">73-214</div><div class="hero-stat-label">م² المساحة الإجمالية</div></div><div class="hero-stat"><div class="hero-stat-value">36</div><div class="hero-stat-label">شهر تقسيط</div></div><div class="hero-stat"><div class="hero-stat-value">50%</div><div class="hero-stat-label">دفعة أولى</div></div></div></div></section>
 <section class="video-panoramic"><video autoplay muted loop playsinline><source src="https://videotourl.com/videos/1783544807060-a7710f5c-832d-4ab9-a146-1a771e779970.mp4#t=3" type="video/mp4"></video></section>
 <section class="gallery-section"><div class="gallery-title"><h2>صور المشروع</h2><div class="gallery-subtitle">الحالة الإنشائية للمول التجاري</div><p>اضغط على الصورة لعرضها بالحجم الكامل</p></div><div class="gallery-layout"><div class="gallery-hero-img"><img src="https://i.ibb.co/SXNv98tT/Whats-App-Image-2026-06-10-at-11-55-12-AM-3.jpg" alt="الحالة الإنشائية" onclick="openLightbox(this.src)"></div><div class="gallery-pair"><div class="gallery-pair-item"><img src="https://i.ibb.co/yDcSDnq/image.png" alt="صورة 2" onclick="openLightbox(this.src)"></div><div class="gallery-pair-item"><img src="https://i.ibb.co/spDyN6WN/Whats-App-Image-2026-06-10-at-11-55-15-AM-2-1.jpg" alt="صورة 3" onclick="openLightbox(this.src)"></div></div></div></section>
 
@@ -1686,7 +1703,7 @@ function closePopup(){document.getElementById('unit-popup').classList.remove('ac
 var tiers=[{price:600000,label:'600,000',color:'var(--tier-600)',units:[]},{price:700000,label:'700,000',color:'var(--tier-700)',units:[]},{price:800000,label:'800,000',color:'var(--tier-800)',units:[]},{price:1200000,label:'1,200,000',color:'var(--tier-1200)',units:[]},{price:1400000,label:'1,400,000',color:'var(--tier-1400)',units:[]},{price:1600000,label:'1,600,000',color:'var(--tier-1600)',units:[]}];
 units.forEach(function(u){var tier=tiers.find(function(t){return t.price===u.price});if(tier)tier.units.push(u)});
 function formatNum(n){return n.toLocaleString('en-US')}
-function renderCatalog(){var main=document.getElementById('catalog');var html='';tiers.forEach(function(tier){if(tier.units.length===0)return;var tierKey=tier.price/1000;html+='<section class="tier-section" data-tier="'+tierKey+'" style="--tier-color:'+tier.color+'"><div class="tier-header"><div class="tier-price">'+tier.label+' ₪</div><div class="tier-count">'+tier.units.length+' وحدة</div><div class="tier-meta">دفعة أولى '+formatNum(tier.units[0].down)+' ₪ · قسط شهري '+formatNum(tier.units[0].monthly)+' ₪</div></div><div class="units-grid">';tier.units.sort(function(a,b){return a.id-b.id}).forEach(function(u){html+='<article class="unit-card" style="--tier-color:'+tier.color+'"><div class="unit-number">'+u.id+'</div><div class="unit-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/>'+(u.doors===2?'<rect x="14" y="3" width="7" height="18" rx="1"/>':'')+'</svg>'+(u.doors===1?'باب واحد':'بابين (عدد 2)')+'</div><div class="unit-areas"><div class="unit-area"><div class="unit-area-value">'+u.ground+'</div><div class="unit-area-label">م² أرضي</div></div><div class="unit-area"><div class="unit-area-value">'+u.roof+'</div><div class="unit-area-label">م² طابقي</div></div><div class="unit-area"><div class="unit-area-value">'+u.total+'</div><div class="unit-area-label">م² إجمالي</div></div></div><div class="unit-pricing"><div class="unit-ppm">سعر المتر: <strong>'+formatNum(u.ppm)+' ₪</strong></div><div class="unit-installment"><strong>'+formatNum(u.monthly)+' ₪</strong>شهرياً / 36 شهر</div></div></article>'});html+='</div></section>'});html+='<section class="payment-section"><div class="payment-title">خطة الدفع</div><div class="payment-subtitle">نظام تقسيط مرن على 36 شهراً بدون فوائد</div><div class="payment-grid"><div class="payment-card"><div class="payment-card-icon">📋</div><div class="payment-card-value">50%</div><div class="payment-card-label">دفعة أولى عند التوقيع</div></div><div class="payment-card"><div class="payment-card-icon">📅</div><div class="payment-card-value">36 شهر</div><div class="payment-card-label">فترة التقسيط</div></div><div class="payment-card"><div class="payment-card-icon">💰</div><div class="payment-card-value">0%</div><div class="payment-card-label">بدون فوائد أو رسوم إضافية</div></div><div class="payment-card"><div class="payment-card-icon">🔑</div><div class="payment-card-value">فوري</div><div class="payment-card-label">تسليم المحل بعد الدفعة الأولى</div></div></div></section>';main.innerHTML=html}
+function renderCatalog(){var main=document.getElementById('catalog');var html='';tiers.forEach(function(tier){if(tier.units.length===0)return;var tierKey=tier.price/1000;html+='<section class="tier-section" data-tier="'+tierKey+'" style="--tier-color:'+tier.color+'"><div class="tier-header"><div class="tier-price">'+tier.label+' ₪</div><div class="tier-meta">دفعة أولى '+formatNum(tier.units[0].down)+' ₪ · قسط شهري '+formatNum(tier.units[0].monthly)+' ₪</div></div><div class="units-grid">';tier.units.sort(function(a,b){return a.id-b.id}).forEach(function(u){html+='<article class="unit-card" style="--tier-color:'+tier.color+'"><div class="unit-number">'+u.id+'</div><div class="unit-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/>'+(u.doors===2?'<rect x="14" y="3" width="7" height="18" rx="1"/>':'')+'</svg>'+(u.doors===1?'باب واحد':'بابين (عدد 2)')+'</div><div class="unit-areas"><div class="unit-area"><div class="unit-area-value">'+u.ground+'</div><div class="unit-area-label">م² أرضي</div></div><div class="unit-area"><div class="unit-area-value">'+u.roof+'</div><div class="unit-area-label">م² طابقي</div></div><div class="unit-area"><div class="unit-area-value">'+u.total+'</div><div class="unit-area-label">م² إجمالي</div></div></div><div class="unit-pricing"><div class="unit-ppm">سعر المتر: <strong>'+formatNum(u.ppm)+' ₪</strong></div><div class="unit-installment"><strong>'+formatNum(u.monthly)+' ₪</strong>شهرياً / 36 شهر</div></div></article>'});html+='</div></section>'});html+='<section class="payment-section"><div class="payment-title">خطة الدفع</div><div class="payment-subtitle">نظام تقسيط مرن على 36 شهراً بدون فوائد</div><div class="payment-grid"><div class="payment-card"><div class="payment-card-icon">📋</div><div class="payment-card-value">50%</div><div class="payment-card-label">دفعة أولى عند التوقيع</div></div><div class="payment-card"><div class="payment-card-icon">📅</div><div class="payment-card-value">36 شهر</div><div class="payment-card-label">فترة التقسيط</div></div><div class="payment-card"><div class="payment-card-icon">💰</div><div class="payment-card-value">0%</div><div class="payment-card-label">بدون فوائد أو رسوم إضافية</div></div><div class="payment-card"><div class="payment-card-icon">🔑</div><div class="payment-card-value">فوري</div><div class="payment-card-label">تسليم المحل بعد الدفعة الأولى</div></div></div></section>';main.innerHTML=html}
 document.querySelectorAll('.filter-btn').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');var filter=btn.dataset.filter;document.querySelectorAll('.tier-section').forEach(function(section){if(filter==='all'){section.style.display=''}else{section.style.display=section.dataset.tier==filter?'':'none'}})})});
 renderCatalog();
 document.querySelector('.video-panoramic video').addEventListener('loadedmetadata',function(){this.currentTime=3});
@@ -1797,6 +1814,14 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
     // Current State
     let currentCategory = 'all';
     let currentPayment = 'all';
+    let currentPrice = 'all';
+    function inPriceRange(price) {
+      if (currentPrice === 'all') return true;
+      if (!price) return false;
+      const [lo, hi] = currentPrice.split('-').map(Number);
+      return price >= lo && price < hi;
+    }
+    function setPriceRange(v) { currentPrice = v; applyMasterFilters(); }
     let currentSearchQuery = '';
     const activeCarouselIndex = {};
 
@@ -2129,7 +2154,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
           (item.desc && item.desc.toLowerCase().includes(query)) ||
           item.kind.toLowerCase().includes(query) ||
           'بوابة أريحا'.includes(query);
-        return matchesPay && matchesSearch;
+        return matchesPay && matchesSearch && (currentPrice === 'all' || (!item.sold && item.pay !== 'sold' && inPriceRange(priceMap[item.id])));
       });
 
       // Filter Shell Properties
@@ -2142,7 +2167,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
           item.kind.toLowerCase().includes(query) ||
           'عظم'.includes(query) ||
           'بوابة أريحا'.includes(query);
-        return matchesPay && matchesSearch;
+        return matchesPay && matchesSearch && (currentPrice === 'all' || (!item.sold && item.pay !== 'sold' && inPriceRange(priceMap[item.id])));
       });
 
       // Filter Lands
@@ -2155,7 +2180,15 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
           'أرض'.includes(query) ||
           'طابو'.includes(query) ||
           'بوابة أريحا'.includes(query);
-        return matchesPay && matchesSearch;
+        return matchesPay && matchesSearch && (currentPrice === 'all' || (!item.sold && item.pay !== 'sold' && inPriceRange(priceMap[item.id])));
+      });
+
+      // Mall: hide price tiers outside the chosen range
+      let mallVisible = 0;
+      document.querySelectorAll('#mall-section .tier-section').forEach(sec => {
+        const ok = inPriceRange(Number(sec.dataset.tier) * 1000);
+        sec.classList.toggle('price-hidden', !ok);
+        if (ok) mallVisible++;
       });
 
       // Render updated cards
@@ -2175,7 +2208,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
       if (currentCategory === 'all') {
         secReady.style.display = filteredReady.length > 0 ? 'block' : 'none';
         secShell.style.display = filteredShell.length > 0 ? 'block' : 'none';
-        secMall.style.display  = (currentPayment === 'cash' && query.length > 0) ? 'none' : 'block';
+        secMall.style.display  = ((currentPayment === 'cash' && query.length > 0) || mallVisible === 0) ? 'none' : 'block';
         secLands.style.display = filteredLands.length > 0 ? 'block' : 'none';
         if (div1) div1.style.display = 'flex';
         if (div2) div2.style.display = 'flex';
@@ -2239,6 +2272,8 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
       document.getElementById('masterSearch').value = '';
       currentCategory = 'all';
       currentPayment = 'all';
+      currentPrice = 'all';
+      document.getElementById('priceFilter').value = 'all';
       currentSearchQuery = '';
       document.querySelectorAll('#categoryTabs .cat-tab').forEach(b => b.classList.toggle('active', b.dataset.cat === 'all'));
       document.querySelectorAll('.payment-filters .pay-pill').forEach(b => b.classList.toggle('active', b.dataset.pay === 'all'));
@@ -2499,7 +2534,7 @@ function closePopup(){document.getElementById('unit-popup').classList.remove('ac
 var tiers=[{price:600000,label:'600,000',color:'var(--tier-600)',units:[]},{price:700000,label:'700,000',color:'var(--tier-700)',units:[]},{price:800000,label:'800,000',color:'var(--tier-800)',units:[]},{price:1200000,label:'1,200,000',color:'var(--tier-1200)',units:[]},{price:1400000,label:'1,400,000',color:'var(--tier-1400)',units:[]},{price:1600000,label:'1,600,000',color:'var(--tier-1600)',units:[]}];
 units.forEach(function(u){var tier=tiers.find(function(t){return t.price===u.price});if(tier)tier.units.push(u)});
 function formatNum(n){return n.toLocaleString('en-US')}
-function renderCatalog(){var main=document.getElementById('catalog');var html='';tiers.forEach(function(tier){if(tier.units.length===0)return;var tierKey=tier.price/1000;html+='<section class="tier-section" data-tier="'+tierKey+'" style="--tier-color:'+tier.color+'"><div class="tier-header"><div class="tier-price">'+tier.label+' ₪</div><div class="tier-count">'+tier.units.length+' وحدة</div><div class="tier-meta">دفعة أولى '+formatNum(tier.units[0].down)+' ₪ · قسط شهري '+formatNum(tier.units[0].monthly)+' ₪</div></div><div class="units-grid">';tier.units.sort(function(a,b){return a.id-b.id}).forEach(function(u){html+='<article class="unit-card" style="--tier-color:'+tier.color+'"><div class="unit-number">'+u.id+'</div><div class="unit-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/>'+(u.doors===2?'<rect x="14" y="3" width="7" height="18" rx="1"/>':'')+'</svg>'+(u.doors===1?'باب واحد':'بابين (عدد 2)')+'</div><div class="unit-areas"><div class="unit-area"><div class="unit-area-value">'+u.ground+'</div><div class="unit-area-label">م² أرضي</div></div><div class="unit-area"><div class="unit-area-value">'+u.roof+'</div><div class="unit-area-label">م² طابقي</div></div><div class="unit-area"><div class="unit-area-value">'+u.total+'</div><div class="unit-area-label">م² إجمالي</div></div></div><div class="unit-pricing"><div class="unit-ppm">سعر المتر: <strong>'+formatNum(u.ppm)+' ₪</strong></div><div class="unit-installment"><strong>'+formatNum(u.monthly)+' ₪</strong>شهرياً / 36 شهر</div></div></article>'});html+='</div></section>'});html+='<section class="payment-section"><div class="payment-title">خطة الدفع</div><div class="payment-subtitle">نظام تقسيط مرن على 36 شهراً بدون فوائد</div><div class="payment-grid"><div class="payment-card"><div class="payment-card-icon">📋</div><div class="payment-card-value">50%</div><div class="payment-card-label">دفعة أولى عند التوقيع</div></div><div class="payment-card"><div class="payment-card-icon">📅</div><div class="payment-card-value">36 شهر</div><div class="payment-card-label">فترة التقسيط</div></div><div class="payment-card"><div class="payment-card-icon">💰</div><div class="payment-card-value">0%</div><div class="payment-card-label">بدون فوائد أو رسوم إضافية</div></div><div class="payment-card"><div class="payment-card-icon">🔑</div><div class="payment-card-value">فوري</div><div class="payment-card-label">تسليم المحل بعد الدفعة الأولى</div></div></div></section>';main.innerHTML=html}
+function renderCatalog(){var main=document.getElementById('catalog');var html='';tiers.forEach(function(tier){if(tier.units.length===0)return;var tierKey=tier.price/1000;html+='<section class="tier-section" data-tier="'+tierKey+'" style="--tier-color:'+tier.color+'"><div class="tier-header"><div class="tier-price">'+tier.label+' ₪</div><div class="tier-meta">دفعة أولى '+formatNum(tier.units[0].down)+' ₪ · قسط شهري '+formatNum(tier.units[0].monthly)+' ₪</div></div><div class="units-grid">';tier.units.sort(function(a,b){return a.id-b.id}).forEach(function(u){html+='<article class="unit-card" style="--tier-color:'+tier.color+'"><div class="unit-number">'+u.id+'</div><div class="unit-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/>'+(u.doors===2?'<rect x="14" y="3" width="7" height="18" rx="1"/>':'')+'</svg>'+(u.doors===1?'باب واحد':'بابين (عدد 2)')+'</div><div class="unit-areas"><div class="unit-area"><div class="unit-area-value">'+u.ground+'</div><div class="unit-area-label">م² أرضي</div></div><div class="unit-area"><div class="unit-area-value">'+u.roof+'</div><div class="unit-area-label">م² طابقي</div></div><div class="unit-area"><div class="unit-area-value">'+u.total+'</div><div class="unit-area-label">م² إجمالي</div></div></div><div class="unit-pricing"><div class="unit-ppm">سعر المتر: <strong>'+formatNum(u.ppm)+' ₪</strong></div><div class="unit-installment"><strong>'+formatNum(u.monthly)+' ₪</strong>شهرياً / 36 شهر</div></div></article>'});html+='</div></section>'});html+='<section class="payment-section"><div class="payment-title">خطة الدفع</div><div class="payment-subtitle">نظام تقسيط مرن على 36 شهراً بدون فوائد</div><div class="payment-grid"><div class="payment-card"><div class="payment-card-icon">📋</div><div class="payment-card-value">50%</div><div class="payment-card-label">دفعة أولى عند التوقيع</div></div><div class="payment-card"><div class="payment-card-icon">📅</div><div class="payment-card-value">36 شهر</div><div class="payment-card-label">فترة التقسيط</div></div><div class="payment-card"><div class="payment-card-icon">💰</div><div class="payment-card-value">0%</div><div class="payment-card-label">بدون فوائد أو رسوم إضافية</div></div><div class="payment-card"><div class="payment-card-icon">🔑</div><div class="payment-card-value">فوري</div><div class="payment-card-label">تسليم المحل بعد الدفعة الأولى</div></div></div></section>';main.innerHTML=html}
 document.querySelectorAll('.filter-btn').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');var filter=btn.dataset.filter;document.querySelectorAll('.tier-section').forEach(function(section){if(filter==='all'){section.style.display=''}else{section.style.display=section.dataset.tier==filter?'':'none'}})})});
 renderCatalog();
 document.querySelector('.video-panoramic video').addEventListener('loadedmetadata',function(){this.currentTime=3});
