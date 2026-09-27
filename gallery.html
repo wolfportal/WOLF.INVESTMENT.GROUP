@@ -504,14 +504,13 @@
     .properties-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2px 32px;
-      row-gap: 48px;
+      gap: 64px 32px;
     }
     @media(min-width: 680px) {
-      .properties-grid { grid-template-columns: repeat(2,1fr); row-gap: 56px; gap: 2px 36px; }
+      .properties-grid { grid-template-columns: repeat(2,1fr); gap: 72px 36px; }
     }
     @media(min-width: 1000px) {
-      .properties-grid { grid-template-columns: repeat(3,1fr); row-gap: 64px; gap: 2px 40px; }
+      .properties-grid { grid-template-columns: repeat(3,1fr); gap: 80px 40px; }
     }
 
     /* Property Card (villas-style) */
@@ -717,6 +716,13 @@
       margin-top: 2px;
     }
     .discount-line i { font-size: 1.05rem; flex-shrink: 0; }
+    .price-box { display:flex; flex-direction:column; gap:6px; margin-top:4px; }
+    .price-below { display:inline-flex; align-items:center; gap:7px; width:fit-content; font-size:0.78rem; font-weight:700; color:#e8dcc8; background:rgba(232,220,200,0.08); border:1px solid rgba(232,220,200,0.28); border-radius:999px; padding:4px 12px; }
+    .price-below i { font-size:1rem; }
+    .price-final { display:flex; align-items:baseline; gap:10px; }
+    .price-lbl { font-size:0.74rem; font-weight:600; color:rgba(245,243,239,0.68); letter-spacing:0.04em; }
+    .price-val { font-family:'Cairo','Tajawal',sans-serif; font-size:1.7rem; font-weight:800; color:#f5f3ef; line-height:1.15; font-variant-numeric:tabular-nums; direction:ltr; unicode-bidi:isolate; }
+    .price-cur { font-size:1.05rem; font-weight:700; color:#e8dcc8; }
     .divider { height: 1px; background: rgba(255, 255, 255, 0.1); margin: 4px 0; }
     .property-payment {
       display: flex;
@@ -768,6 +774,8 @@
       padding-top: 12px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
+    .property-card { padding-bottom: 26px; border-bottom: 1px solid rgba(232, 220, 200, 0.22); }
+    .property-desc.show { margin-bottom: 4px; padding: 14px 16px; background: rgba(255,255,255,0.035); border-inline-start: 2px solid rgba(232,220,200,0.45); border-radius: 8px; }
     .btn-explore {
       background: none;
       border: 0;
@@ -1914,6 +1922,21 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
     }).addTo(map);
 
     // Render Ready Properties Cards (villas-style)
+    // Prices (matched by property ID from the price sheet). cur: ILS | USD | JOD
+    const priceMap = {"#D-83":[1350000,"ILS"],"#D-89":[1350000,"ILS"],"#D-71":[1250000,"ILS"],"#D-95":[1400000,"ILS"],"#D-113":[1680000,"ILS"],"#D-107":[1700000,"ILS"],"D-149":[1600000,"ILS"],"D-9":[1000000,"ILS"],"#D-47":[900000,"ILS"],"#D-59":[1200000,"ILS"],"#D-77":[1300000,"ILS"],"#D-155":[2100000,"ILS"],"#D-161":[3200000,"ILS"],
+      "AJ-D211":[670000,"ILS"],"شارع 3":[214000,"USD"],"R-10":[800000,"ILS"],"A":[295000,"USD"],"15":[980000,"ILS"],"#D-09":[1000000,"ILS"],
+      "GH-1":[575000,"ILS"],"224":[68500,"JOD"],"225":[64000,"JOD"],"153":[481500,"JOD"],"J-1":[134000,"JOD"],"135":[125100,"JOD"],"134":[135803,"JOD"],"133":[134969,"JOD"],"132":[135108,"JOD"],"131":[136220,"JOD"],"130":[138027,"JOD"],"127":[169441,"JOD"],"126":[170831,"JOD"],"125":[171665,"JOD"],"124":[171804,"JOD"],"123":[171665,"JOD"],"122":[143170,"JOD"]};
+    const CUR_LABEL = {ILS:'₪', USD:'$', JOD:'دينار'};
+    function priceBlock(id, discount, sold) {
+      const e = priceMap[id];
+      if (!e || sold) return '';
+      const [v, cur] = e;
+      const below = discount ? `<div class="price-below"><i class="ph-bold ph-trend-down"></i><span>أقل من قيمة السوق بـ ${discount} ₪</span></div>` : '';
+      const num = v.toLocaleString('en-US');
+      const amount = cur === 'USD' ? `<span class="price-cur">$</span>${num}` : `${num} <span class="price-cur">${CUR_LABEL[cur]}</span>`;
+      return `<div class="price-box">${below}<div class="price-final"><span class="price-lbl">السعر</span><strong class="price-val">${amount}</strong></div></div>`;
+    }
+
     function renderReadyCards(items) {
       const grid = document.getElementById('readyGrid');
       if (!items || items.length === 0) {
@@ -1932,7 +1955,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
         if (hasVideo) media += `<div class="slide"><video src="${videoUrl}" controls playsinline preload="metadata"${images[0] ? ` poster="${images[0]}"` : ''}></video></div>`;
         const slideCount = images.length + (hasVideo ? 1 : 0);
         const hasSlides = slideCount > 1;
-        const discountLine = p.discount ? `<div class="discount-line"><i class="ph-bold ph-tag"></i><span>أقل من سعر السوق بـ ${p.discount} ₪</span></div>` : '';
+        const discountLine = priceMap[p.id] && !isSold ? priceBlock(p.id, p.discount, isSold) : (p.discount ? `<div class="discount-line"><i class="ph-bold ph-tag"></i><span>أقل من قيمة السوق بـ ${p.discount} ₪</span></div>` : '');
         const paymentBlock = isSold
           ? `<span class="payment-tag sold">تم البيع</span>`
           : (isInstall
@@ -2026,6 +2049,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
                 <div class="spec-item"><span class="spec-icon"><i class="ph-bold ph-bed"></i></span><span>ماستر: <strong>${p.master}</strong></span></div>
                 <div class="spec-item"><span class="spec-icon"><i class="ph-bold ph-swimming-pool"></i></span><span>بركة: <strong>${p.pool}</strong></span></div>
               </div>
+              ${priceBlock(p.id, null, isSold)}
               <div class="divider"></div>
               <div class="property-payment">${paymentBlock}<span class="payment-tag installment">عظم</span></div>
               <div class="property-desc" id="s_desc_${idx}">${kindLabel} ${p.id} في بوابة أريحا، جاهز للتشطيب حسب ذوقك، مع مساحة خارجية وبركة سباحة ومخطط عملي.</div>
@@ -2071,6 +2095,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
                 <div class="spec-item"><span class="spec-icon"><i class="ph-bold ph-tag"></i></span><span>التصنيف: <strong>${classLabel}</strong></span></div>
                 <div class="spec-item"><span class="spec-icon"><i class="ph-bold ph-calendar-check"></i></span><span>التسليم: <strong>جاهزة للبناء</strong></span></div>
               </div>
+              ${priceBlock(l.id, null, false)}
               <div class="divider"></div>
               <div class="property-payment">
                 <span class="payment-tag ${classTag}">${classLabel}</span>
