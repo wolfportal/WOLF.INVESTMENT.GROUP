@@ -1062,7 +1062,8 @@
     </a>
     <nav class="topbar-nav" id="topbarNav">
       <a href="index.html" data-t="home">الرئيسية</a>
-      <a href="properties.html" class="active" data-t="exhibition">معرض العقارات</a>
+      <a href="gallery.html" class="active" data-t="exhibition">معرض العقارات</a>
+      <a href="georgia.html" data-t="georgiaGallery">معرض عقارات جورجيا</a>
       <a href="about.html" data-t="about">من نحن</a>
       <a href="jericho-gate.html" data-t="gate">بوابة أريحا</a>
       <a href="why_invest.html" data-t="whyInvest">لماذا نستثمر</a>
@@ -1128,7 +1129,7 @@
       <button class="map-btn" onclick="flyToLocation(31.8667, 35.4500, 11)">
         <i class="ph-bold ph-map-pin"></i> بوابة أريحا
       </button>
-      <button class="map-btn" onclick="flyToLocation(41.7151, 44.8271, 9)">
+      <button class="map-btn" onclick="location.href='georgia.html'">
         <i class="ph-bold ph-globe"></i> جورجيا
       </button>
       <button class="map-btn" onclick="flyToLocation(25.2048, 55.2708, 9)">
@@ -1852,7 +1853,7 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
 
     // Georgia Marker
     const georgiaIconHtml = `
-      <div class="flex flex-col items-center select-none cursor-pointer" onclick="flyToLocation(41.7151, 44.8271, 9)">
+      <div class="flex flex-col items-center select-none cursor-pointer" onclick="location.href='georgia.html'">
         <div class="w-12 h-12 rounded-full bg-black/90 border-2 border-purple-400 flex items-center justify-center shadow-lg overflow-hidden">
           <img src="https://i.ibb.co/rKP9VSJv/pngtree-georgia-flag-icon-vector-png-image-6695264.png" alt="جورجيا" class="w-full h-full object-cover rounded-full" />
         </div>
@@ -2356,10 +2357,10 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
 
     // Multilingual Dictionary
     const masterDict = {
-      ar: { dir: 'rtl', home: 'الرئيسية', exhibition: 'معرض العقارات', about: 'من نحن', gate: 'بوابة أريحا', whyInvest: 'لماذا نستثمر', contact: 'تواصل معنا' },
-      en: { dir: 'ltr', home: 'Home', exhibition: 'Exhibition', about: 'About Us', gate: 'Jericho Gate', whyInvest: 'Why Invest', contact: 'Contact' },
-      ka: { dir: 'ltr', home: 'მთავარი', exhibition: 'გამოფენა', about: 'ჩვენ შესახებ', gate: 'იერიხოს კარიბჭე', whyInvest: 'რატომ ჩვენთან', contact: 'კონტაქტი' },
-      he: { dir: 'rtl', home: 'ראשי', exhibition: 'תערוכת נדל״ן', about: 'אודותינו', gate: 'שער יריחו', whyInvest: 'למה איתנו', contact: 'צור קשר' }
+      ar: { dir: 'rtl', home: 'الرئيسية', exhibition: 'معرض العقارات', georgiaGallery: 'معرض عقارات جورجيا', about: 'من نحن', gate: 'بوابة أريحا', whyInvest: 'لماذا نستثمر', contact: 'تواصل معنا' },
+      en: { dir: 'ltr', home: 'Home', exhibition: 'Exhibition', georgiaGallery: 'Georgia Property Gallery', about: 'About Us', gate: 'Jericho Gate', whyInvest: 'Why Invest', contact: 'Contact' },
+      ka: { dir: 'ltr', home: 'მთავარი', exhibition: 'გამოფენა', georgiaGallery: 'საქართველოს ქონების გალერეა', about: 'ჩვენ შესახებ', gate: 'იერიხოს კარიბჭე', whyInvest: 'რატომ ჩვენთან', contact: 'კონტაქტი' },
+      he: { dir: 'rtl', home: 'ראשי', exhibition: 'תערוכת נדל״ן', georgiaGallery: 'גלריית נכסים בגאורגיה', about: 'אודותינו', gate: 'שער יריחו', whyInvest: 'למה איתנו', contact: 'צור קשר' }
     };
 
     function setMasterLang(lang) {
