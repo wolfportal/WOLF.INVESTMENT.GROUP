@@ -1066,7 +1066,15 @@
         padding-bottom: 4px;
       }
     }
-  </style>
+  
+    @media (max-width: 480px) {
+      .topbar { padding: 0 12px; gap: 8px; }
+      .topbar-logo { height: 40px; }
+      .topbar-actions { gap: 8px; }
+      .topbar-actions > button[onclick^="openPriceSheetGate"] { margin-inline-end: 0 !important; padding: 8px 10px !important; }
+      .topbar-actions > button[onclick^="openPriceSheetGate"] span { display: none; }
+    }
+</style>
 <style>
 /* ===== Jericho Gate agents mode ===== */
 .ag-panel{display:none;scroll-margin-top:120px;max-width:1100px;margin:28px auto 8px;padding:22px 24px;border-radius:20px;background:#0b0b0b;border:1px solid rgba(232,220,200,.35);color:#f5f3ef;box-sizing:border-box}
@@ -1721,6 +1729,10 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
 .chat-hint-g{position:fixed;bottom:26px;right:88px;z-index:9998;background:rgba(16,16,16,.92);color:#f5f3ef;font-size:.68rem;padding:5px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.15);white-space:nowrap;pointer-events:none;animation:chatHintPulse-g 3.2s ease-in-out infinite}
 @keyframes chatHintPulse-g{0%,100%{opacity:.85;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
 @media(max-width:700px){.chat-hint-g{bottom:20px;right:70px;font-size:.6rem;padding:4px 9px}}
+
+@media (max-width: 600px) {
+  .unit-area-label, .type-badge, .video-badge, .property-eyebrow, .filter-label, .collection-label, .chat-hint-g { font-size: 12px !important; }
+}
 </style>
 <span class="chat-hint-g">💬 تحدث معنا مباشرة</span>
 
@@ -2607,5 +2619,6 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
   if (location.hash === '#agents') setTimeout(() => $('agPanel').scrollIntoView({ behavior: 'smooth', block: 'start' }), 400);
 })();
 </script>
+<script src="mobile-nav.js" data-header="header.topbar" data-hide="#topbarNav,.hamburger-btn,.topbar-actions .lang-switcher" data-lang=".topbar-actions .lang-switcher button" defer></script>
 </body>
 </html>

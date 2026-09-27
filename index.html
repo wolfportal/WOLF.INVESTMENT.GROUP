@@ -161,6 +161,8 @@
 .ap-note{font-size:.8rem;color:var(--gold);min-height:1.2em;margin:-6px 0 10px}
 .ap-out{background:none;border:0;color:var(--dim);font-size:.8rem;text-decoration:underline;cursor:pointer;font-family:inherit}
 .ap-x:focus-visible,.ap-btn:focus-visible,.ap-region:focus-visible,.ap-out:focus-visible,.nav a.ap-nav:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+@media(max-width:900px){.catalog{padding:56px 16px}.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head><body>
 
@@ -327,4 +329,5 @@ const slides=[['https://i.ibb.co/gbsSqmZV/111.png','فلل فاخرة','فلل �
   if (location.hash === '#agents') apOpen();
 })();
 </script>
+<script src="mobile-nav.js" data-header="nav.topbar .topbar-inner" data-hide="#nav,#hamburger" data-lang="#nav .lang-switcher button" data-social="#nav .social" data-extra="#apNav" defer></script>
 </body></html>
