@@ -1052,6 +1052,26 @@
       }
     }
   </style>
+<style>
+/* ===== Jericho Gate agents mode ===== */
+.ag-panel{display:none;scroll-margin-top:120px;max-width:1100px;margin:28px auto 8px;padding:22px 24px;border-radius:20px;background:#0b0b0b;border:1px solid rgba(232,220,200,.35);color:#f5f3ef;box-sizing:border-box}
+.ag-panel *{box-sizing:border-box}
+body.ag-mode .ag-panel{display:block}
+.ag-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.ag-title{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;color:#e8dcc8}
+.ag-title small{font-weight:500;font-size:.8rem;color:rgba(245,243,239,.65)}
+.ag-out{background:none;border:1px solid rgba(232,220,200,.35);color:#e8dcc8;border-radius:10px;padding:7px 14px;font-size:.8rem;cursor:pointer;font-family:inherit}
+.ag-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media(max-width:900px){.ag-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.ag-grid{grid-template-columns:1fr}}
+.ag-grid label{display:block;font-size:.76rem;color:rgba(245,243,239,.65);margin-bottom:6px}
+.ag-grid input{width:100%;background:#050505;border:1px solid rgba(232,220,200,.28);color:#f5f3ef;border-radius:11px;padding:11px 12px;font-size:.92rem;outline:none;font-family:inherit}
+.ag-grid input:focus{border-color:#e8dcc8}
+.ag-grid input.invalid{border-color:#e06b6b}
+.ag-hint{font-size:.78rem;color:rgba(245,243,239,.6);margin-top:12px;line-height:1.7}
+.ag-err{color:#e88a8a;font-size:.8rem;min-height:1.1em;margin-top:6px}
+.ag-out:focus-visible,.ag-grid input:focus-visible{outline:2px solid #e8dcc8;outline-offset:2px}
+</style>
 </head>
 <body>
 
@@ -1146,6 +1166,22 @@
   </section>
 
   <!-- Exhibition Hero Section -->
+  <!-- ===== Agents: client details (Jericho Gate) ===== -->
+  <section class="ag-panel" id="agPanel" aria-label="بوابة الوكلاء — بيانات الزبون">
+    <div class="ag-head">
+      <div class="ag-title">بوابة الوكلاء — بوابة أريحا <small>تُضاف هذه البيانات تلقائياً لكل طلب واتساب من هذه الصفحة</small></div>
+      <button type="button" class="ag-out" onclick="agLogout()">تسجيل الخروج</button>
+    </div>
+    <div class="ag-grid">
+      <div><label for="agAgent">اسم الوكيل</label><input id="agAgent" type="text" placeholder="اسمك كوكيل" autocomplete="name"></div>
+      <div><label for="agClient">اسم الزبون</label><input id="agClient" type="text" placeholder="الاسم الكامل" autocomplete="off"></div>
+      <div><label for="agPhone">رقم هاتف الزبون</label><input id="agPhone" type="tel" placeholder="+970 5X XXX XXXX" autocomplete="off" style="direction:ltr;text-align:right"></div>
+      <div><label for="agArea">منطقة الزبون</label><input id="agArea" type="text" placeholder="المدينة / المنطقة" autocomplete="off"></div>
+    </div>
+    <div class="ag-err" id="agErr" aria-live="polite"></div>
+    <p class="ag-hint">بعد إدخال البيانات، اضغط زر «واتساب» أو «حجز معاينة» على أي عقار، وسيصل الطلب لفريقنا مع اسمك وبيانات الزبون.</p>
+  </section>
+
   <section class="exhibition-hero" id="catalog-section">
     <div class="hero-eyebrow">
       <i class="ph-bold ph-shield-check"></i>
@@ -2446,5 +2482,58 @@ document.querySelector('.video-panoramic video').addEventListener('loadedmetadat
 
 
   </script>
+<script>
+/* Jericho Gate agents mode: opened from the agents portal on the home page (same session). */
+(function () {
+  const SESSION = 'wolfAgentAccess', NAME_KEY = 'wolfAgentName', CLIENT_KEY = 'wolfAgentClientJericho';
+  let on = false;
+  try { on = sessionStorage.getItem(SESSION) === '1'; } catch (e) {}
+  if (!on) return;
+  document.body.classList.add('ag-mode');
+  const $ = id => document.getElementById(id);
+  let saved = {};
+  try { saved = JSON.parse(sessionStorage.getItem(CLIENT_KEY) || '{}'); } catch (e) {}
+  try { $('agAgent').value = localStorage.getItem(NAME_KEY) || ''; } catch (e) {}
+  $('agClient').value = saved.client || ''; $('agPhone').value = saved.phone || ''; $('agArea').value = saved.area || '';
+  function save() {
+    try { localStorage.setItem(NAME_KEY, $('agAgent').value.trim()); } catch (e) {}
+    try { sessionStorage.setItem(CLIENT_KEY, JSON.stringify({ client: $('agClient').value.trim(), phone: $('agPhone').value.trim(), area: $('agArea').value.trim() })); } catch (e) {}
+  }
+  ['agAgent', 'agClient', 'agPhone', 'agArea'].forEach(id => $(id).addEventListener('input', () => { $(id).classList.remove('invalid'); $('agErr').textContent = ''; save(); }));
+  function valid() {
+    const checks = [['agAgent', $('agAgent').value.trim().length >= 2, 'اسم الوكيل'], ['agClient', $('agClient').value.trim().length >= 2, 'اسم الزبون'], ['agPhone', $('agPhone').value.replace(/\D/g, '').length >= 7, 'رقم هاتف صحيح للزبون']];
+    checks.forEach(([id, ok]) => $(id).classList.toggle('invalid', !ok));
+    const miss = checks.filter(c => !c[1]);
+    if (miss.length) { $('agErr').textContent = 'أدخل ' + miss.map(c => c[2]).join(' و') + ' قبل إرسال الطلب.'; $('agPanel').scrollIntoView({ behavior: 'smooth', block: 'center' }); $(miss[0][0]).focus(); return false; }
+    return true;
+  }
+  function withAgent(url) {
+    const u = new URL(url, location.href);
+    const orig = u.searchParams.get('text') || '';
+    const head = 'طلب من بوابة الوكلاء — بوابة أريحا\n- اسم الوكيل: ' + $('agAgent').value.trim() + '\n- اسم الزبون: ' + $('agClient').value.trim() +
+      '\n- رقم هاتف الزبون: ' + $('agPhone').value.trim() + '\n- منطقة الزبون: ' + ($('agArea').value.trim() || '—');
+    u.searchParams.set('text', head + '\n\n' + (orig || 'أرجو التواصل مع الزبون.'));
+    return u.toString();
+  }
+  const isWa = h => /(^|\/\/)(wa\.me|api\.whatsapp\.com)\//.test(h || '');
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!a || !isWa(a.getAttribute('href'))) return;
+    e.preventDefault(); e.stopPropagation();
+    if (!valid()) return;
+    _open.call(window, withAgent(a.href), '_blank', 'noopener');
+  }, true);
+  const _open = window.open;
+  window.open = function (url, ...rest) {
+    if (typeof url === 'string' && isWa(url)) { if (!valid()) return null; url = withAgent(url); }
+    return _open.call(window, url, ...rest);
+  };
+  window.agLogout = function () {
+    try { sessionStorage.removeItem(SESSION); sessionStorage.removeItem(CLIENT_KEY); } catch (e) {}
+    location.href = 'gallery.html';
+  };
+  if (location.hash === '#agents') setTimeout(() => $('agPanel').scrollIntoView({ behavior: 'smooth', block: 'start' }), 400);
+})();
+</script>
 </body>
 </html>
