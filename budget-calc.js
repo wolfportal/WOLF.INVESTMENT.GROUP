@@ -10,7 +10,10 @@
     dubai:   { label: 'دبي', cur: '$', months: 48, page: '', pageLabel: '' }
   };
   var PURPOSE = { res: 'سكني', inv: 'استثماري', both: 'سكني واستثماري' };
-  var st = { dest: 'jericho', purpose: 'inv' };
+  var CUR = { ILS: { label: 'شيكل', sym: '₪', after: true }, USD: { label: 'دولار', sym: '$' }, EUR: { label: 'يورو', sym: '€' }, JOD: { label: 'دينار', sym: 'JD', after: true } };
+  var DEST_CUR = { jericho: 'ILS', georgia: 'USD', dubai: 'USD' };
+  var st = { dest: 'jericho', purpose: 'inv', cur: 'ILS' };
+  var money = function (n) { var c = CUR[st.cur]; return c.after ? fmt(n) + ' ' + c.sym : c.sym + ' ' + fmt(n); };
 
   var css = '' +
     '.wbc-fab{position:fixed;right:20px;bottom:24px;z-index:9995;display:flex;align-items:center;gap:8px;height:52px;padding:0 18px 0 16px;border-radius:999px;border:0;cursor:pointer;' +
@@ -33,7 +36,7 @@
     '.wbc-chip{flex:1 1 auto;min-width:0;padding:9px 10px;border-radius:12px;border:1px solid rgba(212,190,158,.28);background:#141414;color:#CFC8BC;font-weight:700;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap}' +
     '.wbc-chip.on{background:linear-gradient(180deg,#F7EFE2,#D4BE9E);color:#0A0A0A;border-color:transparent}' +
     '.wbc-in{position:relative}' +
-    '.wbc-in input,.wbc-in select{width:100%;height:46px;border-radius:12px;border:1px solid rgba(212,190,158,.3);background:#141414;color:#FAF7F2;font-weight:700;font-size:16px;font-family:inherit;padding:0 14px 0 44px;direction:ltr;text-align:right;outline:none}' +
+    '.wbc-in input,.wbc-in select{width:100%;height:46px;border-radius:12px;border:1px solid rgba(212,190,158,.3);background:#141414;color:#FAF7F2;font-weight:700;font-size:16px;font-family:inherit;padding:0 14px 0 52px;direction:ltr;text-align:right;outline:none}' +
     '.wbc-in select{direction:rtl;padding:0 14px;appearance:auto}' +
     '.wbc-in input:focus,.wbc-in select:focus{border-color:#D4BE9E}' +
     '.wbc-cur{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-weight:800;color:#D4BE9E;font-size:15px}' +
@@ -62,6 +65,7 @@
     '<h3>احسب ميزانيتك</h3><p class="wbc-sub">أدخل دفعتك الأولى وقسطك الشهري، ونعرف لك حدود الميزانية المناسبة.</p>' +
     '<span class="wbc-l">مكان الاستثمار</span>' + chips('dest', DEST) +
     '<span class="wbc-l">الغرض من العقار</span>' + chips('purpose', PURPOSE) +
+    '<span class="wbc-l">العملة</span>' + chips('cur', CUR) +
     '<label class="wbc-l" for="wbcDown">الدفعة الأولى</label><div class="wbc-in"><input id="wbcDown" type="text" inputmode="numeric" autocomplete="off" placeholder="0"><span class="wbc-cur"></span></div>' +
     '<label class="wbc-l" for="wbcMonthly">الدفعة الشهرية</label><div class="wbc-in"><input id="wbcMonthly" type="text" inputmode="numeric" autocomplete="off" placeholder="0"><span class="wbc-cur"></span></div>' +
     '<label class="wbc-l" for="wbcMonths">مدة التقسيط</label><div class="wbc-in"><select id="wbcMonths">' + [12, 24, 36, 48, 60].map(function (m) { return '<option value="' + m + '">' + m + ' شهراً</option>'; }).join('') + '</select></div>' +
@@ -82,25 +86,28 @@
   function setChip(g, v) {
     st[g] = v;
     p.querySelectorAll('[data-g="' + g + '"] .wbc-chip').forEach(function (b) { b.classList.toggle('on', b.dataset.v === v); });
-    if (g === 'dest') { $('wbcMonths').value = String(DEST[v].months); }
+    if (g === 'dest') { $('wbcMonths').value = String(DEST[v].months); if (!st.curPicked) setChip('cur', DEST_CUR[v], true); }
+    if (g === 'cur' && !arguments[2]) st.curPicked = true;
     calc();
   }
   function calc() {
     var d = DEST[st.dest], dp = num($('wbcDown')), mo = num($('wbcMonthly')), m = Number($('wbcMonths').value);
-    p.querySelectorAll('.wbc-cur').forEach(function (c) { c.textContent = d.cur; });
+    var cs = CUR[st.cur].sym;
+    p.querySelectorAll('.wbc-cur').forEach(function (c) { c.textContent = cs; });
     var total = dp + mo * m;
-    $('wbcTotal').textContent = total ? (d.cur === '$' ? '$ ' + fmt(total) : fmt(total) + ' ₪') : '—';
+    $('wbcTotal').textContent = total ? money(total) : '—';
     $('wbcPct').textContent = total ? Math.round(dp / total * 100) + '%' : '—';
     var go = $('wbcGo');
     if (d.page) {
-      var q = '?wbc=1&dp=' + dp + '&mo=' + mo + '&m=' + m + '&pu=' + st.purpose;
+      var q = '?wbc=1&dp=' + dp + '&mo=' + mo + '&m=' + m + '&pu=' + st.purpose + '&cur=' + st.cur;
       go.href = d.page + q + (st.dest === 'georgia' ? '#investment-matcher' : '');
       go.textContent = d.pageLabel; go.style.display = '';
     } else { go.style.display = 'none'; }
     var msg = 'مرحباً، حسبت ميزانيتي على موقع WOLF INVESTMENT GROUP:\n' +
       '• مكان الاستثمار: ' + d.label + '\n• الغرض: ' + PURPOSE[st.purpose] + '\n' +
-      '• الدفعة الأولى: ' + fmt(dp) + ' ' + d.cur + '\n• الدفعة الشهرية: ' + fmt(mo) + ' ' + d.cur + ' لمدة ' + m + ' شهراً\n' +
-      '• الميزانية الإجمالية التقريبية: ' + fmt(total) + ' ' + d.cur + '\nأرجو اقتراح عقارات مناسبة.';
+      '• العملة: ' + CUR[st.cur].label + '\n' +
+      '• الدفعة الأولى: ' + money(dp) + '\n• الدفعة الشهرية: ' + money(mo) + ' لمدة ' + m + ' شهراً\n' +
+      '• الميزانية الإجمالية التقريبية: ' + money(total) + '\nأرجو اقتراح عقارات مناسبة.';
     var wa = $('wbcWa');
     wa.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
     wa.setAttribute('aria-disabled', total ? 'false' : 'true');
@@ -125,6 +132,7 @@
     if (qs.get('wbc') && path.indexOf('georgia') > -1) {
       window.addEventListener('load', function () {
         var dp = +qs.get('dp') || 0, mo = +qs.get('mo') || 0, pu = qs.get('pu');
+        if (qs.get('cur') && qs.get('cur') !== 'USD') { dp = 0; mo = 0; }
         var d = $('matchDown'), m = $('matchMonthly');
         if (typeof setMatchPay === 'function') setMatchPay('installment');
         if (typeof setMatchPurpose === 'function') setMatchPurpose(pu === 'res' ? 'residential' : 'investment');
