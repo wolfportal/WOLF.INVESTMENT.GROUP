@@ -888,6 +888,25 @@
     .cg-lb-x{position:absolute;top:14px;left:14px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(212,190,158,.4);background:#0B0B0B;color:#EADBC4;font-size:1.1rem;cursor:pointer}
     .cg-lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(212,190,158,.4);background:rgba(11,11,11,.8);color:#EADBC4;font-size:1.6rem;cursor:pointer}
     .cg-lb-prev{right:12px}.cg-lb-next{left:12px}
+    .nc{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;align-items:center;border:1px solid rgba(212,190,158,.3);border-radius:22px;padding:22px;background:linear-gradient(160deg,rgba(212,190,158,.08),rgba(5,5,5,.7))}
+    @media (max-width:860px){.nc{grid-template-columns:1fr}}
+    .nc-kick{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;color:#D4BE9E;border:1px solid rgba(212,190,158,.3);border-radius:999px;padding:4px 11px}
+    .nc-info h3{font-size:1.3rem;font-weight:800;color:#FAF7F2;margin:12px 0 6px;direction:ltr;text-align:right}
+    .nc-info p{font-size:.86rem;line-height:1.85;color:#B9B2A6}
+    .nc-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+    .nc-facts div{border:1px solid rgba(212,190,158,.18);border-radius:12px;padding:8px 11px;background:#070707}
+    .nc-facts dt{font-size:.68rem;color:#958F86}
+    .nc-facts dd{font-size:.82rem;font-weight:700;color:#F3EDE3}
+    .nc-n{direction:ltr;text-align:right}
+    .nc-verify{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:#EADBC4;text-decoration:underline;text-underline-offset:3px}
+    .nc-docs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .nc-doc{margin:0;cursor:zoom-in}
+    .nc-frame{position:relative;padding:10px;border-radius:6px;background:linear-gradient(145deg,#E9D9B8,#B39D7C 45%,#EADBC4 70%,#9C8463);box-shadow:0 18px 40px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .35s ease}
+    .nc-frame::before{content:"";position:absolute;inset:6px;border:1px solid rgba(60,45,25,.45);border-radius:3px;pointer-events:none}
+    .nc-frame img{display:block;width:100%;height:auto;background:#fff;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+    .nc-doc:hover .nc-frame{transform:translateY(-4px) rotate(-.4deg)}
+    .nc-seal{position:absolute;bottom:-12px;left:-12px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#0A0A0A;background:radial-gradient(circle at 35% 30%,#FFF4DC,#D4BE9E 60%,#9C8463);box-shadow:0 6px 16px rgba(0,0,0,.5)}
+    .nc-doc figcaption{text-align:center;font-size:.76rem;font-weight:700;color:#D4BE9E;margin-top:14px}
   </style>
 </head>
 <body class="bg-[oklch(14%_.012_55)] text-[oklch(94%_.012_80)] min-h-screen relative selection:bg-[oklch(80%_.04_75)] selection:text-black">
@@ -1021,7 +1040,7 @@
         <button type="button" class="cg-lb-nav cg-lb-next" id="cgLbNext" aria-label="التالي">›</button>
       </div>
       <script>
-        window.CG_LAND = ["https://i.ibb.co/RGsjcNGx/2025-11-12-13-26-37-IMG-2878.jpg", "https://i.ibb.co/zTcgbRm7/2025-11-13-14-01-29-IMG-3114.jpg", "https://i.ibb.co/XrtjRRVr/2025-11-08-11-58-08-IMG-2162.jpg", "https://i.ibb.co/TMKkLJhW/2025-11-10-16-05-34-IMG-2535.jpg", "https://i.ibb.co/2mvd3S7/2025-11-12-13-26-21-IMG-2872.jpg", "https://i.ibb.co/rGbgqMGQ/2025-11-13-14-01-16-IMG-3109.jpg", "https://i.ibb.co/0Vd1pmdG/2025-11-08-11-57-53-IMG-2159.jpg", "https://i.ibb.co/Q3Zws4Gf/2025-11-12-13-26-31-IMG-2876-1.jpg", "https://i.ibb.co/hRGNXd2h/2025-11-10-16-05-18-IMG-2527-1.jpg", "https://i.ibb.co/n8B6zWmb/2025-11-12-13-26-16-IMG-2870.jpg", "https://i.ibb.co/bMFmSS34/2025-11-13-14-00-21-IMG-3099.jpg", "https://i.ibb.co/ycRMWJVs/2025-11-12-13-26-23-IMG-2873-1.jpg", "https://i.ibb.co/jZksmvKk/2025-11-08-11-57-51-IMG-2157.jpg", "https://i.ibb.co/gb9pjv6B/2025-11-12-13-26-19-IMG-2871-1.jpg"];
+        window.CG_LAND = ["https://i.ibb.co/21rQyLf3/2025-11-13-19-31-25-IMG-3240.jpg", "https://i.ibb.co/RGsjcNGx/2025-11-12-13-26-37-IMG-2878.jpg", "https://i.ibb.co/zTcgbRm7/2025-11-13-14-01-29-IMG-3114.jpg", "https://i.ibb.co/XrtjRRVr/2025-11-08-11-58-08-IMG-2162.jpg", "https://i.ibb.co/TMKkLJhW/2025-11-10-16-05-34-IMG-2535.jpg", "https://i.ibb.co/2mvd3S7/2025-11-12-13-26-21-IMG-2872.jpg", "https://i.ibb.co/rGbgqMGQ/2025-11-13-14-01-16-IMG-3109.jpg", "https://i.ibb.co/0Vd1pmdG/2025-11-08-11-57-53-IMG-2159.jpg", "https://i.ibb.co/Q3Zws4Gf/2025-11-12-13-26-31-IMG-2876-1.jpg", "https://i.ibb.co/hRGNXd2h/2025-11-10-16-05-18-IMG-2527-1.jpg", "https://i.ibb.co/n8B6zWmb/2025-11-12-13-26-16-IMG-2870.jpg", "https://i.ibb.co/bMFmSS34/2025-11-13-14-00-21-IMG-3099.jpg", "https://i.ibb.co/ycRMWJVs/2025-11-12-13-26-23-IMG-2873-1.jpg", "https://i.ibb.co/jZksmvKk/2025-11-08-11-57-51-IMG-2157.jpg", "https://i.ibb.co/gb9pjv6B/2025-11-12-13-26-19-IMG-2871-1.jpg"];
         window.CG_PORT = ["https://i.ibb.co/QFjDChKy/2025-11-08-11-55-37-IMG-2155.jpg", "https://i.ibb.co/jPxGRd6C/2025-11-08-14-06-11-IMG-2222-Copy.jpg", "https://i.ibb.co/wrJXFQfB/2025-11-10-09-54-28-IMG-3910-Copy.jpg", "https://i.ibb.co/PztxgcFh/2025-11-08-11-48-43-IMG-2143.jpg", "https://i.ibb.co/C5F18nLT/2025-11-08-14-09-36-IMG-2245.jpg", "https://i.ibb.co/v6gGyMhJ/2025-11-13-10-58-58-IMG-2949-Copy.jpg", "https://i.ibb.co/rK8hYLCS/2025-11-08-11-50-49-IMG-2152.jpg", "https://i.ibb.co/VcrqhLmx/2025-11-08-14-09-27-IMG-2243.jpg", "https://i.ibb.co/LhnkwbXC/2025-11-10-09-53-28-IMG-3947-Copy.jpg", "https://i.ibb.co/xSjXSXjJ/2025-11-08-11-48-40-IMG-2140.jpg", "https://i.ibb.co/gZH2nYBg/2025-11-08-14-07-44-IMG-2237.jpg", "https://i.ibb.co/WpKK88dP/2025-11-12-13-40-24-IMG-2885.jpg", "https://i.ibb.co/fzkmXvQK/2025-11-08-11-50-43-IMG-2149-Copy.jpg", "https://i.ibb.co/hTfbP01/2025-11-08-14-07-35-IMG-2235.jpg", "https://i.ibb.co/bj3B7TVh/2025-11-08-11-42-47-IMG-2134.jpg", "https://i.ibb.co/m55rQ9z3/2025-11-08-11-48-41-IMG-2141.jpg", "https://i.ibb.co/5hccBm8K/2025-11-08-11-42-45-IMG-2132.jpg"];
       </script>
     </section>
@@ -1036,6 +1055,31 @@
         <p class="text-sm sm:text-base text-[oklch(72%_.012_75)] leading-relaxed mb-4">جورجيا مصنفة بالمرتبة 7 عالمياً في سهولة ممارسة الأعمال وحماية الملكية العقارية من البنك الدولي. نظام التسجيل العقاري رقمي 100% ومربوط بتقنية البلوكشين لمنع أي ازدواجية أو تزوير.</p>
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 text-xs font-bold">
           <i data-lucide="award" class="w-4 h-4"></i><span>المرتبة 7 عالمياً في سهولة تسجيل الملكية (World Bank)</span>
+        </div>
+      </div>
+      <!-- Company registration extract (NAPR) -->
+      <div class="nc mb-12">
+        <div class="nc-info">
+          <span class="nc-kick"><i data-lucide="badge-check" class="w-3.5 h-3.5"></i> شركة مسجّلة رسمياً في جورجيا</span>
+          <h3>WOLF GEORGIA INVESTMENT LLC</h3>
+          <p>مستخرج رسمي من سجل الشركات لدى الوكالة الوطنية للسجل العام (NAPR) — وزارة العدل الجورجية، بنسختيه الجورجية والإنجليزية.</p>
+          <dl class="nc-facts">
+            <div><dt>الشكل القانوني</dt><dd>شركة ذات مسؤولية محدودة (LLC)</dd></div>
+            <div><dt>رقم التعريف</dt><dd class="nc-n">434193419</dd></div>
+            <div><dt>تاريخ التسجيل</dt><dd class="nc-n">11/11/2025</dd></div>
+            <div><dt>جهة التسجيل</dt><dd>الوكالة الوطنية للسجل العام NAPR</dd></div>
+          </dl>
+          <a class="nc-verify" href="https://enreg.reestri.gov.ge/main.php" target="_blank" rel="noopener"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> التحقق من السجل الرسمي</a>
+        </div>
+        <div class="nc-docs">
+          <figure class="nc-doc" data-src="https://i.ibb.co/GQVSZrfP/NAPEN24808483040.png">
+            <div class="nc-frame"><img src="https://i.ibb.co/GQVSZrfP/NAPEN24808483040.png" alt="مستخرج السجل العام — النسخة الجورجية" loading="lazy"><span class="nc-seal"><i data-lucide="shield-check" class="w-4 h-4"></i></span></div>
+            <figcaption>النسخة الجورجية</figcaption>
+          </figure>
+          <figure class="nc-doc" data-src="https://i.ibb.co/C34GY6cr/NAPEN24808473040-1.png">
+            <div class="nc-frame"><img src="https://i.ibb.co/C34GY6cr/NAPEN24808473040-1.png" alt="مستخرج السجل العام — النسخة الإنجليزية" loading="lazy"><span class="nc-seal"><i data-lucide="shield-check" class="w-4 h-4"></i></span></div>
+            <figcaption>النسخة الإنجليزية</figcaption>
+          </figure>
         </div>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12" id="naprPillarsGrid"></div>
@@ -2567,6 +2611,8 @@
     function close() { lb.classList.remove('open'); show(cur); }
     function go(d) { li = (li + d + list.length) % list.length; lbImg.src = list[li]; }
     track.addEventListener('click', function () { open(L, cur); });
+    var docs = Array.prototype.map.call(document.querySelectorAll('.nc-doc'), function (d) { return d.dataset.src; });
+    document.querySelectorAll('.nc-doc').forEach(function (d, i) { d.addEventListener('click', function () { open(docs, i); }); });
     rail.addEventListener('click', function (e) { var c = e.target.closest('.cg-card'); if (c) open(P, +c.dataset.i); });
     document.getElementById('cgLbX').onclick = close;
     document.getElementById('cgLbNext').onclick = function (e) { e.stopPropagation(); go(1); };
