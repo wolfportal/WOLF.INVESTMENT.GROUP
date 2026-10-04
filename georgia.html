@@ -855,6 +855,40 @@
 @media(max-width:700px){.wa-float-g{bottom:16px;left:16px;width:48px;height:48px}.wa-float-g svg{width:25px;height:25px}}
 @media print{.wa-float-g{display:none}}
 </style>
+
+  <style id="cg-style">
+    /* ---- company photos ---- */
+    .cg-stage{position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(212,190,158,.28);background:#050505;aspect-ratio:16/9;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+    @media (max-width:640px){.cg-stage{aspect-ratio:4/3;border-radius:16px}}
+    .cg-track{position:absolute;inset:0}
+    .cg-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;cursor:zoom-in}
+    .cg-slide.on{opacity:1;z-index:1}
+    .cg-slide .bg{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(26px) brightness(.45);transform:scale(1.1)}
+    .cg-slide img{position:relative;width:100%;height:100%;object-fit:contain;display:block}
+    .cg-slide.on img{animation:cgZoom 7s ease-out both}
+    @keyframes cgZoom{from{transform:scale(1.035)}to{transform:scale(1)}}
+    .cg-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,190,158,.45);background:rgba(0,0,0,.55);color:#EADBC4;font-size:1.6rem;line-height:1;cursor:pointer;backdrop-filter:blur(6px)}
+    .cg-prev{right:14px}.cg-next{left:14px}
+    .cg-nav:hover{background:rgba(0,0,0,.8)}
+    .cg-count{position:absolute;bottom:14px;right:16px;z-index:3;font-size:.75rem;font-weight:700;color:#EADBC4;background:rgba(0,0,0,.55);padding:4px 11px;border-radius:999px;border:1px solid rgba(212,190,158,.3);direction:ltr}
+    .cg-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08);z-index:3}
+    .cg-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#B39D7C,#EADBC4)}
+    .cg-rail-head{display:flex;align-items:center;justify-content:space-between;margin:26px 2px 12px;color:#D4BE9E;font-weight:700;font-size:.9rem}
+    .cg-rail-btns{display:flex;gap:6px}
+    .cg-rail-btns button{width:38px;height:38px;border-radius:11px;border:1px solid rgba(212,190,158,.35);background:#0B0B0B;color:#EADBC4;font-size:1.3rem;cursor:pointer}
+    .cg-rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:rgba(212,190,158,.35) transparent;-webkit-overflow-scrolling:touch}
+    .cg-card{flex:none;scroll-snap-align:start;height:min(62vh,520px);border-radius:16px;overflow:hidden;border:1px solid rgba(212,190,158,.25);background:#0B0B0B;cursor:zoom-in;position:relative}
+    .cg-card img{height:100%;width:auto;display:block;transition:transform .5s ease}
+    .cg-card:hover img{transform:scale(1.03)}
+    .cg-card.ph{aspect-ratio:3/4}
+    @media (max-width:640px){.cg-card{height:56vh}}
+    .cg-lb{position:fixed;inset:0;z-index:12000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.93);padding:18px}
+    .cg-lb.open{display:flex}
+    .cg-lb img{max-width:100%;max-height:92vh;object-fit:contain;border-radius:10px}
+    .cg-lb-x{position:absolute;top:14px;left:14px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(212,190,158,.4);background:#0B0B0B;color:#EADBC4;font-size:1.1rem;cursor:pointer}
+    .cg-lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(212,190,158,.4);background:rgba(11,11,11,.8);color:#EADBC4;font-size:1.6rem;cursor:pointer}
+    .cg-lb-prev{right:12px}.cg-lb-next{left:12px}
+  </style>
 </head>
 <body class="bg-[oklch(14%_.012_55)] text-[oklch(94%_.012_80)] min-h-screen relative selection:bg-[oklch(80%_.04_75)] selection:text-black">
 
@@ -865,13 +899,14 @@
       <div class="site-nav" id="siteNav">
         <a href="index.html">الرئيسية</a>
         <a href="#panorama">المعرض</a>
+        <a href="#company">عن الشركة</a>
+        <a href="#napr-guide">السجل العقاري</a>
+        <a href="#partners">شركاؤنا</a>
         <a href="#why-georgia">لماذا جورجيا</a>
         <a href="#batumi">باتومي</a>
         <a href="#tbilisi">تبليسي</a>
-        <a href="#napr-guide">السجل العقاري</a>
         <a href="#investment-matcher">دلّني على فرصتي</a>
         <a href="#faq">الأسئلة الشائعة</a>
-        <a href="#partners">شركاؤنا</a>
         <a id="agentNavLink" class="agent-nav-link" role="button"><i data-lucide="lock" class="w-3.5 h-3.5"></i><span id="agentNavLabel">بوابة الوكلاء</span></a>
         <a href="https://wa.me/972544228985" target="_blank" rel="noopener" class="!text-black !bg-[oklch(80%_.04_75)] px-4 py-2 rounded-lg font-bold">تواصل معنا</a>
       </div>
@@ -956,6 +991,92 @@
 
   <!-- Main Container -->
   <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+
+    <!-- WOLF in Georgia: company photos (landscape slideshow + portrait rail) -->
+    <section id="company" class="cg mb-24 scroll-mt-24 reveal-card">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
+          <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+          <span>WOLF INVESTMENT GROUP في جورجيا</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">حضورنا على أرض الواقع</h2>
+        <p class="text-sm sm:text-base text-[oklch(72%_.012_75)] leading-relaxed">لقطات من فريق WOLF INVESTMENT GROUP في جورجيا — زياراتنا الميدانية للمشاريع ولقاءاتنا مع شركائنا المطوّرين في باتومي وتبليسي.</p>
+      </div>
+      <div class="cg-stage" id="cgStage" aria-roledescription="carousel" aria-label="لقطات الشركة في جورجيا">
+        <div class="cg-track" id="cgTrack"></div>
+        <button type="button" class="cg-nav cg-prev" id="cgPrev" aria-label="الصورة السابقة">‹</button>
+        <button type="button" class="cg-nav cg-next" id="cgNext" aria-label="الصورة التالية">›</button>
+        <div class="cg-count" id="cgCount"></div>
+        <div class="cg-bar"><i id="cgBar"></i></div>
+      </div>
+      <div class="cg-rail-head">
+        <span>من الميدان</span>
+        <div class="cg-rail-btns"><button type="button" id="cgRailPrev" aria-label="السابق">‹</button><button type="button" id="cgRailNext" aria-label="التالي">›</button></div>
+      </div>
+      <div class="cg-rail" id="cgRail"></div>
+      <div class="cg-lb" id="cgLb" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+        <button type="button" class="cg-lb-x" id="cgLbX" aria-label="إغلاق">✕</button>
+        <button type="button" class="cg-lb-nav cg-lb-prev" id="cgLbPrev" aria-label="السابق">‹</button>
+        <img id="cgLbImg" alt="">
+        <button type="button" class="cg-lb-nav cg-lb-next" id="cgLbNext" aria-label="التالي">›</button>
+      </div>
+      <script>
+        window.CG_LAND = ["https://i.ibb.co/RGsjcNGx/2025-11-12-13-26-37-IMG-2878.jpg", "https://i.ibb.co/zTcgbRm7/2025-11-13-14-01-29-IMG-3114.jpg", "https://i.ibb.co/XrtjRRVr/2025-11-08-11-58-08-IMG-2162.jpg", "https://i.ibb.co/TMKkLJhW/2025-11-10-16-05-34-IMG-2535.jpg", "https://i.ibb.co/2mvd3S7/2025-11-12-13-26-21-IMG-2872.jpg", "https://i.ibb.co/rGbgqMGQ/2025-11-13-14-01-16-IMG-3109.jpg", "https://i.ibb.co/0Vd1pmdG/2025-11-08-11-57-53-IMG-2159.jpg", "https://i.ibb.co/Q3Zws4Gf/2025-11-12-13-26-31-IMG-2876-1.jpg", "https://i.ibb.co/hRGNXd2h/2025-11-10-16-05-18-IMG-2527-1.jpg", "https://i.ibb.co/n8B6zWmb/2025-11-12-13-26-16-IMG-2870.jpg", "https://i.ibb.co/bMFmSS34/2025-11-13-14-00-21-IMG-3099.jpg", "https://i.ibb.co/ycRMWJVs/2025-11-12-13-26-23-IMG-2873-1.jpg", "https://i.ibb.co/jZksmvKk/2025-11-08-11-57-51-IMG-2157.jpg", "https://i.ibb.co/gb9pjv6B/2025-11-12-13-26-19-IMG-2871-1.jpg"];
+        window.CG_PORT = ["https://i.ibb.co/QFjDChKy/2025-11-08-11-55-37-IMG-2155.jpg", "https://i.ibb.co/jPxGRd6C/2025-11-08-14-06-11-IMG-2222-Copy.jpg", "https://i.ibb.co/wrJXFQfB/2025-11-10-09-54-28-IMG-3910-Copy.jpg", "https://i.ibb.co/PztxgcFh/2025-11-08-11-48-43-IMG-2143.jpg", "https://i.ibb.co/C5F18nLT/2025-11-08-14-09-36-IMG-2245.jpg", "https://i.ibb.co/v6gGyMhJ/2025-11-13-10-58-58-IMG-2949-Copy.jpg", "https://i.ibb.co/rK8hYLCS/2025-11-08-11-50-49-IMG-2152.jpg", "https://i.ibb.co/VcrqhLmx/2025-11-08-14-09-27-IMG-2243.jpg", "https://i.ibb.co/LhnkwbXC/2025-11-10-09-53-28-IMG-3947-Copy.jpg", "https://i.ibb.co/xSjXSXjJ/2025-11-08-11-48-40-IMG-2140.jpg", "https://i.ibb.co/gZH2nYBg/2025-11-08-14-07-44-IMG-2237.jpg", "https://i.ibb.co/WpKK88dP/2025-11-12-13-40-24-IMG-2885.jpg", "https://i.ibb.co/fzkmXvQK/2025-11-08-11-50-43-IMG-2149-Copy.jpg", "https://i.ibb.co/hTfbP01/2025-11-08-14-07-35-IMG-2235.jpg", "https://i.ibb.co/bj3B7TVh/2025-11-08-11-42-47-IMG-2134.jpg", "https://i.ibb.co/m55rQ9z3/2025-11-08-11-48-41-IMG-2141.jpg", "https://i.ibb.co/5hccBm8K/2025-11-08-11-42-45-IMG-2132.jpg"];
+      </script>
+    </section>
+
+    <!-- NAPR Registry Guide -->
+    <section id="napr-guide" class="mb-24 scroll-mt-24 reveal-card">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span>الأمان القانوني والتسجيل الحكومي</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">دليل فحص الملكية في السجل العقاري الجورجي (NAPR وبيت العدل)</h2>
+        <p class="text-sm sm:text-base text-[oklch(72%_.012_75)] leading-relaxed mb-4">جورجيا مصنفة بالمرتبة 7 عالمياً في سهولة ممارسة الأعمال وحماية الملكية العقارية من البنك الدولي. نظام التسجيل العقاري رقمي 100% ومربوط بتقنية البلوكشين لمنع أي ازدواجية أو تزوير.</p>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 text-xs font-bold">
+          <i data-lucide="award" class="w-4 h-4"></i><span>المرتبة 7 عالمياً في سهولة تسجيل الملكية (World Bank)</span>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12" id="naprPillarsGrid"></div>
+      <div class="card-velvet rounded-3xl border border-gold-hairline p-5 sm:p-8">
+        <h3 class="text-base sm:text-lg font-bold text-[oklch(94%_.012_80)] mb-1.5">محاكي فحص صك الملكية في السجل العقاري الحكومي الجورجي</h3>
+        <p class="text-xs sm:text-sm text-[oklch(72%_.012_75)] mb-5">أدخل كود كادستر جورجي (بالصيغة الرسمية) لمحاكاة استخراج مستند التحقق الإلكتروني الصادر من NAPR:</p>
+        <div class="grid sm:grid-cols-2 gap-4 mb-5">
+          <div>
+            <label for="naprPresetSelect" class="block text-xs font-semibold text-[oklch(78%_.012_78)] mb-1.5">اختر للفحص:</label>
+            <select id="naprPresetSelect" onchange="if(this.value){document.getElementById('naprCustomCode').value='';}" class="w-full bg-neutral-900 border border-gold-subtle text-[oklch(94%_.012_80)] text-sm rounded-lg px-3 py-2.5">
+              <option value="company">WOLF GEORGIA INVESTMENT — شركتنا</option>
+              <option value="">كود كادستر عقاري (أدخله في الخانة المجاورة)</option>
+            </select>
+          </div>
+          <div>
+            <label for="naprCustomCode" class="block text-xs font-semibold text-[oklch(78%_.012_78)] mb-1.5">أو أدخل كود الكادستر العقاري:</label>
+            <input id="naprCustomCode" type="text" placeholder="05.24.08.109" oninput="if(this.value.trim()){document.getElementById('naprPresetSelect').value='';}" class="w-full bg-neutral-900 border border-gold-subtle text-[oklch(94%_.012_80)] text-sm rounded-lg px-3 py-2.5 calc-num" style="direction:ltr;">
+          </div>
+        </div>
+        <button type="button" onclick="runNaprVerify()" class="w-full sm:w-auto px-6 py-3 rounded-xl calc-lock-btn text-black font-extrabold text-sm mb-6 inline-flex items-center justify-center gap-2">
+          <i data-lucide="search-check" class="w-4 h-4"></i><span>فحص وتدقيق السجل العقاري الآن</span>
+        </button>
+        <div id="naprResultBody"></div>
+      </div>
+
+    </section>
+
+    <section id="partners" class="mb-20 -mx-4 sm:-mx-6 lg:-mx-8 scroll-mt-24 reveal-card">
+      <div class="text-center max-w-3xl mx-auto px-4 mb-8">
+        <img src="https://i.ibb.co/zWkj8NVC/WOLF-GATE-53.png" alt="WOLF GEORGIA INVESTMENT" class="wm-partner-logo">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          <span>شريك متعاقد</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-2">شركاؤنا المعتمدون في جورجيا</h2>
+        <p class="text-xs sm:text-sm text-[oklch(72%_.012_75)]">WOLF INVESTMENT متعاقدة حصرياً مع أبرز شركات التطوير العقاري في جورجيا لتمثيل مشاريعها الاستثمارية.</p>
+      </div>
+      <div class="marquee-wrap">
+        <div class="marquee-track" id="marqueeTrack"></div>
+      </div>
+    </section>
 
     <!-- Why Invest in Georgia -->
     <section id="why-georgia" class="mb-24 scroll-mt-24 reveal-card">
@@ -1095,43 +1216,6 @@
           <p class="text-[11px] text-[oklch(55%_.012_75)] text-center mt-4">مؤشر تقريبي لمتوسط أسعار البيع في تبليسي (المصدر: الوكالة الوطنية للإحصاء الجورجية Geostat، وتقارير Galt &amp; Taggart وGlobal Property Guide)، لأغراض التوضيح العام فقط.</p>
         </div>
       </div>
-    </section>
-
-    <!-- NAPR Registry Guide -->
-    <section id="napr-guide" class="mb-24 scroll-mt-24 reveal-card">
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
-          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span>الأمان القانوني والتسجيل الحكومي</span>
-        </div>
-        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">دليل فحص الملكية في السجل العقاري الجورجي (NAPR وبيت العدل)</h2>
-        <p class="text-sm sm:text-base text-[oklch(72%_.012_75)] leading-relaxed mb-4">جورجيا مصنفة بالمرتبة 7 عالمياً في سهولة ممارسة الأعمال وحماية الملكية العقارية من البنك الدولي. نظام التسجيل العقاري رقمي 100% ومربوط بتقنية البلوكشين لمنع أي ازدواجية أو تزوير.</p>
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 text-xs font-bold">
-          <i data-lucide="award" class="w-4 h-4"></i><span>المرتبة 7 عالمياً في سهولة تسجيل الملكية (World Bank)</span>
-        </div>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12" id="naprPillarsGrid"></div>
-      <div class="card-velvet rounded-3xl border border-gold-hairline p-5 sm:p-8">
-        <h3 class="text-base sm:text-lg font-bold text-[oklch(94%_.012_80)] mb-1.5">محاكي فحص صك الملكية في السجل العقاري الحكومي الجورجي</h3>
-        <p class="text-xs sm:text-sm text-[oklch(72%_.012_75)] mb-5">أدخل كود كادستر جورجي (بالصيغة الرسمية) لمحاكاة استخراج مستند التحقق الإلكتروني الصادر من NAPR:</p>
-        <div class="grid sm:grid-cols-2 gap-4 mb-5">
-          <div>
-            <label for="naprPresetSelect" class="block text-xs font-semibold text-[oklch(78%_.012_78)] mb-1.5">اختر للفحص:</label>
-            <select id="naprPresetSelect" onchange="if(this.value){document.getElementById('naprCustomCode').value='';}" class="w-full bg-neutral-900 border border-gold-subtle text-[oklch(94%_.012_80)] text-sm rounded-lg px-3 py-2.5">
-              <option value="company">WOLF GEORGIA INVESTMENT — شركتنا</option>
-              <option value="">كود كادستر عقاري (أدخله في الخانة المجاورة)</option>
-            </select>
-          </div>
-          <div>
-            <label for="naprCustomCode" class="block text-xs font-semibold text-[oklch(78%_.012_78)] mb-1.5">أو أدخل كود الكادستر العقاري:</label>
-            <input id="naprCustomCode" type="text" placeholder="05.24.08.109" oninput="if(this.value.trim()){document.getElementById('naprPresetSelect').value='';}" class="w-full bg-neutral-900 border border-gold-subtle text-[oklch(94%_.012_80)] text-sm rounded-lg px-3 py-2.5 calc-num" style="direction:ltr;">
-          </div>
-        </div>
-        <button type="button" onclick="runNaprVerify()" class="w-full sm:w-auto px-6 py-3 rounded-xl calc-lock-btn text-black font-extrabold text-sm mb-6 inline-flex items-center justify-center gap-2">
-          <i data-lucide="search-check" class="w-4 h-4"></i><span>فحص وتدقيق السجل العقاري الآن</span>
-        </button>
-        <div id="naprResultBody"></div>
-      </div>
-
     </section>
 
     <!-- Match Me With The Right Opportunity — budget-based recommender -->
@@ -1277,21 +1361,6 @@
         <p class="text-sm sm:text-base text-[oklch(72%_.012_75)]">إجابات مباشرة على أكثر الأسئلة اللي بتوصلنا من مستثمرين أجانب</p>
       </div>
       <div class="wf-list"><details class="wf-item" open><summary><span>هل يحق للأجانب تملك عقار بجورجيا بشكل حر؟</span><svg class="wf-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="wf-a">نعم، جورجيا من أكثر الدول انفتاحاً على الاستثمار الأجنبي — الأجانب يتملكون عقاراً حراً (Freehold) بنفس حقوق المواطن الجورجي بدون أي قيود أو شريك محلي.</div></details><details class="wf-item"><summary><span>شو الضرائب اللي بترتب علي كمستثمر أجنبي؟</span><svg class="wf-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="wf-a">لا ضريبة على الشراء، ضريبة عقار سنوية أقل من 1%، ضريبة دخل إيجار ثابتة 5%، و0% ضريبة أرباح رأسمالية بعد سنتين تملك (5% إذا كان البيع قبل هيك).</div></details><details class="wf-item"><summary><span>كيف بتشتغل خطط الدفع بالتقسيط؟</span><svg class="wf-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="wf-a">معظم المشاريع بتقدم دفعة أولى تتراوح 10-20% والباقي يتقسط على 24-40 شهر بدون فوائد حتى تاريخ التسليم، حسب سياسة كل مطوّر.</div></details><details class="wf-item"><summary><span>مين بيدير العقار وبيأجّره بعد الشراء؟</span><svg class="wf-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="wf-a">كل مشروع من محفظتنا عنده نظام إدارة تأجير احترافي (يتبع الفندق الشريك أو المطوّر نفسه)، وانت كمالك بتقدر تستخدم الوحدة شخصياً فترة محددة بالسنة وتترك الباقي للتأجير.</div></details><details class="wf-item"><summary><span>هل الاستثمار العقاري بجورجيا بيأهلني للإقامة؟</span><svg class="wf-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="wf-a">نعم، استثمار 150,000$ فأكثر يمنحك إقامة قابلة للتجديد لمدة سنة، واستثمار 300,000$ فأكثر يمنحك إقامة 5 سنوات تؤهلك للإقامة الدائمة، بدون شرط إقامة فعلية بالبلد.</div></details><details class="wf-item"><summary><span>شو بيصير إذا حبيت أبيع العقار بالمستقبل؟</span><svg class="wf-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="wf-a">سوق باتومي شهد نمو أسعار مستمر بالسنوات الأخيرة، وبعض المشاريع بتقدم ضمان إعادة شراء (Buyback) بعد فترة معينة — التفاصيل بتختلف حسب المشروع ونقدر نوضحلك الخيارات المتاحة.</div></details><details class="wf-item"><summary><span>شو دور WOLF INVESTMENT بالضبط؟</span><svg class="wf-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="wf-a">إحنا شريك معتمد ومتعاقد مباشرة مع المطورين المعروضين هون، ومهمتنا نساعدك تختار المشروع الأنسب، نوضحلك كل التفاصيل الحقيقية، ونرافقك من الحجز لحد التسليم.</div></details><details class="wf-item"><summary><span>كيف أضمن عدم وجود أي رهن أو حجز بنكي على العقار؟</span><svg class="wf-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="wf-a">من خلال المستخرج الإلكتروني الصادر من الوكالة الوطنية للسجل العقاري (NAPR) التابعة لوزارة العدل الجورجية. النظام الحكومي يتيح فحصاً فورياً لكافة الرهونات والتأمينات السابقة عبر كود الكادستر الفريد لكل عقار.</div></details><details class="wf-item"><summary><span>كيف يتم تأجير وتحصيل الأرباح إن كنت أعيش خارج جورجيا؟</span><svg class="wf-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="wf-a">كل المشاريع المعروضة عنا متعاقدة مع شركات إدارة فندقية عالمية ومحلية متخصصة تتولى التسويق والصيانة والاستقبال والتأجير عبر المنصات العالمية، مع تحويل صافي الأرباح مباشرة لحسابك البنكي بغض النظر عن مكان إقامتك.</div></details></div>
-    </section>
-
-    <section id="partners" class="mb-20 -mx-4 sm:-mx-6 lg:-mx-8 scroll-mt-24 reveal-card">
-      <div class="text-center max-w-3xl mx-auto px-4 mb-8">
-        <img src="https://i.ibb.co/zWkj8NVC/WOLF-GATE-53.png" alt="WOLF GEORGIA INVESTMENT" class="wm-partner-logo">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
-          <i data-lucide="award" class="w-3.5 h-3.5"></i>
-          <span>شريك متعاقد</span>
-        </div>
-        <h2 class="text-xl sm:text-2xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-2">شركاؤنا المعتمدون في جورجيا</h2>
-        <p class="text-xs sm:text-sm text-[oklch(72%_.012_75)]">WOLF INVESTMENT متعاقدة حصرياً مع أبرز شركات التطوير العقاري في جورجيا لتمثيل مشاريعها الاستثمارية.</p>
-      </div>
-      <div class="marquee-wrap">
-        <div class="marquee-track" id="marqueeTrack"></div>
-      </div>
     </section>
 
     <!-- Footer -->
@@ -2445,5 +2514,69 @@
 </script>
 <script src="chatbot.js?v=1"></script><!-- https://respond.io -->
 <script src="mobile-nav.js?v=3" data-header=".site-topbar-inner" data-hide="#siteNav,#siteHamburger" data-links="#siteNav > a:not(#agentNavLink)" data-extra="#agentNavLink" data-bp="820" defer></script>
+
+  <script>
+  /* company photos: landscape slideshow (auto, swipe, arrows) + portrait rail at natural size + lightbox */
+  (function () {
+    var L = window.CG_LAND || [], P = window.CG_PORT || [];
+    var track = document.getElementById('cgTrack'); if (!track || !L.length) return;
+    var cur = 0, timer = null, DUR = 5200, bar = document.getElementById('cgBar'), cnt = document.getElementById('cgCount');
+    track.innerHTML = L.map(function (u, i) {
+      return '<div class="cg-slide' + (i ? '' : ' on') + '" data-i="' + i + '"><div class="bg"' + (i < 2 ? ' style="background-image:url(\'' + u + '\')"' : '') + '></div><img ' + (i < 2 ? 'src' : 'data-src') + '="' + u + '" alt="WOLF INVESTMENT GROUP في جورجيا" loading="' + (i ? 'lazy' : 'eager') + '"></div>';
+    }).join('');
+    var slides = track.querySelectorAll('.cg-slide');
+    function load(i) {
+      var s = slides[(i + L.length) % L.length], im = s.querySelector('img');
+      if (im.dataset.src) { im.src = im.dataset.src; s.querySelector('.bg').style.backgroundImage = 'url(\'' + im.dataset.src + '\')'; delete im.dataset.src; }
+    }
+    function show(i) {
+      cur = (i + L.length) % L.length; load(cur); load(cur + 1);
+      slides.forEach(function (s, k) { s.classList.toggle('on', k === cur); });
+      cnt.textContent = (cur + 1) + ' / ' + L.length;
+      bar.style.transition = 'none'; bar.style.width = '0';
+      requestAnimationFrame(function () { requestAnimationFrame(function () { bar.style.transition = 'width ' + DUR + 'ms linear'; bar.style.width = '100%'; }); });
+      clearTimeout(timer); timer = setTimeout(function () { show(cur + 1); }, DUR);
+    }
+    document.getElementById('cgNext').onclick = function (e) { e.stopPropagation(); show(cur + 1); };
+    document.getElementById('cgPrev').onclick = function (e) { e.stopPropagation(); show(cur - 1); };
+    var stage = document.getElementById('cgStage'), sx = null;
+    stage.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener('touchend', function (e) {
+      if (sx === null) return; var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 40) show(dx > 0 ? cur - 1 : cur + 1);   /* RTL: swipe right = back */
+    });
+    /* pause while off screen */
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) show(cur); else clearTimeout(timer); });
+    }, { threshold: .25 }).observe(stage);
+    else show(0);
+
+    var rail = document.getElementById('cgRail');
+    rail.innerHTML = P.map(function (u, i) { return '<button type="button" class="cg-card ph" data-i="' + i + '"><img src="' + u + '" alt="WOLF INVESTMENT GROUP في جورجيا" loading="lazy"></button>'; }).join('');
+    rail.querySelectorAll('img').forEach(function (im) {
+      var done = function () { if (im.naturalWidth) im.parentNode.classList.remove('ph'); };
+      if (im.complete) done(); else im.addEventListener('load', done);
+    });
+    var step = function () { var c = rail.querySelector('.cg-card'); return c ? c.offsetWidth + 12 : 300; };
+    document.getElementById('cgRailNext').onclick = function () { rail.scrollBy({ left: -step(), behavior: 'smooth' }); };
+    document.getElementById('cgRailPrev').onclick = function () { rail.scrollBy({ left: step(), behavior: 'smooth' }); };
+
+    /* lightbox */
+    var lb = document.getElementById('cgLb'), lbImg = document.getElementById('cgLbImg'), list = [], li = 0;
+    function open(arr, i) { list = arr; li = i; lbImg.src = list[li]; lb.classList.add('open'); clearTimeout(timer); }
+    function close() { lb.classList.remove('open'); show(cur); }
+    function go(d) { li = (li + d + list.length) % list.length; lbImg.src = list[li]; }
+    track.addEventListener('click', function () { open(L, cur); });
+    rail.addEventListener('click', function (e) { var c = e.target.closest('.cg-card'); if (c) open(P, +c.dataset.i); });
+    document.getElementById('cgLbX').onclick = close;
+    document.getElementById('cgLbNext').onclick = function (e) { e.stopPropagation(); go(1); };
+    document.getElementById('cgLbPrev').onclick = function (e) { e.stopPropagation(); go(-1); };
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') go(1); if (e.key === 'ArrowRight') go(-1);
+    });
+  })();
+  </script>
 </body>
 </html>
