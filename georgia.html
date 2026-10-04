@@ -888,6 +888,12 @@
     .cg-lb-x{position:absolute;top:14px;left:14px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(212,190,158,.4);background:#0B0B0B;color:#EADBC4;font-size:1.1rem;cursor:pointer}
     .cg-lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(212,190,158,.4);background:rgba(11,11,11,.8);color:#EADBC4;font-size:1.6rem;cursor:pointer}
     .cg-lb-prev{right:12px}.cg-lb-next{left:12px}
+    .pi-sep{width:1px;height:12px;background:rgba(212,190,158,.4)}
+    .pi-sum{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
+    .pi-sum span{font-size:.78rem;color:#CFC8BC;border:1px solid rgba(212,190,158,.22);border-radius:999px;padding:5px 12px;background:rgba(5,5,5,.6)}
+    .pi-sum b{color:#EADBC4}
+    .pi-src{font-size:11px;text-align:center;margin-top:6px;color:oklch(55% .012 75)}
+    .pi-src a{color:#D4BE9E;text-decoration:underline;text-underline-offset:2px}
     .nc{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;align-items:center;border:1px solid rgba(212,190,158,.3);border-radius:22px;padding:22px;background:linear-gradient(160deg,rgba(212,190,158,.08),rgba(5,5,5,.7))}
     @media (max-width:860px){.nc{grid-template-columns:1fr}}
     .nc-kick{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;color:#D4BE9E;border:1px solid rgba(212,190,158,.3);border-radius:999px;padding:4px 11px}
@@ -1183,6 +1189,8 @@
               <i data-lucide="trending-up" class="w-3.5 h-3.5 text-[oklch(80%_.04_75)]"></i>
               <span class="text-xs font-bold calc-gold">نمو تراكمي</span>
               <span class="text-xs font-extrabold calc-gold">+66%</span>
+              <span class="pi-sep"></span>
+              <span class="text-xs font-extrabold calc-gold"><bdi dir="ltr">+557 $</bdi> للمتر</span>
             </div>
           </div>
           <div class="price-chart-bars" id="priceChartBars">
@@ -1194,7 +1202,9 @@
             <div class="price-bar-col"><span class="price-bar-value" data-target="1197" data-delay="5.5" data-duration="1.2">$0</span><div class="price-bar" style="--bar-h:80%; transition-delay:5.5s; transition-duration:1.2s;"></div><span class="price-bar-year">2024</span></div>
             <div class="price-bar-col"><span class="price-bar-value" data-target="1395" data-delay="6.6" data-duration="1.2">$0</span><div class="price-bar" style="--bar-h:93%; transition-delay:6.6s; transition-duration:1.2s;"></div><span class="price-bar-year">2025</span></div>
           </div>
+          <div class="pi-sum"><span>سعر المتر ارتفع من <b dir="ltr">838 $</b> في 2019 إلى <b dir="ltr">1,395 $</b> في 2025</span><span>زيادة <b dir="ltr">+557 $</b> لكل متر مربع</span><span>شقة 60 م² زادت قيمتها نحو <b dir="ltr">+33,420 $</b></span></div>
           <p class="text-[11px] text-[oklch(55%_.012_75)] text-center mt-4">مؤشر تقريبي لمتوسط أسعار البيع في المناطق الحضرية بباتومي، لأغراض التوضيح العام فقط.</p>
+          <p class="pi-src">المصادر: <a href="https://galtandtaggart.com/report/batumi-residential-real-estate-1q25-overview/" target="_blank" rel="noopener">Galt &amp; Taggart — Batumi Residential Real Estate</a> · <a href="https://internationalinvestment.biz/en/business/7220-batumi-housing-market-prices-rose-by-17-in-2025-tbc-capital-report.html" target="_blank" rel="noopener">TBC Capital — Batumi 2025</a></p>
         </div>
       </div>
     </section>
@@ -1246,6 +1256,8 @@
               <i data-lucide="trending-up" class="w-3.5 h-3.5 text-[oklch(80%_.04_75)]"></i>
               <span class="text-xs font-bold calc-gold">نمو تراكمي</span>
               <span class="text-xs font-extrabold calc-gold">+97%</span>
+              <span class="pi-sep"></span>
+              <span class="text-xs font-extrabold calc-gold"><bdi dir="ltr">+678 $</bdi> للمتر</span>
             </div>
           </div>
           <div class="price-chart-bars" id="priceChartBarsTbilisi">
@@ -1257,7 +1269,9 @@
             <div class="price-bar-col"><span class="price-bar-value" data-target="1233" data-delay="5.5" data-duration="1.2">$0</span><div class="price-bar" style="--bar-h:83%; transition-delay:5.5s; transition-duration:1.2s;"></div><span class="price-bar-year">2024</span></div>
             <div class="price-bar-col"><span class="price-bar-value" data-target="1378" data-delay="6.6" data-duration="1.2">$0</span><div class="price-bar" style="--bar-h:93%; transition-delay:6.6s; transition-duration:1.2s;"></div><span class="price-bar-year">2025</span></div>
           </div>
-          <p class="text-[11px] text-[oklch(55%_.012_75)] text-center mt-4">مؤشر تقريبي لمتوسط أسعار البيع في تبليسي (المصدر: الوكالة الوطنية للإحصاء الجورجية Geostat، وتقارير Galt &amp; Taggart وGlobal Property Guide)، لأغراض التوضيح العام فقط.</p>
+          <div class="pi-sum"><span>سعر المتر ارتفع من <b dir="ltr">700 $</b> في 2019 إلى <b dir="ltr">1,378 $</b> في 2025</span><span>زيادة <b dir="ltr">+678 $</b> لكل متر مربع</span><span>شقة 60 م² زادت قيمتها نحو <b dir="ltr">+40,680 $</b></span></div>
+          <p class="text-[11px] text-[oklch(55%_.012_75)] text-center mt-4">مؤشر تقريبي لمتوسط أسعار البيع في تبليسي، لأغراض التوضيح العام فقط.</p>
+          <p class="pi-src">المصادر: <a href="https://www.geostat.ge/en" target="_blank" rel="noopener">Geostat — الوكالة الوطنية للإحصاء الجورجية</a> · <a href="https://galtandtaggart.com/" target="_blank" rel="noopener">Galt &amp; Taggart</a> · <a href="https://www.globalpropertyguide.com/europe/georgia/price-history" target="_blank" rel="noopener">Global Property Guide</a></p>
         </div>
       </div>
     </section>
@@ -2644,5 +2658,6 @@
     });
   })();
   </script>
+<script src="budget-calc.js?v=1" defer></script>
 </body>
 </html>
