@@ -876,7 +876,7 @@
     .cg-rail-head{display:flex;align-items:center;justify-content:space-between;margin:26px 2px 12px;color:#D4BE9E;font-weight:700;font-size:.9rem}
     .cg-rail-btns{display:flex;gap:6px}
     .cg-rail-btns button{width:38px;height:38px;border-radius:11px;border:1px solid rgba(212,190,158,.35);background:#0B0B0B;color:#EADBC4;font-size:1.3rem;cursor:pointer}
-    .cg-rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:rgba(212,190,158,.35) transparent;-webkit-overflow-scrolling:touch}
+    .cg-rail{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:rgba(212,190,158,.35) transparent;-webkit-overflow-scrolling:touch}
     .cg-card{flex:none;scroll-snap-align:start;height:min(62vh,520px);border-radius:16px;overflow:hidden;border:1px solid rgba(212,190,158,.25);background:#0B0B0B;cursor:zoom-in;position:relative}
     .cg-card img{height:100%;width:auto;display:block;transition:transform .5s ease}
     .cg-card:hover img{transform:scale(1.03)}
@@ -899,11 +899,11 @@
     .nc-facts dd{font-size:.82rem;font-weight:700;color:#F3EDE3}
     .nc-n{direction:ltr;text-align:right}
     .nc-verify{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:#EADBC4;text-decoration:underline;text-underline-offset:3px}
-    .nc-docs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .nc-docs{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:460px;width:100%;margin:0 auto}
     .nc-doc{margin:0;cursor:zoom-in}
     .nc-frame{position:relative;padding:10px;border-radius:6px;background:linear-gradient(145deg,#E9D9B8,#B39D7C 45%,#EADBC4 70%,#9C8463);box-shadow:0 18px 40px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .35s ease}
     .nc-frame::before{content:"";position:absolute;inset:6px;border:1px solid rgba(60,45,25,.45);border-radius:3px;pointer-events:none}
-    .nc-frame img{display:block;width:100%;height:auto;background:#fff;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+    .nc-frame img{display:block;width:100%;aspect-ratio:1/1.414;object-fit:cover;object-position:top;background:#fff;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
     .nc-doc:hover .nc-frame{transform:translateY(-4px) rotate(-.4deg)}
     .nc-seal{position:absolute;bottom:-12px;left:-12px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#0A0A0A;background:radial-gradient(circle at 35% 30%,#FFF4DC,#D4BE9E 60%,#9C8463);box-shadow:0 6px 16px rgba(0,0,0,.5)}
     .nc-doc figcaption{text-align:center;font-size:.76rem;font-weight:700;color:#D4BE9E;margin-top:14px}
@@ -2602,8 +2602,28 @@
       if (im.complete) done(); else im.addEventListener('load', done);
     });
     var step = function () { var c = rail.querySelector('.cg-card'); return c ? c.offsetWidth + 12 : 300; };
-    document.getElementById('cgRailNext').onclick = function () { rail.scrollBy({ left: -step(), behavior: 'smooth' }); };
-    document.getElementById('cgRailPrev').onclick = function () { rail.scrollBy({ left: step(), behavior: 'smooth' }); };
+    /* portrait rail: glides by itself, pauses while the visitor touches / hovers / uses the arrows */
+    var paused = 0, onScreen = false, pos = null, last = 0;
+    var hold = function (ms) { paused = Date.now() + (ms || 4000); pos = null; };
+    function glide(t) {
+      var dt = last ? Math.min(t - last, 50) : 16; last = t;
+      if (onScreen && Date.now() > paused && rail.scrollWidth > rail.clientWidth + 4) {
+        var max = rail.scrollWidth - rail.clientWidth;
+        if (pos === null) pos = Math.abs(rail.scrollLeft);
+        pos += dt * 0.045;                       /* ~45 px per second */
+        if (pos >= max - 1) { pos = 0; hold(1500); rail.scrollLeft = 0; }
+        else rail.scrollLeft = -pos;            /* RTL: content scrolls toward negative values */
+        if (Math.abs(rail.scrollLeft) < 1 && pos > 2) rail.scrollLeft = pos;   /* browsers with positive RTL scroll */
+      }
+      requestAnimationFrame(glide);
+    }
+    requestAnimationFrame(glide);
+    ['pointerdown', 'touchstart', 'wheel', 'mouseenter'].forEach(function (ev) { rail.addEventListener(ev, function () { hold(6000); }, { passive: true }); });
+    rail.addEventListener('mouseleave', function () { hold(800); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { onScreen = es[0].isIntersecting; }, { threshold: .2 }).observe(rail);
+    else onScreen = true;
+    document.getElementById('cgRailNext').onclick = function () { hold(6000); rail.scrollBy({ left: -step(), behavior: 'smooth' }); };
+    document.getElementById('cgRailPrev').onclick = function () { hold(6000); rail.scrollBy({ left: step(), behavior: 'smooth' }); };
 
     /* lightbox */
     var lb = document.getElementById('cgLb'), lbImg = document.getElementById('cgLbImg'), list = [], li = 0;
