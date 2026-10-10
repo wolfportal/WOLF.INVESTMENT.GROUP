@@ -914,6 +914,169 @@
     .nc-seal{position:absolute;bottom:-12px;left:-12px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#0A0A0A;background:radial-gradient(circle at 35% 30%,#FFF4DC,#D4BE9E 60%,#9C8463);box-shadow:0 6px 16px rgba(0,0,0,.5)}
     .nc-doc figcaption{text-align:center;font-size:.76rem;font-weight:700;color:#D4BE9E;margin-top:14px}
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <style id="wolf-oct26">
+    /* same presentation as the internal reference file */
+    @media (prefers-reduced-motion:reduce){.pj-panel.on,.pj-panel.on>*,.wmth-step,.wmth-seal,.wmth-title{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}}
+    .wmth{color:#EFE9DE}
+    .wmth-hero,.tm-frame{position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(212,190,158,.45);background:#050505;box-shadow:0 0 0 6px rgba(212,190,158,.06),0 30px 80px rgba(0,0,0,.6)}
+    .wmth-hero{aspect-ratio:16/9;margin-inline:auto}
+    .wmth-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .tm-frame{aspect-ratio:9/16;height:min(78vh,680px);max-width:100%}
+    .tm-frame.is-wide{height:auto;width:min(100%,900px)}
+    .wmth-shade{position:absolute;inset:0;background:linear-gradient(270deg,rgba(5,5,5,.92) 0%,rgba(5,5,5,.72) 42%,rgba(5,5,5,.15) 100%)}
+    .wmth-title{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:clamp(18px,4vw,48px);max-width:640px;opacity:0;transform:translateX(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+    .wmth-title.in{opacity:1;transform:none}
+    .wmth-kick{align-self:flex-start;padding:5px 14px;border-radius:999px;border:1px solid rgba(212,190,158,.45);color:#D4BE9E;font-size:.8rem;font-weight:700;background:rgba(0,0,0,.35)}
+    .wmth-title h2{font-size:clamp(1.5rem,3.4vw,2.5rem);font-weight:800;color:#FAF7F2;line-height:1.3;margin:0}
+    .wmth-title p{font-size:clamp(.92rem,1.4vw,1.05rem);line-height:1.9;color:#E3DCCF;margin:0}
+    .wmth-title b{color:#F7EFE2}
+    .wmth-steps{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;counter-reset:s}
+    .wmth-step{position:relative;padding:18px 16px 16px;border-radius:20px;border:1px solid rgba(212,190,158,.22);background:linear-gradient(170deg,#0E0E0E,#060606);opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1),border-color .3s;transition-delay:calc(var(--i) * 110ms)}
+    .wmth-step.in{opacity:1;transform:none}
+    .wmth-step:hover{border-color:rgba(212,190,158,.6)}
+    .wmth-step::after{content:'';position:absolute;top:34px;left:-12px;width:12px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,190,158,.6))}
+    .wmth-step:last-child::after{display:none}
+    .wmth-n{position:absolute;top:12px;left:14px;font-size:.78rem;font-weight:800;color:rgba(212,190,158,.55);letter-spacing:.08em}
+    .wmth-ic{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:14px;background:radial-gradient(circle at 30% 25%,rgba(212,190,158,.22),rgba(212,190,158,.05));border:1px solid rgba(212,190,158,.35);color:#D4BE9E;margin-bottom:10px}
+    .wmth-step h3{font-size:1.02rem;font-weight:800;color:#FAF7F2;margin:0 0 6px}
+    .wmth-step p{font-size:.88rem;line-height:1.8;color:#CFC8BC;margin:0}
+    .wmth-step b{color:#F7EFE2}
+    .wmth-seal{display:flex;align-items:center;gap:12px;margin-top:12px;padding:14px 18px;border-radius:18px;background:linear-gradient(90deg,rgba(212,190,158,.16),rgba(212,190,158,.04));border:1px solid rgba(212,190,158,.4);opacity:0;transform:scale(.98);transition:opacity .7s .5s,transform .7s .5s}
+    .wmth-seal.in{opacity:1;transform:none}
+    .wmth-seal .wmth-ic{margin:0;flex:none}
+    .wmth-seal p{margin:0;font-weight:700;color:#F3EDE3;line-height:1.8}
+    @media (max-width:1000px){.wmth-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.wmth-step::after{display:none}}
+    .wmth.is-tall .wmth-hero{width:min(100%,calc(86vh * var(--ar,1)));max-height:86vh}
+    .wmth.is-tall .wmth-shade,.wmth.is-stack .wmth-shade{display:none}
+    .wmth.is-tall .wmth-title,.wmth.is-stack .wmth-title{position:static;max-width:860px;margin:18px auto 0;padding:0;text-align:center;align-items:center}
+    .wmth.is-tall .wmth-kick,.wmth.is-stack .wmth-kick{align-self:center}
+    @media (max-width:640px){.wmth-steps{grid-template-columns:1fr}.tm-frame{height:min(70vh,560px)}}
+    .nc-top{position:relative}
+    .nc-logo{display:block;height:34px;width:auto;margin:0 0 12px;opacity:.95}
+    @media (max-width:640px){.nc-logo{height:28px}}
+    .cityx-kick{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid rgba(212,190,158,.35);background:rgba(212,190,158,.1);color:#EADBC4;font-size:.75rem;font-weight:800;margin-bottom:12px}
+    .cityx-lead{font-size:.95rem;line-height:1.95;color:#C4BDB1;margin:0 0 16px}
+    .cityx-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
+    @media (max-width:640px){.cityx-kpis{grid-template-columns:1fr}}
+    .cityx-kpi{border:1px solid rgba(212,190,158,.28);border-radius:16px;padding:12px;background:linear-gradient(160deg,rgba(212,190,158,.1),rgba(5,5,5,.7));display:flex;flex-direction:column;gap:3px}
+    .cityx-kpi svg{width:22px;height:22px;color:#EADBC4;margin-bottom:4px}
+    .cityx-kpi small{font-size:.72rem;color:#B0A99D;font-weight:700}
+    .cityx-kpi b{font-size:1.3rem;font-weight:900;color:#FAF7F2}
+    .cityx-kpi em{font-style:normal;font-size:.68rem;color:#8A847A}
+    .cityx-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+    .cityx-list li{display:flex;gap:11px;align-items:flex-start;font-size:.86rem;line-height:1.85;color:#CFC8BC}
+    .cityx-list li>svg{flex:none;width:34px;height:34px;padding:7px;border-radius:11px;color:#EADBC4;background:rgba(212,190,158,.1);border:1px solid rgba(212,190,158,.28)}
+    .cityx-list b{color:#FAF7F2}
+    .bevo{display:flex;flex-direction:column;gap:10px}
+    .bevo-stage{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;border:1px solid rgba(212,190,158,.3);background:#050505;touch-action:pan-y}
+    .bevo-stage figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s ease}
+    .bevo-stage figure.on{opacity:1}
+    .bevo-stage img{width:100%;height:100%;object-fit:cover;display:block}
+    .bevo-stage figcaption{position:absolute;bottom:10px;right:10px;font-size:.76rem;font-weight:800;color:#EADBC4;background:rgba(0,0,0,.6);border:1px solid rgba(212,190,158,.35);border-radius:999px;padding:4px 12px}
+    .bevo-map{background:#0b0b0b}
+    .bevo-mosaic{position:absolute;left:0;top:0;width:1280px;height:1280px;transform-origin:0 0}
+    .bevo-mosaic img{position:absolute;width:256px;height:256px;max-width:none;object-fit:fill}
+    .bevo-stage figure.bevo-map figcaption{font-size:1rem;padding:5px 14px;background:rgba(0,0,0,.7)}
+    .bevo-src{position:absolute;top:8px;left:10px;z-index:3;font-size:9px;color:rgba(255,255,255,.7);background:rgba(0,0,0,.45);padding:2px 7px;border-radius:6px}
+    .bevo-stage figure{z-index:1}
+    .bevo-stage figure.on{z-index:2}
+    .bevo-cap{font-size:.78rem;color:#9A9489;text-align:center;line-height:1.7;margin:0}
+    .bevo-bar{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+    .bevo-bar button{min-width:30px;height:28px;padding:0 9px;border-radius:999px;border:1px solid rgba(212,190,158,.3);background:#0B0B0B;color:#CFC8BC;font-size:.72rem;font-weight:800;cursor:pointer;direction:ltr}
+    .bevo-bar button.on{background:#D4BE9E;color:#0A0A0A}
+    .price-bar-pct{font-size:10px;font-weight:800;color:#7FD7A6;direction:ltr;white-space:nowrap;line-height:1}
+    .price-bar-pct.base{color:#8A847A}
+    .price-bar-pct.neg{color:#E69A8A}
+    .cyc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
+    @media (max-width:860px){.cyc{grid-template-columns:1fr}}
+    .cyc-box{border:1px solid rgba(212,190,158,.22);border-radius:18px;padding:16px;background:#070707}
+    .cyc-box h4{display:flex;align-items:center;gap:8px;font-size:.95rem;font-weight:800;color:#FAF7F2;margin:0 0 4px}
+    .cyc-box h4 svg{width:18px;height:18px;color:#EADBC4}
+    .cyc-box p{font-size:.72rem;color:#8A847A;margin:0 0 12px}
+    .cyc-row{display:grid;grid-template-columns:minmax(92px,34%) 1fr auto;align-items:center;gap:10px;margin-bottom:9px}
+    .cyc-row span{font-size:.78rem;color:#CFC8BC}
+    .cyc-track{height:12px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden}
+    .cyc-track i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#9C8463,#EADBC4);transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+    .cyc-box.alt .cyc-track i{background:linear-gradient(90deg,#3E8E68,#7FD7A6)}
+    .cyc-row b{font-size:.8rem;font-weight:800;color:#FAF7F2;direction:ltr;min-width:58px;text-align:left}
+    .cyc-avg{margin-top:10px;padding-top:10px;border-top:1px dashed rgba(212,190,158,.25);display:flex;justify-content:space-between;font-size:.8rem;color:#B9B2A6}
+    .cyc-avg b{color:#EADBC4;direction:ltr}
+    .snd-btn{position:fixed;right:14px;bottom:84px;z-index:65;width:40px;height:40px;border-radius:50%;border:1px solid rgba(212,190,158,.45);background:rgba(11,11,11,.85);color:#EADBC4;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px);box-shadow:0 8px 24px rgba(0,0,0,.5)}
+    .snd-btn svg{width:18px;height:18px}
+    .snd-btn.off{opacity:.6}
+    .snd-btn.snd-nav{position:static;width:34px;height:34px;flex:none;box-shadow:none;margin-inline:4px}
+    @media print{.snd-btn{display:none}}
+    @property --gr{syntax:'<angle>';inherits:false;initial-value:0deg}
+    .gold-run{position:relative;isolation:isolate}
+    .gold-run::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:6;
+      background:conic-gradient(from var(--gr),rgba(212,190,158,.18) 0deg,#FFF1D2 40deg,#D4BE9E 70deg,rgba(212,190,158,.18) 120deg,rgba(212,190,158,.18) 180deg,#EADBC4 220deg,#B39D7C 250deg,rgba(212,190,158,.18) 300deg);
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+      animation:grSpin 4.5s linear infinite}
+    @media (prefers-reduced-motion:reduce){.gold-run::after{animation:none}}
+    .bk-logo.gold-run{background:#050505;border:0;height:58px;border-radius:14px}
+    .bc-top .bk-logo.gold-run{height:42px;padding:0 18px}
+    .tm-frame.gold-run{border:0;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+    .tm-frame video{object-fit:cover!important}
+    .sec-title{font-size:clamp(1.8rem,4.4vw,3rem)!important;line-height:1.35!important;font-weight:800!important;position:relative;padding-bottom:16px;margin-bottom:14px!important;
+      background:linear-gradient(100deg,#FAF7F2 0%,#FAF7F2 38%,#FFE7B8 48%,#D4BE9E 52%,#FAF7F2 62%,#FAF7F2 100%);background-size:260% 100%;background-position:100% 0;
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent!important;
+      opacity:0;transform:translateY(22px) scale(.98);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+    .sec-title *{-webkit-text-fill-color:transparent}
+    .sec-title.in{opacity:1;transform:none;animation:secShine 2.6s ease .35s both}
+    .sec-title::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,#D4BE9E,#FFF1D2,#D4BE9E,transparent);transition:width 1.1s cubic-bezier(.2,.8,.2,1) .35s}
+    .sec-title.in::after{width:min(180px,55%)}
+    .sec-title-start::after{left:auto;right:0;transform:none;background:linear-gradient(270deg,#FFF1D2,#D4BE9E,transparent)}
+    @media (prefers-reduced-motion:reduce){.sec-title{opacity:1;transform:none;transition:none}.sec-title.in{animation:none;background-position:0 0}}
+    @media print{.sec-title{opacity:1!important;transform:none!important;-webkit-text-fill-color:#1d1a16}}
+    .bev{margin-top:34px;padding-top:28px;border-top:1px solid rgba(212,190,158,.18)}
+    .bev-head{text-align:center;margin-bottom:18px}
+    .bev-head h3{font-size:clamp(1.4rem,3.4vw,2.2rem);font-weight:800;color:#FAF7F2;margin:10px 0 0}
+    .bev-pair{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center}
+    @media (max-width:760px){.bev-pair{grid-template-columns:1fr}.bev-arrow{transform:rotate(90deg);margin:-4px auto}}
+    .bev-shot{margin:0;opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+    .bev-shot.is-now{transition-delay:.35s}
+    .bev.in .bev-shot{opacity:1;transform:none}
+    .bev-img{border-radius:18px;overflow:hidden;border:1px solid rgba(212,190,158,.3);background:#050505;aspect-ratio:4/3;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+    .bev-shot.is-now .bev-img{border-color:rgba(212,190,158,.65);box-shadow:0 0 0 1px rgba(212,190,158,.25),0 24px 60px rgba(0,0,0,.6)}
+    .bev-img img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06);transition:transform 6s ease}
+    .bev.in .bev-img img{transform:scale(1)}
+    .bev-shot figcaption{text-align:center;margin-top:12px;display:flex;flex-direction:column;align-items:center;gap:2px}
+    .bev-year{font-size:clamp(2.6rem,7vw,4.2rem);font-weight:900;line-height:1;letter-spacing:.04em;direction:ltr;font-variant-numeric:tabular-nums;
+      background:linear-gradient(100deg,#B39D7C 0%,#FFF1D2 45%,#D4BE9E 55%,#9C8463 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+      animation:bevShine 4s ease-in-out infinite;text-shadow:0 0 30px rgba(212,190,158,.15)}
+    .bev-shot:not(.is-now) .bev-year{background:linear-gradient(100deg,#8A847A,#CFC8BC,#8A847A);background-size:220% 100%;-webkit-background-clip:text;background-clip:text}
+    .bev-shot figcaption small{font-size:.84rem;color:#B9B2A6}
+    .bev-arrow{display:flex;flex-direction:column;align-items:center;gap:6px;color:#EADBC4;font-size:.78rem;font-weight:800;white-space:nowrap}
+    .bev-arrow i{display:block;width:64px;height:2px;background:linear-gradient(270deg,#FFF1D2,#D4BE9E 60%,transparent);position:relative;transform-origin:right;transform:scaleX(0);transition:transform 1s ease .5s}
+    .bev-arrow i::after{content:"";position:absolute;left:-2px;top:-5px;border:6px solid transparent;border-right:9px solid #FFF1D2;border-left:0}
+    .bev.in .bev-arrow i{transform:scaleX(1)}
+    .bev-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:22px 0 14px}
+    @media (max-width:640px){.bev-stats{grid-template-columns:1fr}}
+    .bev-stats div{border:1px solid rgba(212,190,158,.25);border-radius:16px;padding:12px;text-align:center;background:linear-gradient(160deg,rgba(212,190,158,.09),rgba(5,5,5,.7))}
+    .bev-stats b{display:block;font-size:1.6rem;font-weight:900;color:#7FD7A6}
+    .bev-stats small{font-size:.76rem;color:#B9B2A6}
+    .bev-text{font-size:.92rem;line-height:1.95;color:#C4BDB1;text-align:center;max-width:860px;margin:0 auto}
+    @media (prefers-reduced-motion:reduce){.bev-shot,.bev-img img,.bev-arrow i{transition:none;opacity:1;transform:none}.bev-year{animation:none}}
+    .cityx-wide{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:26px 0 0;padding:0;list-style:none}
+    .cityx-wide li{grid-column:span 2;border:1px solid rgba(212,190,158,.2);border-radius:16px;padding:14px;background:linear-gradient(160deg,rgba(212,190,158,.06),rgba(5,5,5,.6));font-size:.84rem;line-height:1.8;align-items:flex-start}
+    .cityx-wide li:nth-child(4):nth-last-child(2),.cityx-wide li:nth-child(5):last-child{grid-column:span 3}
+    @media (max-width:1023px){.cityx-wide{grid-template-columns:repeat(2,minmax(0,1fr))}.cityx-wide li,.cityx-wide li:nth-child(4):nth-last-child(2),.cityx-wide li:nth-child(5):last-child{grid-column:span 1}.cityx-wide li:last-child:nth-child(odd){grid-column:1/-1}}
+    @media (max-width:640px){.cityx-wide{grid-template-columns:1fr}.cityx-wide li:last-child:nth-child(odd){grid-column:auto}}
+    .bev-year{font-family:'Playfair Display',Georgia,'Times New Roman',serif!important;font-weight:800;font-variant-numeric:lining-nums tabular-nums;letter-spacing:.02em}
+    @media (min-width:1024px){#company.cg>.text-center .sec-title-start::after,#company.cg>.text-center .sec-title::after{left:auto;right:0;transform:none}}
+    @property --ra{syntax:'<angle>';initial-value:0deg;inherits:false}
+    .bev-video{position:relative;margin:20px auto 0;max-width:980px;border-radius:18px;overflow:hidden;border:1px solid rgba(212,190,158,.3);background:#050505;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .bev-video video{display:block;width:100%;height:auto;max-height:70vh;background:#000}
+    .bev-video figcaption{position:absolute;top:12px;right:12px;pointer-events:none}
+    .bev-video figcaption span{font-size:.8rem;font-weight:800;color:#EADBC4;background:rgba(0,0,0,.6);border:1px solid rgba(212,190,158,.35);border-radius:999px;padding:4px 12px}
+    .bev-video.tm-frame{max-width:100%;margin:22px auto 0;border-radius:26px;display:block}
+    .bev-video.tm-frame video{width:100%;height:100%;max-height:none;object-fit:cover}
+    .bev-video.tm-frame figcaption{z-index:7}
+    @keyframes bevShine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+    @keyframes grSpin{to{--gr:360deg}}
+    @keyframes secShine{from{background-position:100% 0}to{background-position:0 0}}
+  </style>
 </head>
 <body class="bg-[oklch(14%_.012_55)] text-[oklch(94%_.012_80)] min-h-screen relative selection:bg-[oklch(80%_.04_75)] selection:text-black">
 
@@ -923,13 +1086,14 @@
       <a href="index.html" aria-label="الصفحة الرئيسية"><img class="site-logo" src="https://i.ibb.co/zWkj8NVC/WOLF-GATE-53.png" alt="WOLF GEORGIA INVESTMENT"></a>
       <div class="site-nav" id="siteNav">
         <a href="index.html">الرئيسية</a>
-        <a href="#panorama">المعرض</a>
-        <a href="#company">عن الشركة</a>
-        <a href="#napr-guide">السجل العقاري</a>
+        <a href="#company-reg">الشركة</a>
         <a href="#partners">شركاؤنا</a>
+        <a href="#company">حضورنا</a>
+        <a href="#wolf-method">منهجيتنا</a>
         <a href="#why-georgia">لماذا جورجيا</a>
         <a href="#batumi">باتومي</a>
         <a href="#tbilisi">تبليسي</a>
+        <a href="#panorama">المعرض</a>
         <a href="#investment-matcher">دلّني على فرصتي</a>
         <a href="#faq">الأسئلة الشائعة</a>
         <a id="agentNavLink" class="agent-nav-link" role="button"><i data-lucide="lock" class="w-3.5 h-3.5"></i><span id="agentNavLabel">بوابة الوكلاء</span></a>
@@ -995,27 +1159,52 @@
     </p>
   </header>
 
-  <!-- Panoramic Gallery -->
-  <section id="panorama" class="relative z-10 scroll-mt-24">
-    <div class="panorama-stage" id="panoramaStage">
-      <!-- slides injected by JS -->
-      <div class="panorama-gradient"></div>
-      <div class="panorama-caption">
-        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[oklch(80%_.04_75)] bg-black/50 px-4 py-2 rounded-full border border-gold-subtle backdrop-blur-md">Batumi &amp; Tbilisi — Georgia</span>
-      </div>
-      <div class="panorama-dots" id="panoramaDots"></div>
-      <button type="button" id="panoramaPrev" class="panorama-nav-btn panorama-nav-prev" aria-label="السابق">‹</button>
-      <button type="button" id="panoramaNext" class="panorama-nav-btn panorama-nav-next" aria-label="التالي">›</button>
-    </div>
-  </section>
-
-  <!-- Vertical reel strip (portrait clips, detected automatically) -->
-  <section id="reelSection" class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 -mt-8 mb-4" style="display:none;">
-    <div class="reel-wrap" id="reelWrap"></div>
-  </section>
-
   <!-- Main Container -->
   <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+
+    <!-- Company registration certificate -->
+    <section id="company-reg" class="mb-20 scroll-mt-24 reveal-card">
+      <!-- Company registration extract (NAPR) -->
+      <div class="nc nc-top">
+        <div class="nc-info">
+          <img class="nc-logo" src="https://i.ibb.co/zWkj8NVC/WOLF-GATE-53.png" alt="WOLF GEORGIA INVESTMENT">
+          <span class="nc-kick"><i data-lucide="badge-check" class="w-3.5 h-3.5"></i> شركة مسجّلة رسمياً في جورجيا</span>
+          <h3>WOLF GEORGIA INVESTMENT LLC</h3>
+          <p>مستخرج رسمي من سجل الشركات لدى الوكالة الوطنية للسجل العام (NAPR) — وزارة العدل الجورجية، بنسختيه الجورجية والإنجليزية.</p>
+          <dl class="nc-facts">
+            <div><dt>الشكل القانوني</dt><dd>شركة ذات مسؤولية محدودة (LLC)</dd></div>
+            <div><dt>رقم التعريف</dt><dd class="nc-n">434193419</dd></div>
+            <div><dt>جهة التسجيل</dt><dd>الوكالة الوطنية للسجل العام NAPR</dd></div>
+          </dl>
+          <a class="nc-verify" href="https://enreg.reestri.gov.ge/main.php" target="_blank" rel="noopener"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> التحقق من السجل الرسمي</a>
+        </div>
+        <div class="nc-docs">
+          <figure class="nc-doc" data-src="https://i.ibb.co/GQVSZrfP/NAPEN24808483040.png">
+            <div class="nc-frame"><img src="https://i.ibb.co/GQVSZrfP/NAPEN24808483040.png" alt="مستخرج السجل العام — النسخة الجورجية" loading="lazy"><span class="nc-seal"><i data-lucide="shield-check" class="w-4 h-4"></i></span></div>
+            <figcaption>النسخة الجورجية</figcaption>
+          </figure>
+          <figure class="nc-doc" data-src="https://i.ibb.co/C34GY6cr/NAPEN24808473040-1.png">
+            <div class="nc-frame"><img src="https://i.ibb.co/C34GY6cr/NAPEN24808473040-1.png" alt="مستخرج السجل العام — النسخة الإنجليزية" loading="lazy"><span class="nc-seal"><i data-lucide="shield-check" class="w-4 h-4"></i></span></div>
+            <figcaption>النسخة الإنجليزية</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" class="mb-20 -mx-4 sm:-mx-6 lg:-mx-8 scroll-mt-24 reveal-card">
+      <div class="text-center max-w-3xl mx-auto px-4 mb-8">
+        <img src="https://i.ibb.co/zWkj8NVC/WOLF-GATE-53.png" alt="WOLF GEORGIA INVESTMENT" class="wm-partner-logo">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          <span>شريك متعاقد</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-2">شركاؤنا المعتمدون في جورجيا</h2>
+        <p class="text-xs sm:text-sm text-[oklch(72%_.012_75)]">WOLF INVESTMENT متعاقدة حصرياً مع أبرز شركات التطوير العقاري في جورجيا لتمثيل مشاريعها الاستثمارية.</p>
+      </div>
+      <div class="marquee-wrap">
+        <div class="marquee-track" id="marqueeTrack"></div>
+      </div>
+    </section>
 
     <!-- WOLF in Georgia: company photos (landscape slideshow + portrait rail) -->
     <section id="company" class="cg mb-24 scroll-mt-24 reveal-card">
@@ -1051,80 +1240,35 @@
       </script>
     </section>
 
-    <!-- NAPR Registry Guide -->
-    <section id="napr-guide" class="mb-24 scroll-mt-24 reveal-card">
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
-          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span>الأمان القانوني والتسجيل الحكومي</span>
-        </div>
-        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">دليل فحص الملكية في السجل العقاري الجورجي (NAPR وبيت العدل)</h2>
-        <p class="text-sm sm:text-base text-[oklch(72%_.012_75)] leading-relaxed mb-4">جورجيا مصنفة بالمرتبة 7 عالمياً في سهولة ممارسة الأعمال وحماية الملكية العقارية من البنك الدولي. نظام التسجيل العقاري رقمي 100% ومربوط بتقنية البلوكشين لمنع أي ازدواجية أو تزوير.</p>
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 text-xs font-bold">
-          <i data-lucide="award" class="w-4 h-4"></i><span>المرتبة 7 عالمياً في سهولة تسجيل الملكية (World Bank)</span>
-        </div>
-      </div>
-      <!-- Company registration extract (NAPR) -->
-      <div class="nc mb-12">
-        <div class="nc-info">
-          <span class="nc-kick"><i data-lucide="badge-check" class="w-3.5 h-3.5"></i> شركة مسجّلة رسمياً في جورجيا</span>
-          <h3>WOLF GEORGIA INVESTMENT LLC</h3>
-          <p>مستخرج رسمي من سجل الشركات لدى الوكالة الوطنية للسجل العام (NAPR) — وزارة العدل الجورجية، بنسختيه الجورجية والإنجليزية.</p>
-          <dl class="nc-facts">
-            <div><dt>الشكل القانوني</dt><dd>شركة ذات مسؤولية محدودة (LLC)</dd></div>
-            <div><dt>رقم التعريف</dt><dd class="nc-n">434193419</dd></div>
-            <div><dt>تاريخ التسجيل</dt><dd class="nc-n">11/11/2025</dd></div>
-            <div><dt>جهة التسجيل</dt><dd>الوكالة الوطنية للسجل العام NAPR</dd></div>
-          </dl>
-          <a class="nc-verify" href="https://enreg.reestri.gov.ge/main.php" target="_blank" rel="noopener"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> التحقق من السجل الرسمي</a>
-        </div>
-        <div class="nc-docs">
-          <figure class="nc-doc" data-src="https://i.ibb.co/GQVSZrfP/NAPEN24808483040.png">
-            <div class="nc-frame"><img src="https://i.ibb.co/GQVSZrfP/NAPEN24808483040.png" alt="مستخرج السجل العام — النسخة الجورجية" loading="lazy"><span class="nc-seal"><i data-lucide="shield-check" class="w-4 h-4"></i></span></div>
-            <figcaption>النسخة الجورجية</figcaption>
-          </figure>
-          <figure class="nc-doc" data-src="https://i.ibb.co/C34GY6cr/NAPEN24808473040-1.png">
-            <div class="nc-frame"><img src="https://i.ibb.co/C34GY6cr/NAPEN24808473040-1.png" alt="مستخرج السجل العام — النسخة الإنجليزية" loading="lazy"><span class="nc-seal"><i data-lucide="shield-check" class="w-4 h-4"></i></span></div>
-            <figcaption>النسخة الإنجليزية</figcaption>
-          </figure>
+    <!-- WOLF GEORGIA INVESTMENT: how projects and units are chosen -->
+    <section id="wolf-method" class="wmth mb-24 scroll-mt-24">
+      <div class="wmth-hero">
+        <video class="wmth-video" src="https://videotourl.com/videos/1791289859322-a39f1a4b-8e35-4725-b6d9-c0bf876ac5c6.mp4" muted autoplay loop playsinline preload="metadata"></video>
+        <div class="wmth-shade"></div>
+        <div class="wmth-title">
+          <span class="wmth-kick">منهجية العمل</span>
+          <h2>كيف نختار المشاريع والوحدات في جورجيا</h2>
+          <p><b dir="ltr">WOLF GEORGIA INVESTMENT</b> تعتمد نظام عمل احترافياً ودقيقاً في اختيار المشاريع والوحدات العقارية، قائماً على دراسة شاملة لكل مشروع لضمان مقومات الربح الحقيقي والقيمة الاستثمارية المستدامة.</p>
         </div>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12" id="naprPillarsGrid"></div>
-      <div class="card-velvet rounded-3xl border border-gold-hairline p-5 sm:p-8">
-        <h3 class="text-base sm:text-lg font-bold text-[oklch(94%_.012_80)] mb-1.5">محاكي فحص صك الملكية في السجل العقاري الحكومي الجورجي</h3>
-        <p class="text-xs sm:text-sm text-[oklch(72%_.012_75)] mb-5">أدخل كود كادستر جورجي (بالصيغة الرسمية) لمحاكاة استخراج مستند التحقق الإلكتروني الصادر من NAPR:</p>
-        <div class="grid sm:grid-cols-2 gap-4 mb-5">
-          <div>
-            <label for="naprPresetSelect" class="block text-xs font-semibold text-[oklch(78%_.012_78)] mb-1.5">اختر للفحص:</label>
-            <select id="naprPresetSelect" onchange="if(this.value){document.getElementById('naprCustomCode').value='';}" class="w-full bg-neutral-900 border border-gold-subtle text-[oklch(94%_.012_80)] text-sm rounded-lg px-3 py-2.5">
-              <option value="company">WOLF GEORGIA INVESTMENT — شركتنا</option>
-              <option value="">كود كادستر عقاري (أدخله في الخانة المجاورة)</option>
-            </select>
-          </div>
-          <div>
-            <label for="naprCustomCode" class="block text-xs font-semibold text-[oklch(78%_.012_78)] mb-1.5">أو أدخل كود الكادستر العقاري:</label>
-            <input id="naprCustomCode" type="text" placeholder="05.24.08.109" oninput="if(this.value.trim()){document.getElementById('naprPresetSelect').value='';}" class="w-full bg-neutral-900 border border-gold-subtle text-[oklch(94%_.012_80)] text-sm rounded-lg px-3 py-2.5 calc-num" style="direction:ltr;">
-          </div>
-        </div>
-        <button type="button" onclick="runNaprVerify()" class="w-full sm:w-auto px-6 py-3 rounded-xl calc-lock-btn text-black font-extrabold text-sm mb-6 inline-flex items-center justify-center gap-2">
-          <i data-lucide="search-check" class="w-4 h-4"></i><span>فحص وتدقيق السجل العقاري الآن</span>
-        </button>
-        <div id="naprResultBody"></div>
-      </div>
-
+      <ol class="wmth-steps">
+        <li class="wmth-step" style="--i:0"><span class="wmth-n">01</span><span class="wmth-ic" data-ico="chart"></span><h3>تحليل السوق</h3><p>قراءة اتجاهات الأسعار والطلب والعرض في باتومي وتبليسي قبل أي ترشيح.</p></li>
+        <li class="wmth-step" style="--i:1"><span class="wmth-n">02</span><span class="wmth-ic" data-ico="pin"></span><h3>تقييم الموقع الاستراتيجي</h3><p>القرب من البحر والخدمات ومحاور الحركة، وقوة المنطقة على المدى الطويل.</p></li>
+        <li class="wmth-step" style="--i:2"><span class="wmth-n">03</span><span class="wmth-ic" data-ico="invest"></span><h3>انتقاء الوحدات الأعلى استثماراً</h3><p>داخل كل مشروع نختار الوحدات ذات الإطلالة المثالية والمساحة والطابق الأنسب للتأجير وإعادة البيع.</p></li>
+        <li class="wmth-step" style="--i:3"><span class="wmth-n">04</span><span class="wmth-ic" data-ico="percent"></span><h3>دراسة الجدوى الاقتصادية</h3><p>تحليل مهني ومنهجي للعائد الاستثماري المتوقع وقابلية التأجير والارتفاع السنوي لقيمة العقار.</p></li>
+        <li class="wmth-step" style="--i:4"><span class="wmth-n">05</span><span class="wmth-ic" data-ico="shield"></span><h3>زيارات ميدانية فعلية</h3><p>يزور الخبير العقاري ومالك شركة <b dir="ltr">WOLF INVESTMENT</b> رجل الأعمال <b>أ. بشير سعيد</b> المشاريع شخصياً، للتأكد من جودة التنفيذ ومطابقتها لمعايير الشركة قبل ترشيحها للمستثمرين.</p></li>
+      </ol>
+      <div class="wmth-seal"><span class="wmth-ic" data-ico="award"></span><p>لا يُرشَّح أي مشروع أو وحدة للمستثمر إلا بعد اجتياز هذه المراحل الخمس كاملة — ثقة وشفافية في كل خطوة.</p></div>
     </section>
 
-    <section id="partners" class="mb-20 -mx-4 sm:-mx-6 lg:-mx-8 scroll-mt-24 reveal-card">
-      <div class="text-center max-w-3xl mx-auto px-4 mb-8">
-        <img src="https://i.ibb.co/zWkj8NVC/WOLF-GATE-53.png" alt="WOLF GEORGIA INVESTMENT" class="wm-partner-logo">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
-          <i data-lucide="award" class="w-3.5 h-3.5"></i>
-          <span>شريك متعاقد</span>
-        </div>
-        <h2 class="text-xl sm:text-2xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-2">شركاؤنا المعتمدون في جورجيا</h2>
-        <p class="text-xs sm:text-sm text-[oklch(72%_.012_75)]">WOLF INVESTMENT متعاقدة حصرياً مع أبرز شركات التطوير العقاري في جورجيا لتمثيل مشاريعها الاستثمارية.</p>
+    <!-- Client testimonials -->
+    <section id="testimonials" class="mb-24 scroll-mt-24 reveal-card">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">آراء عملائنا</h2>
+        <p class="text-sm sm:text-base text-[oklch(72%_.012_75)]">تجارب حقيقية من مستثمرين وثقوا بـ WOLF INVESTMENT</p>
       </div>
-      <div class="marquee-wrap">
-        <div class="marquee-track" id="marqueeTrack"></div>
+      <div class="tm-video vfit tm-frame gold-run mx-auto overflow-hidden bg-black">
+        <video src="https://videotourl.com/videos/1788792460285-6f1380ab-2e77-4e72-977e-43c5a6df940f.mp4#t=0.1" controls playsinline preload="metadata" aria-label="فيديو آراء عملائنا"></video>
       </div>
     </section>
 
@@ -1157,34 +1301,59 @@
               <img src="https://images.unsplash.com/photo-1592024354777-3d4e1fd44937?auto=format&fit=crop&w=900&q=80" alt="باتومي ليلاً" loading="lazy">
             </div>
           </div>
-          <div class="w-full lg:w-3/5">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
-              <i data-lucide="waves" class="w-3.5 h-3.5"></i><span>عاصمة أدجارا الساحلية</span>
+          <div class="w-full lg:w-3/5 cityx">
+            <div class="cityx-kick"><i data-lucide="trophy" class="w-3.5 h-3.5"></i><span>الوجهة رقم 1 للاستثمار السياحي في جورجيا</span></div>
+            <h2 class="text-2xl sm:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">لماذا الاستثمار في باتومي؟</h2>
+            <p class="cityx-lead">باتومي اليوم سوق استثماري في مرحلة صعود: طلب سياحي متزايد على مدار السنة، علامات فندقية عالمية تدخل المدينة، وأسعار ما زالت في بداية منحناها. يرى كثير من المستثمرين أنها تشبه دبي قبل 5 إلى 8 سنوات — الدخول المبكر هو مصدر الربح الأكبر.</p>
+            <div class="cityx-kpis">
+              <div class="cityx-kpi"><i data-lucide="hand-coins"></i><small>العائد السنوي من التأجير</small><b><bdi dir="ltr">8% – 12%</bdi></b><em>تقديري — الأعلى في جورجيا</em></div>
+              <div class="cityx-kpi"><i data-lucide="chart-line"></i><small>الارتفاع السنوي لقيمة العقار</small><b><bdi dir="ltr">8% – 12%</bdi></b><em>تقديري</em></div>
+              <div class="cityx-kpi"><i data-lucide="chart-spline"></i><small>الارتفاع خلال فترة الإنشاء</small><b><bdi dir="ltr">25% – 40%</bdi></b><em>من سعر الشراء حتى التسليم — تقديري</em></div>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-4">لماذا الاستثمار في باتومي؟</h2>
-            <p class="text-sm sm:text-base text-[oklch(72%_.012_75)] leading-relaxed font-light mb-5">
-              باتومي هي اللؤلؤة السياحية لجورجيا على ساحل البحر الأسود، ومحرك اقتصاد الضيافة والفندقة في البلاد. مناخها شبه الاستوائي، ومينائها الحر، وواجهتها البحرية المتلألئة بالأبراج الحديثة جعلتها الوجهة الأولى للمستثمرين الباحثين عن عائد إيجاري موسمي مرتفع إلى جانب نمو رأسمالي مستمر.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="feat-chip"><i data-lucide="sun"></i>موسم سياحي طويل (أبريل - أكتوبر)</span>
-              <span class="feat-chip"><i data-lucide="plane"></i>مطار باتومي الدولي ورحلات مباشرة متنامية</span>
-              <span class="feat-chip"><i data-lucide="dice-5"></i>اقتصاد كازينوهات وترفيه راسخ</span>
-              <span class="feat-chip"><i data-lucide="building-2"></i>منطقة حرة صناعية بمزايا ضريبية إضافية</span>
-              <span class="feat-chip"><i data-lucide="ship"></i>ميناء تجاري وسياحي على البحر الأسود</span>
-              <span class="feat-chip"><i data-lucide="hotel"></i>سوق واسع للوحدات الفندقية المُدارة</span>
-            </div>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-[oklch(78%_.012_78)] mb-2">
-              <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[oklch(80%_.04_75)] mt-0.5 shrink-0"></i><span>عائد إيجاري موسمي مرتفع بفضل تدفق سياحي سنوي يتجاوز الملايين، مدفوعاً بالقرب الجغرافي من تركيا وروسيا ودول الخليج.</span></li>
-              <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[oklch(80%_.04_75)] mt-0.5 shrink-0"></i><span>واجهة بحرية حضرية تشهد تطوراً عمرانياً متسارعاً خلال العقد الأخير، مع أبراج سكنية وفندقية بعلامات عالمية.</span></li>
-              <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[oklch(80%_.04_75)] mt-0.5 shrink-0"></i><span>تكلفة دخول أقل نسبياً مقارنة بالعاصمة، ما يجعلها مناسبة للمستثمر الباحث عن وحدة استجمام واستثمار في آن واحد.</span></li>
-            </ul>
           </div>
+        </div>
+
+        <ul class="cityx-list cityx-wide">
+              <li><i data-lucide="badge-dollar-sign"></i><span><b>استثمار سياحي بامتياز:</b> أكثر من 2.6 مليون زائر دولي سنوياً، وموسم يمتد من الربيع حتى الخريف، مع شقق فندقية مُدارة تؤجَّر يومياً بعائد أعلى من التأجير التقليدي.</span></li>
+              <li><i data-lucide="globe-lock"></i><span><b>بلد منفتح على المستثمر الأجنبي:</b> تملّك حر وكامل للأجانب، دخول بدون تأشيرة لمواطني نحو 98 دولة لمدة تصل إلى سنة، وتسجيل الملكية خلال أيام.</span></li>
+              <li><i data-lucide="receipt-text"></i><span><b>ضرائب منخفضة:</b> ضريبة 5% فقط على دخل التأجير السكني للأفراد، ولا ضريبة سنوية على العقار لمعظم المستثمرين.</span></li>
+              <li><i data-lucide="chart-column-increasing"></i><span><b>مدينة تُبنى الآن:</b> ممشى بحري بطول 8 كم، ميناء ومطار دولي، ومشاريع عملاقة على الواجهة البحرية — ما يرفع قيمة العقار عاماً بعد عام.</span></li>
+              <li><i data-lucide="piggy-bank"></i><span><b>دخول بسعر مدروس:</b> سعر المتر ما زال جزءاً بسيطاً من أسعار المدن الساحلية المنافسة، مع تقسيط مباشر من المطوّر بدون فوائد.</span></li>
+            </ul>
+
+        <!-- Batumi then and now -->
+        <div class="bev reveal-evo" id="batumiThenNow">
+          <div class="bev-head">
+            <span class="cityx-kick"><i data-lucide="chart-column-increasing" class="w-3.5 h-3.5"></i><span>تطوّر باتومي خلال 4 سنوات</span></span>
+            <h3>نفس المدينة… قيمة مختلفة</h3>
+          </div>
+          <div class="bev-pair">
+            <figure class="bev-shot">
+              <div class="bev-img"><img src="https://i.ibb.co/d0spSMw8/batumi-21.jpg" alt="باتومي سنة 2021" loading="lazy"></div>
+              <figcaption><b class="bev-year" data-y="2021">2021</b><small>سعر المتر نحو <bdi dir="ltr">$844</bdi></small></figcaption>
+            </figure>
+            <div class="bev-arrow" aria-hidden="true"><span>+4 سنوات</span><i></i></div>
+            <figure class="bev-shot is-now">
+              <div class="bev-img"><img src="https://i.ibb.co/v6Xqqj5C/batumi-25.jpg" alt="باتومي سنة 2025" loading="lazy"></div>
+              <figcaption><b class="bev-year" data-y="2025">2025</b><small>سعر المتر نحو <bdi dir="ltr">$1,395</bdi></small></figcaption>
+            </figure>
+          </div>
+          <figure class="bev-video vfit tm-frame gold-run">
+            <video src="https://videotourl.com/videos/1791625708463-8876ec19-737a-4f2c-91f8-60fc1b885959.mp4" autoplay muted loop playsinline controls preload="metadata" aria-label="باتومي قبل وبعد"></video>
+            <figcaption><span>باتومي — قبل وبعد</span></figcaption>
+          </figure>
+          <div class="bev-stats">
+            <div><b dir="ltr">+65%</b><small>ارتفاع متوسط سعر المتر بين 2021 و2025</small></div>
+            <div><b dir="ltr">+$551</b><small>زيادة في كل متر مربع خلال 4 سنوات</small></div>
+            <div><b dir="ltr">≈ 13%</b><small>متوسط النمو السنوي المركّب للسعر</small></div>
+          </div>
+          <p class="bev-text">بين 2021 و2025 تحوّلت الواجهة البحرية في باتومي إلى خط أبراج سكنية وفندقية حديثة، ودخلت علامات فندقية عالمية إلى المدينة، وارتفع الطلب السياحي عاماً بعد عام. هذا التطوّر انعكس مباشرة على القيمة: من اشترى في 2021 يملك اليوم عقاراً ارتفع سعر متره بنحو الثلثين، إضافة إلى دخل الإيجار طوال هذه السنوات. والمدينة ما زالت في منتصف هذا المسار — المشاريع قيد الإنشاء اليوم هي واجهة باتومي في السنوات القادمة.</p>
         </div>
 
         <!-- Batumi price index -->
         <div class="mt-10 pt-8 border-t border-gold-subtle">
           <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
-            <h3 class="text-base sm:text-lg font-bold text-[oklch(94%_.012_80)]">مؤشر أسعار العقارات في باتومي ($/م²)</h3>
+            <h3 class="text-base sm:text-lg font-bold text-[oklch(94%_.012_80)]">مؤشر متوسط أسعار العقارات في باتومي ($/م²)</h3>
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[oklch(80%_.04_75_/_0.12)] border border-gold-hairline">
               <i data-lucide="trending-up" class="w-3.5 h-3.5 text-[oklch(80%_.04_75)]"></i>
               <span class="text-xs font-bold calc-gold">نمو تراكمي</span>
@@ -1213,27 +1382,15 @@
     <section id="tbilisi" class="mb-24 scroll-mt-24 reveal-card">
       <div class="card-velvet rounded-3xl border border-gold-hairline p-6 sm:p-10">
         <div class="flex flex-col-reverse lg:flex-row gap-8 lg:gap-10 items-start">
-          <div class="w-full lg:w-3/5">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-900 border border-gold-subtle text-[oklch(80%_.04_75)] text-xs font-semibold mb-4">
-              <i data-lucide="landmark" class="w-3.5 h-3.5"></i><span>العاصمة والمركز الاقتصادي</span>
+          <div class="w-full lg:w-3/5 cityx">
+            <div class="cityx-kick"><i data-lucide="landmark" class="w-3.5 h-3.5"></i><span>العاصمة — استثمار طويل المدى وتأجير سكني</span></div>
+            <h2 class="text-2xl sm:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">لماذا الاستثمار في تبليسي؟</h2>
+            <p class="cityx-lead">تبليسي هي المركز الاقتصادي والتعليمي لجورجيا، وسوقها مبني على طلب سكني ثابت طوال السنة. مناسبة للاستثمار طويل المدى، في العقارات الجاهزة للتأجير الفوري أو قيد الإنشاء للاستفادة من ارتفاع السعر حتى التسليم.</p>
+            <div class="cityx-kpis">
+              <div class="cityx-kpi"><i data-lucide="hand-coins"></i><small>العائد السنوي من التأجير</small><b><bdi dir="ltr">6% – 9%</bdi></b><em>تأجير سكني طويل المدى — تقديري</em></div>
+              <div class="cityx-kpi"><i data-lucide="chart-line"></i><small>الارتفاع السنوي لقيمة العقار</small><b><bdi dir="ltr">6% – 10%</bdi></b><em>تقديري</em></div>
+              <div class="cityx-kpi"><i data-lucide="chart-spline"></i><small>الارتفاع خلال فترة الإنشاء</small><b><bdi dir="ltr">15% – 30%</bdi></b><em>من سعر الشراء حتى التسليم — تقديري</em></div>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-4">لماذا الاستثمار في تبليسي؟</h2>
-            <p class="text-sm sm:text-base text-[oklch(72%_.012_75)] leading-relaxed font-light mb-5">
-              تبليسي هي القلب السياسي والاقتصادي لجورجيا، ومدينة تجمع بين سحر البلدة القديمة التاريخية وحيوية أحياء الأعمال الحديثة. بفضل تنوع اقتصادها بين التكنولوجيا والخدمات المالية واللوجستيات، توفر تبليسي طلباً إيجارياً مستقراً على مدار العام، بعيداً عن الموسمية السياحية، ما يجعلها خياراً مفضلاً للمستثمر الباحث عن استقرار طويل الأمد وسيولة أعلى عند إعادة البيع.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="feat-chip"><i data-lucide="landmark"></i>مقر الحكومة والسفارات والمؤسسات الدولية</span>
-              <span class="feat-chip"><i data-lucide="laptop"></i>مركز إقليمي متنامٍ لقطاع التقنية والأعمال</span>
-              <span class="feat-chip"><i data-lucide="handshake"></i>اتفاقيات تجارة حرة مع الاتحاد الأوروبي والصين ورابطة الدول المستقلة</span>
-              <span class="feat-chip"><i data-lucide="graduation-cap"></i>جامعات ومستشفيات تجذب طلاباً ومرضى دوليين</span>
-              <span class="feat-chip"><i data-lucide="calendar-check"></i>طلب إيجاري ثابت طوال العام</span>
-              <span class="feat-chip"><i data-lucide="landmark"></i>بلدة قديمة مدرجة ضمن التراث المعماري</span>
-            </div>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-[oklch(78%_.012_78)] mb-2">
-              <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[oklch(80%_.04_75)] mt-0.5 shrink-0"></i><span>قاعدة مستأجرين متنوعة من الجالية الأجنبية والعاملين عن بُعد وموظفي الشركات الدولية، ما يقلل مخاطر الشغور.</span></li>
-              <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[oklch(80%_.04_75)] mt-0.5 shrink-0"></i><span>أحياء أعمال حديثة مثل فاكي وسابورتالو تشهد توسعاً عمرانياً مستمراً إلى جانب البلدة القديمة التاريخية.</span></li>
-              <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[oklch(80%_.04_75)] mt-0.5 shrink-0"></i><span>موقع لوجستي محوري على طريق الحرير الجديد، يربط بين أوروبا وآسيا عبر شبكة طرق وسكك حديدية متطورة.</span></li>
-            </ul>
           </div>
           <div class="w-full lg:w-2/5 shrink-0 grid grid-cols-2 gap-3">
             <div class="city-photo h-40 sm:h-52 col-span-2">
@@ -1248,10 +1405,18 @@
           </div>
         </div>
 
+        <ul class="cityx-list cityx-wide">
+              <li><i data-lucide="graduation-cap"></i><span><b>تأجير الطلاب:</b> عشرات الآلاف من طلاب الجامعات المحليين والدوليين (جامعة تبليسي الحكومية، جامعة جورجيا التقنية، جامعة إيليا، جامعة القوقاز والجامعة الطبية) — عائد تقديري <bdi dir="ltr">7% – 10%</bdi> سنوياً مع إشغال على مدار العام الدراسي.</span></li>
+              <li><i data-lucide="house-plus"></i><span><b>استثمار سكني أكثر منه سياحي:</b> مستأجرون من الموظفين والعائلات والشركات الدولية، بعقود سنوية مستقرة.</span></li>
+              <li><i data-lucide="chart-candlestick"></i><span><b>جاهز أو قيد الإنشاء:</b> الجاهز يعطي دخلاً فورياً، وقيد الإنشاء يعطي ربحاً من فرق السعر حتى التسليم.</span></li>
+              <li><i data-lucide="briefcase-business"></i><span><b>مركز الأعمال والتقنية:</b> مقر الحكومة والسفارات والبنوك وشركات التقنية، ما يدعم الطلب على السكن الحديث.</span></li>
+              <li><i data-lucide="globe-lock"></i><span><b>نفس انفتاح جورجيا:</b> تملّك حر للأجانب، تسجيل سريع للملكية، وضريبة 5% على دخل التأجير السكني للأفراد.</span></li>
+            </ul>
+
         <!-- Tbilisi price index -->
         <div class="mt-10 pt-8 border-t border-gold-subtle">
           <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
-            <h3 class="text-base sm:text-lg font-bold text-[oklch(94%_.012_80)]">مؤشر أسعار العقارات في تبليسي ($/م²)</h3>
+            <h3 class="text-base sm:text-lg font-bold text-[oklch(94%_.012_80)]">مؤشر متوسط أسعار العقارات في تبليسي ($/م²)</h3>
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[oklch(80%_.04_75_/_0.12)] border border-gold-hairline">
               <i data-lucide="trending-up" class="w-3.5 h-3.5 text-[oklch(80%_.04_75)]"></i>
               <span class="text-xs font-bold calc-gold">نمو تراكمي</span>
@@ -1275,6 +1440,29 @@
         </div>
       </div>
     </section>
+
+  </div>
+
+  <!-- Panoramic Gallery -->
+  <section id="panorama" class="relative z-10 scroll-mt-24">
+    <div class="panorama-stage" id="panoramaStage">
+      <!-- slides injected by JS -->
+      <div class="panorama-gradient"></div>
+      <div class="panorama-caption">
+        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[oklch(80%_.04_75)] bg-black/50 px-4 py-2 rounded-full border border-gold-subtle backdrop-blur-md">Batumi &amp; Tbilisi — Georgia</span>
+      </div>
+      <div class="panorama-dots" id="panoramaDots"></div>
+      <button type="button" id="panoramaPrev" class="panorama-nav-btn panorama-nav-prev" aria-label="السابق">‹</button>
+      <button type="button" id="panoramaNext" class="panorama-nav-btn panorama-nav-next" aria-label="التالي">›</button>
+    </div>
+  </section>
+
+  <!-- Vertical reel strip (portrait clips, detected automatically) -->
+  <section id="reelSection" class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 -mt-8 mb-4" style="display:none;">
+    <div class="reel-wrap" id="reelWrap"></div>
+  </section>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-20">
 
     <!-- Match Me With The Right Opportunity — budget-based recommender -->
     <section id="investment-matcher" class="wm mb-24 scroll-mt-24 reveal-card">
@@ -1399,18 +1587,6 @@
         <p class="text-sm sm:text-base text-[oklch(72%_.012_75)]">من اختيار المشروع لحد استلام مفتاح عقارك وإعادة بيعه — خطوات واضحة ومرافقة كاملة</p>
       </div>
       <ol class="wj-track"><li class="wj-step"><div class="wj-dot"><span class="wj-num">1</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div><div class="wj-body"><h3 class="wj-t">اختيار المشروع</h3><p class="wj-d">نساعدك تختار المشروع الأنسب لميزانيتك وأهدافك من محفظتنا المعتمدة</p></div></li><li class="wj-step"><div class="wj-dot"><span class="wj-num">2</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg></div><div class="wj-body"><h3 class="wj-t">الحجز بعربون</h3><p class="wj-d">تثبيت الوحدة المختارة بعربون حجز، وتوقيف السعر لصالحك</p></div></li><li class="wj-step"><div class="wj-dot"><span class="wj-num">3</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 17c1.5-2 2.5-2 3 0s1.5 2 3 0"/></svg></div><div class="wj-body"><h3 class="wj-t">توقيع العقد</h3><p class="wj-d">توقيع عقد البيع الرسمي (SPA) مع المطوّر مباشرة، بمتابعة كاملة منا</p></div></li><li class="wj-step"><div class="wj-dot"><span class="wj-num">4</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div><div class="wj-body"><h3 class="wj-t">خطة الدفع</h3><p class="wj-d">تنفيذ طريقة الدفع المتفق عليها — دفعة كاملة نقداً أو أقساط بدون فوائد حتى تاريخ التسليم</p></div></li><li class="wj-step"><div class="wj-dot"><span class="wj-num">5</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 18.4a2 2 0 0 0 0 2.8l.2.2a2 2 0 0 0 2.8 0l6-6a6 6 0 1 0-3-3Z"/><path d="M16.5 7.5h.01"/></svg></div><div class="wj-body"><h3 class="wj-t">الاستلام والتسجيل</h3><p class="wj-d">استلام الوحدة وتسجيل الملكية باسمك رسمياً بالسجل العقاري الجورجي</p></div></li><li class="wj-step"><div class="wj-dot"><span class="wj-num">6</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5l-5-5L2 17"/><path d="M16 7h6v6"/></svg></div><div class="wj-body"><h3 class="wj-t">إدارة التأجير</h3><p class="wj-d">تفعيل إدارة التأجير الاحترافية للوحدة وبدء تحقيق العائد</p></div></li><li class="wj-step"><div class="wj-dot"><span class="wj-num">7</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M8 16H3v5"/></svg></div><div class="wj-body"><h3 class="wj-t">إعادة البيع</h3><p class="wj-d">عند رغبتك بالبيع، نرافقك بتقييم العقار وتسويقه والوصول للمشتري المناسب حتى إتمام نقل الملكية</p></div></li></ol>
-    </section>
-
-    <!-- FAQ -->
-    <!-- Client testimonials -->
-    <section id="testimonials" class="mb-24 scroll-mt-24 reveal-card">
-      <div class="text-center max-w-3xl mx-auto mb-8">
-        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-serif-luxury text-[oklch(94%_.012_80)] mb-3">آراء عملائنا</h2>
-        <p class="text-sm sm:text-base text-[oklch(72%_.012_75)]">تجارب حقيقية من مستثمرين وثقوا بـ WOLF INVESTMENT</p>
-      </div>
-      <div class="tm-video max-w-2xl mx-auto rounded-2xl overflow-hidden border border-gold-subtle bg-black">
-        <video src="https://videotourl.com/videos/1788792460285-6f1380ab-2e77-4e72-977e-43c5a6df940f.mp4#t=0.1" controls playsinline preload="metadata" aria-label="فيديو آراء عملائنا"></video>
-      </div>
     </section>
 
     <section id="faq" class="mb-24 scroll-mt-24 reveal-card">
@@ -1565,7 +1741,8 @@
 
     /* ============ RENDER: NAPR pillars + verify (generic, no project) ============ */
     function renderNaprPillars() {
-      document.getElementById('naprPillarsGrid').innerHTML = NAPR_PILLARS.map(([icon,title,desc]) =>
+      const _ng = document.getElementById('naprPillarsGrid'); if (!_ng) return;
+      _ng.innerHTML = NAPR_PILLARS.map(([icon,title,desc]) =>
         '<div class="card-velvet rounded-2xl border border-gold-subtle p-5">' +
           '<div class="w-10 h-10 rounded-xl bg-[oklch(80%_.04_75_/_0.12)] border border-gold-hairline flex items-center justify-center mb-3"><i data-lucide="' + icon + '" class="w-5 h-5 text-[oklch(80%_.04_75)]"></i></div>' +
           '<div class="text-sm font-bold text-[oklch(94%_.012_80)] mb-1.5 leading-snug">' + title + '</div>' +
@@ -2659,5 +2836,174 @@
   })();
   </script>
 <script src="budget-calc.js?v=2" defer></script>
+
+  <script>
+    /* ====== same presentation as the internal reference file (Oct 2026) ====== */
+    const IV_ICO = {
+      search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+      tag: '<path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
+      coins: '<circle cx="9" cy="9" r="6"/><path d="M18.1 10.4A6 6 0 1 1 10.4 18.1"/><path d="M9 6.5v5M7 8.5h3.2a1.3 1.3 0 0 1 0 2.6H7.5"/>',
+      trend: '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+      invest: '<path d="M3 11.5 11 5l5 4"/><path d="M5 10v10h7"/><rect x="8" y="14" width="3" height="6"/><path d="M14 20l7-7"/><path d="M16.5 13H21v4.5"/>',
+      hotel: '<path d="M3 21V7l9-4 9 4v14"/><path d="M9 21v-5h6v5M8 9h.01M12 9h.01M16 9h.01M8 13h.01M12 13h.01M16 13h.01"/>',
+      cal: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+      card: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>',
+      key: '<circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3M17 6l3 3M14 9l2 2"/>',
+      award: '<circle cx="12" cy="9" r="6"/><path d="m8.5 14.2-1.5 7.8 5-3 5 3-1.5-7.8"/>',
+      pin: '<path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/>',
+      chart: '<path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6" rx="1"/><rect x="12" y="8" width="3" height="10" rx="1"/><rect x="17" y="5" width="3" height="13" rx="1"/>',
+      shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
+      waves: '<path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>',
+      percent: '<path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>',
+      pool: '<path d="M2 18c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0M8 15V5a2 2 0 0 1 4 0M16 15V5a2 2 0 0 0-4 0M8 9h8"/>',
+      refresh: '<path d="M3 12a9 9 0 0 1 15.5-6.3L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.3L3 16M3 21v-5h5"/>'
+    };
+    const ivIco = (n, s) => '<svg width="' + (s || 18) + '" height="' + (s || 18) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (IV_ICO[n] || IV_ICO.chart) + '</svg>';
+    function setupMethod() {
+      const sec = document.getElementById('wolf-method'); if (!sec) return;
+      sec.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ivIco(e.dataset.ico, 22); });
+      const items = sec.querySelectorAll('.wmth-step, .wmth-seal, .wmth-title');
+      if (!('IntersectionObserver' in window)) { items.forEach(e => e.classList.add('in')); return; }
+      const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: .2 });
+      items.forEach(e => io.observe(e));
+    }
+
+    const SND = { ctx: null, on: true, last: 0, user: 0 };
+    try { SND.on = localStorage.getItem('wolfSnd') !== '0'; } catch (e) {}
+    function sndCtx() {
+      if (!SND.ctx) { const C = window.AudioContext || window.webkitAudioContext; if (!C) return null; try { SND.ctx = new C(); } catch (e) { return null; } }
+      if (SND.ctx.state === 'suspended') SND.ctx.resume();
+      return SND.ctx;
+    }
+    function sndPlay(kind) {
+      if (!SND.on) return;
+      const c = sndCtx(); if (!c) return;
+      const t = c.currentTime;
+      const tone = (f1, f2, dur, vol, type, at) => {
+        const o = c.createOscillator(), g = c.createGain();
+        o.type = type || 'sine';
+        o.frequency.setValueAtTime(f1, t + (at || 0));
+        o.frequency.exponentialRampToValueAtTime(f2, t + (at || 0) + dur);
+        g.gain.setValueAtTime(0.0001, t + (at || 0));
+        g.gain.exponentialRampToValueAtTime(vol, t + (at || 0) + 0.006);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + (at || 0) + dur);
+        o.connect(g); g.connect(c.destination);
+        o.start(t + (at || 0)); o.stop(t + (at || 0) + dur + 0.02);
+      };
+      if (kind === 'tap' || kind === 'soft') {   /* a soft glass "pluck": warm fundamental + quiet bell partials */
+        tone(988, 980, 0.26, 0.075, 'sine'); tone(1976, 1960, 0.14, 0.022, 'sine'); tone(2964, 2950, 0.07, 0.008, 'sine'); tone(494, 492, 0.12, 0.02, 'triangle');
+      }
+      else if (kind === 'tick') { tone(2100, 1800, 0.028, 0.02, 'sine'); }
+      else if (kind === 'on') { tone(880, 1320, 0.12, 0.06, 'sine'); }
+    }
+    function setupSounds() {
+      const INTER = 'a,button,input,select,label,summary,[onclick],[role="tab"],[role="button"],.sel-chip,.pu-tab,.cg-card,.nc-doc,.wal-seg button';
+      ['touchend', 'click'].forEach(ev => document.addEventListener(ev, () => { if (SND.on) sndCtx(); }, { capture: true, passive: true }));   /* iPhone unlocks audio on touchend */
+      ['pointerdown', 'pointermove', 'wheel', 'touchmove', 'keydown'].forEach(ev => document.addEventListener(ev, (e) => { if (ev !== 'pointermove' || e.buttons) SND.user = performance.now(); }, { capture: true, passive: true }));
+      document.addEventListener('pointerdown', (e) => {
+        if (e.button > 0) return;
+        if (e.target.closest('.snd-btn')) return;
+        sndPlay('tap');
+      }, true);
+      /* sideways strips (photo rails, chips, reels, tables) */
+      const lastX = new WeakMap();
+      document.addEventListener('scroll', (e) => {
+        const el = e.target; if (!el || el === document || el === document.documentElement || !el.nodeType) return;
+        const x = el.scrollLeft, px = lastX.get(el); lastX.set(el, x);
+        if (px === undefined || Math.abs(x - px) < 1) return;
+        const now = performance.now(); if (now - SND.user > 1200 || now - SND.last < 110) return; SND.last = now;   /* only when the person moves the strip */
+        sndPlay('tick');
+      }, true);
+      document.addEventListener('input', (e) => {
+        if (e.target && e.target.type === 'range') { const now = performance.now(); if (now - SND.last < 70) return; SND.last = now; sndPlay('tick'); }
+      }, true);
+      /* on/off */
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'snd-btn' + (SND.on ? '' : ' off'); b.setAttribute('aria-label', 'الصوت');
+      const ico = () => { b.innerHTML = SND.on
+        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>'; b.title = SND.on ? 'إيقاف أصوات النقر' : 'تشغيل أصوات النقر'; };
+      ico();
+      b.onclick = () => { SND.on = !SND.on; try { localStorage.setItem('wolfSnd', SND.on ? '1' : '0'); } catch (e) {} b.classList.toggle('off', !SND.on); ico(); if (SND.on) sndPlay('on'); };
+      const ls = document.getElementById('agentNavLink');
+      if (ls && ls.parentNode) { b.classList.add('snd-nav'); ls.parentNode.insertBefore(b, ls); } else document.body.appendChild(b);
+    }
+
+    function setupPriceIndex() {
+      document.querySelectorAll('.price-chart-bars').forEach(box => {
+        let prev = 0;
+        box.querySelectorAll('.price-bar-col').forEach((col, i) => {
+          const ve = col.querySelector('.price-bar-value'), v = ve ? Number(ve.dataset.target) || 0 : 0;
+          if (col.querySelector('.price-bar-pct')) { prev = v; return; }
+          const s = document.createElement('span');
+          if (!i || !prev) { s.className = 'price-bar-pct base'; s.textContent = 'أساس'; }
+          else { const p = (v - prev) / prev * 100; s.className = 'price-bar-pct' + (p < 0 ? ' neg' : ''); s.textContent = (p >= 0 ? '+' : '') + p.toFixed(1) + '%'; }
+          col.insertBefore(s, col.firstChild);
+          prev = v;
+        });
+      });
+      const t = document.getElementById('priceChartBarsTbilisi');
+      if (t && typeof priceChartObserver !== 'undefined') priceChartObserver.observe(t);
+    }
+
+    /* ---- average rental yield and annual price rise per area (estimates) ---- */
+    const CITY_AREAS = {
+      batumi: [
+        ['البوليفارد الجديد', 11, 11], ['باتومي القديمة', 10, 10], ['وسط المدينة — الواجهة البحرية', 9.5, 9],
+        ['ماخينجاوري / الرأس الأخضر', 9, 8], ['غونيو / كفارياتي', 8.5, 7]
+      ],
+      tbilisi: [
+        ['ساباورتالو (منطقة الجامعات)', 8.5, 8], ['فاكي', 7, 8.5], ['فيرا', 7.5, 7.5],
+        ['متاتسميندا / تبليسي القديمة', 7.5, 7], ['ديدي ديغومي', 7.5, 7], ['إيساني / كرتسانيسي', 7, 6.5]
+      ]
+    };
+    function cycBox(city, idx, title, sub, ico, alt) {
+      const L = CITY_AREAS[city], max = 13, avg = L.reduce((a, r) => a + r[idx], 0) / L.length;
+      return '<div class="cyc-box' + (alt ? ' alt' : '') + '"><h4><i data-lucide="' + ico + '"></i>' + title + '</h4><p>' + sub + '</p>' +
+        L.map(r => '<div class="cyc-row"><span>' + r[0] + '</span><div class="cyc-track"><i data-w="' + (r[idx] / max * 100).toFixed(1) + '"></i></div><b>~' + r[idx] + '%</b></div>').join('') +
+        '<div class="cyc-avg"><span>المتوسط في ' + (city === 'batumi' ? 'باتومي' : 'تبليسي') + '</span><b>~' + avg.toFixed(1) + '%</b></div></div>';
+    }
+    function setupCityCharts() {
+      ['batumi', 'tbilisi'].forEach(city => {
+        const sec = document.getElementById(city); if (!sec) return;
+        const anchor = sec.querySelector('.pi-src') || sec.querySelector('.price-chart-bars'); if (!anchor) return;
+        const w = document.createElement('div'); w.className = 'cyc'; w.id = 'cyc-' + city;
+        w.innerHTML = cycBox(city, 1, 'متوسط العائد السنوي من التأجير', 'حسب المنطقة — تقديري', 'hand-coins') +
+          cycBox(city, 2, 'متوسط الارتفاع السنوي لقيمة العقار', 'حسب المنطقة — تقديري', 'trending-up', true);
+        anchor.parentNode.insertBefore(w, anchor.nextSibling);
+        const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.cyc-track i').forEach(i => { i.style.width = i.dataset.w + '%'; }); io.unobserve(e.target); } }), { threshold: 0.25 });
+        io.observe(w);
+      });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function setupTitles() {
+      const seen = new Set();
+      document.querySelectorAll('section').forEach(sec => {
+        if (sec.closest('.sel-modal,#selModal,.sw')) return;
+        const h = sec.querySelector('h2'); if (!h || seen.has(h) || h.classList.contains('sec-title') || h.closest('.proj-sec,#projDetail,#projects') || h.closest('.sw,.det-lock,.cyc,.bk-card,.bc-card,.et-card')) return;
+        seen.add(h); h.classList.add('sec-title');
+        const al = getComputedStyle(h).textAlign; if (!/center/.test(al) && !h.closest('.text-center')) h.classList.add('sec-title-start');
+      });
+      const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.35 });
+      document.querySelectorAll('.sec-title:not(.in)').forEach(h => io.observe(h));
+    }
+    window.addEventListener('load', () => setTimeout(setupTitles, 600));
+    function setupThenNow() {
+      const b = document.getElementById('batumiThenNow'); if (!b) return;
+      const io = new IntersectionObserver((es) => es.forEach(e => {
+        if (!e.isIntersecting) return; io.disconnect(); b.classList.add('in');
+        b.querySelectorAll('.bev-year').forEach((y, k) => { const to = +y.dataset.y, from = to - 12, t0 = performance.now() + k * 350;
+          const step = (t) => { const p = Math.max(0, Math.min(1, (t - t0) / 1100)); y.textContent = Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+          requestAnimationFrame(step); });
+      }), { threshold: 0.25 });
+      io.observe(b);
+    }
+
+    (function () {
+      const run = () => [setupMethod, setupSounds, setupPriceIndex, setupCityCharts, setupThenNow].forEach(f => { try { f(); } catch (e) { console.error(e); } });
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+    })();
+  </script>
 </body>
 </html>
