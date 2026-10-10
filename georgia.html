@@ -1002,11 +1002,6 @@
     .cyc-row b{font-size:.8rem;font-weight:800;color:#FAF7F2;direction:ltr;min-width:58px;text-align:left}
     .cyc-avg{margin-top:10px;padding-top:10px;border-top:1px dashed rgba(212,190,158,.25);display:flex;justify-content:space-between;font-size:.8rem;color:#B9B2A6}
     .cyc-avg b{color:#EADBC4;direction:ltr}
-    .snd-btn{position:fixed;right:14px;bottom:84px;z-index:65;width:40px;height:40px;border-radius:50%;border:1px solid rgba(212,190,158,.45);background:rgba(11,11,11,.85);color:#EADBC4;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px);box-shadow:0 8px 24px rgba(0,0,0,.5)}
-    .snd-btn svg{width:18px;height:18px}
-    .snd-btn.off{opacity:.6}
-    .snd-btn.snd-nav{position:static;width:34px;height:34px;flex:none;box-shadow:none;margin-inline:4px}
-    @media print{.snd-btn{display:none}}
     @property --gr{syntax:'<angle>';inherits:false;initial-value:0deg}
     .gold-run{position:relative;isolation:isolate}
     .gold-run::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:6;
@@ -2874,67 +2869,6 @@
       items.forEach(e => io.observe(e));
     }
 
-    const SND = { ctx: null, on: true, last: 0, user: 0 };
-    try { SND.on = localStorage.getItem('wolfSnd') !== '0'; } catch (e) {}
-    function sndCtx() {
-      if (!SND.ctx) { const C = window.AudioContext || window.webkitAudioContext; if (!C) return null; try { SND.ctx = new C(); } catch (e) { return null; } }
-      if (SND.ctx.state === 'suspended') SND.ctx.resume();
-      return SND.ctx;
-    }
-    function sndPlay(kind) {
-      if (!SND.on) return;
-      const c = sndCtx(); if (!c) return;
-      const t = c.currentTime;
-      const tone = (f1, f2, dur, vol, type, at) => {
-        const o = c.createOscillator(), g = c.createGain();
-        o.type = type || 'sine';
-        o.frequency.setValueAtTime(f1, t + (at || 0));
-        o.frequency.exponentialRampToValueAtTime(f2, t + (at || 0) + dur);
-        g.gain.setValueAtTime(0.0001, t + (at || 0));
-        g.gain.exponentialRampToValueAtTime(vol, t + (at || 0) + 0.006);
-        g.gain.exponentialRampToValueAtTime(0.0001, t + (at || 0) + dur);
-        o.connect(g); g.connect(c.destination);
-        o.start(t + (at || 0)); o.stop(t + (at || 0) + dur + 0.02);
-      };
-      if (kind === 'tap' || kind === 'soft') {   /* a soft glass "pluck": warm fundamental + quiet bell partials */
-        tone(988, 980, 0.26, 0.075, 'sine'); tone(1976, 1960, 0.14, 0.022, 'sine'); tone(2964, 2950, 0.07, 0.008, 'sine'); tone(494, 492, 0.12, 0.02, 'triangle');
-      }
-      else if (kind === 'tick') { tone(2100, 1800, 0.028, 0.02, 'sine'); }
-      else if (kind === 'on') { tone(880, 1320, 0.12, 0.06, 'sine'); }
-    }
-    function setupSounds() {
-      const INTER = 'a,button,input,select,label,summary,[onclick],[role="tab"],[role="button"],.sel-chip,.pu-tab,.cg-card,.nc-doc,.wal-seg button';
-      ['touchend', 'click'].forEach(ev => document.addEventListener(ev, () => { if (SND.on) sndCtx(); }, { capture: true, passive: true }));   /* iPhone unlocks audio on touchend */
-      ['pointerdown', 'pointermove', 'wheel', 'touchmove', 'keydown'].forEach(ev => document.addEventListener(ev, (e) => { if (ev !== 'pointermove' || e.buttons) SND.user = performance.now(); }, { capture: true, passive: true }));
-      document.addEventListener('pointerdown', (e) => {
-        if (e.button > 0) return;
-        if (e.target.closest('.snd-btn')) return;
-        sndPlay('tap');
-      }, true);
-      /* sideways strips (photo rails, chips, reels, tables) */
-      const lastX = new WeakMap();
-      document.addEventListener('scroll', (e) => {
-        const el = e.target; if (!el || el === document || el === document.documentElement || !el.nodeType) return;
-        const x = el.scrollLeft, px = lastX.get(el); lastX.set(el, x);
-        if (px === undefined || Math.abs(x - px) < 1) return;
-        const now = performance.now(); if (now - SND.user > 1200 || now - SND.last < 110) return; SND.last = now;   /* only when the person moves the strip */
-        sndPlay('tick');
-      }, true);
-      document.addEventListener('input', (e) => {
-        if (e.target && e.target.type === 'range') { const now = performance.now(); if (now - SND.last < 70) return; SND.last = now; sndPlay('tick'); }
-      }, true);
-      /* on/off */
-      const b = document.createElement('button');
-      b.type = 'button'; b.className = 'snd-btn' + (SND.on ? '' : ' off'); b.setAttribute('aria-label', 'الصوت');
-      const ico = () => { b.innerHTML = SND.on
-        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>'
-        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>'; b.title = SND.on ? 'إيقاف أصوات النقر' : 'تشغيل أصوات النقر'; };
-      ico();
-      b.onclick = () => { SND.on = !SND.on; try { localStorage.setItem('wolfSnd', SND.on ? '1' : '0'); } catch (e) {} b.classList.toggle('off', !SND.on); ico(); if (SND.on) sndPlay('on'); };
-      const ls = document.getElementById('agentNavLink');
-      if (ls && ls.parentNode) { b.classList.add('snd-nav'); ls.parentNode.insertBefore(b, ls); } else document.body.appendChild(b);
-    }
-
     function setupPriceIndex() {
       document.querySelectorAll('.price-chart-bars').forEach(box => {
         let prev = 0;
@@ -3013,7 +2947,7 @@
     }
 
     (function () {
-      const run = () => [setupMethod, setupSounds, setupPriceIndex, setupCityCharts, setupThenNow].forEach(f => { try { f(); } catch (e) { console.error(e); } });
+      const run = () => [setupMethod, setupPriceIndex, setupCityCharts, setupThenNow].forEach(f => { try { f(); } catch (e) { console.error(e); } });
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
     })();
   </script>
