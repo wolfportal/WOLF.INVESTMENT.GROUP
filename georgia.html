@@ -1076,6 +1076,9 @@
     .bev-img{aspect-ratio:auto}
     .bev-img img{height:auto;object-fit:contain;transform:none!important;transition:none}
     .bev-pair{align-items:start}
+    .bev-img{width:fit-content;max-width:100%;margin:0 auto}
+    .bev-img img{width:auto;max-width:100%;max-height:min(62vh,520px);margin:0 auto}
+    @media (max-width:760px){.bev-img img{max-height:52vh}}
     @keyframes bevShine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
     @keyframes grSpin{to{--gr:360deg}}
     @keyframes secShine{from{background-position:100% 0}to{background-position:0 0}}
