@@ -1339,7 +1339,7 @@
             </figure>
           </div>
           <figure class="bev-video vfit tm-frame gold-run">
-            <video src="https://videotourl.com/videos/1791625708463-8876ec19-737a-4f2c-91f8-60fc1b885959.mp4" autoplay muted loop playsinline controls preload="metadata" aria-label="باتومي قبل وبعد"></video>
+            <video data-src="https://videotourl.com/videos/1791625708463-8876ec19-737a-4f2c-91f8-60fc1b885959.mp4" muted loop playsinline controls preload="none" aria-label="باتومي قبل وبعد"></video>
             <figcaption><span>باتومي — قبل وبعد</span></figcaption>
           </figure>
           <div class="bev-stats">
@@ -2013,7 +2013,7 @@
       const els = document.querySelectorAll('.reveal-card');
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
-      }, { threshold: 0.15 });
+      }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
       els.forEach(el => io.observe(el));
     }
 
@@ -2991,6 +2991,12 @@
     window.addEventListener('load', () => setTimeout(setupTitles, 600));
     function setupThenNow() {
       const b = document.getElementById('batumiThenNow'); if (!b) return;
+      /* the before/after video loads only when it comes near the screen, plays while visible */
+      const v = b.querySelector('video[data-src]');
+      if (v) new IntersectionObserver((es) => es.forEach(e => {
+        if (e.isIntersecting) { if (!v.src) { v.src = v.dataset.src; v.load(); } const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); }
+        else if (v.src && !v.paused) v.pause();
+      }), { rootMargin: '200px 0px' }).observe(v);
       const io = new IntersectionObserver((es) => es.forEach(e => {
         if (!e.isIntersecting) return; io.disconnect(); b.classList.add('in');
         b.querySelectorAll('.bev-year').forEach((y, k) => { const to = +y.dataset.y, from = to - 12, t0 = performance.now() + k * 350;
