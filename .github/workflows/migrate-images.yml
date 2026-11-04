@@ -1,6 +1,9 @@
 name: Move site images into the repo
 on:
   workflow_dispatch:
+  push:
+    branches: [img-migrate]
+    paths: ['.github/workflows/migrate-images.yml', 'tools/migrate_images.py']
 permissions:
   contents: write
 jobs:
