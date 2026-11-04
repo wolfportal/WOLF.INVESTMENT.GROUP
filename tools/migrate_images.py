@@ -19,7 +19,7 @@ def fetch(url):
     for attempt in range(3):
         try:
             req = urllib.request.Request(url, headers={'User-Agent': UA, 'Referer': 'https://wolfportal.github.io/'})
-            with urllib.request.urlopen(req, timeout=20) as r:
+            with urllib.request.urlopen(req, timeout=45) as r:
                 ctype = r.headers.get('Content-Type', '')
                 data = r.read()
             if not ctype.startswith('image/'):
@@ -79,7 +79,7 @@ def main():
             return u, fetch(u), None
         except Exception as e:
             return u, None, str(e)[:200]
-    with ThreadPoolExecutor(8) as ex:
+    with ThreadPoolExecutor(3) as ex:
         for i, (u, d, err) in enumerate(ex.map(one, urls), 1):
             if d is None:
                 failed[u] = err
@@ -116,4 +116,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-# run 2
+# run 3
