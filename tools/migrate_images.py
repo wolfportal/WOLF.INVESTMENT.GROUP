@@ -16,10 +16,10 @@ UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
 
 def fetch(url):
     last = None
-    for attempt in range(4):
+    for attempt in range(3):
         try:
             req = urllib.request.Request(url, headers={'User-Agent': UA, 'Referer': 'https://wolfportal.github.io/'})
-            with urllib.request.urlopen(req, timeout=40) as r:
+            with urllib.request.urlopen(req, timeout=20) as r:
                 ctype = r.headers.get('Content-Type', '')
                 data = r.read()
             if not ctype.startswith('image/'):
@@ -28,7 +28,7 @@ def fetch(url):
             return data
         except Exception as e:  # retry with backoff
             last = e
-            time.sleep(3 * (attempt + 1))
+            time.sleep(2 * (attempt + 1))
     raise last
 
 
@@ -73,14 +73,19 @@ def main():
     urls = sorted({u for t in texts.values() for u in URL_RE.findall(t)})
     print(f'{len(urls)} external images')
     got, failed = {}, {}
-    for i, u in enumerate(urls, 1):
+    from concurrent.futures import ThreadPoolExecutor
+    def one(u):
         try:
-            got[u] = fetch(u)
-            print(f'[{i}/{len(urls)}] ok   {u}')
+            return u, fetch(u), None
         except Exception as e:
-            failed[u] = str(e)[:200]
-            print(f'[{i}/{len(urls)}] FAIL {u} :: {e}')
-        time.sleep(0.4)
+            return u, None, str(e)[:200]
+    with ThreadPoolExecutor(8) as ex:
+        for i, (u, d, err) in enumerate(ex.map(one, urls), 1):
+            if d is None:
+                failed[u] = err
+            else:
+                got[u] = d
+            print(f'[{i}/{len(urls)}] {"ok  " if d else "FAIL"} {u} {err or ""}', flush=True)
     # the same bytes behind many different links = an "unavailable" placeholder, not a real photo
     by_hash = defaultdict(list)
     for u, d in got.items():
